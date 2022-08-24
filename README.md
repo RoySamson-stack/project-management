@@ -15,7 +15,7 @@ This is a simple projecy management web app that allows for collaboration among 
     - track overall project progress
 
 
-## Team leeader
+## Team leader
 Team leaders will be both internal and external. The different tasks the team leader will haev include:
   - break tasks down into substasks
   - estimate completion dates for new tasks
@@ -29,3 +29,7 @@ Team leaders will be both internal and external. The different tasks the team le
 - View the structure of the projects/ related info
 - track the progress
 - update your progress, .pdf, screenshots, video, comments
+
+
+## Technologies used
+HTML, JAVASCRIPT
