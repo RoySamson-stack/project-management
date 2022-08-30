@@ -5,47 +5,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firebase JS</title>
+    <title>Signup Form</title>
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body>
+<body class="form-body">
     <div class="main">
         <div>
             <label>Name</label>
+            <br/>
             <input name="email" placeholder="Name" id="name" type="name" />
         </div>
         <div>
           <label>Email</label>
+          <br/>
           <input name="email" placeholder="Email" id="email" type="email" />
       </div>
       <div>
         <label>Password</label>
+        <br/>
         <input name="password" placeholder="Password" id="password" type="password" />
     </div>
         <div>
             <label>repeat password</label>
+            <br/>
             <input name="password" placeholder="Password" id="password" type="password" />
         </div>
 
-        <!-- <button 
-        class="submit-btn"
-        onclick="register()"
-        >Sign Up</button>
+            <a href="login.html">Already have an account?</a>
+            <br/>
+        <button onclick="saveData()">Signup</button>
 
-        <button 
-        class="login-btn"
-        onclick="login()"
-        >Sign In</button> -->
     </div>
 
-    <button onclick="saveData()">Save Data</button>
 
-    <button onclick="readData()">Read Data</button>
+    <!-- <button onclick="readData()">Read Data</button>
 
     <button onclick="updateData()">Update one Field</button>
 
-    <button onclick="deleteData()">Delete one Field</button>
+    <button onclick="deleteData()">Delete one Field</button> -->
 </body>
 
 <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-app-compat.js"></script>

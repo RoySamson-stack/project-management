@@ -1,11 +1,40 @@
-body {
+*{
+  padding: 0px;
+  margin:0px;
+}
+
+
+/* body {
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
+} */
+.top-nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 70px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.4);
 
+}
+.top-nav--left{
+
+}
+.top-nav--right{
+display: flex;
+justify-content: space-around;
+}
+.top-nav--right div{
+  padding: 5px
+}
+.form-links a{
+  text-decoration: none;
+  color: black;
+
+}
 .submit-btn{
   position: absolute;
   left: 40%;
@@ -18,4 +47,89 @@ body {
   left: 60%;
   top: 50%;
   margin-top: 50px;
+}
+.side-nav{
+color: white;
+background-color: rosybrown;
+width: 200px;
+height: 100vh;
+}
+.side-nav--top{
+  padding: 20px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+.top-logo{
+  padding-left: 10px
+}
+.top-logo p{
+  font-size: 25px
+}
+.line-break{
+  color: white;
+  background-color: white;
+  height: 2px;
+  margin-top: 20px;
+  width: 200px;
+}
+.side-nav--top div{
+padding:10px;
+}
+.side-nav--top a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+.side-nav--top button{
+border: none;
+background-color: transparent;
+color: white;
+font-size: 15px;
+font-weight: bold;
+padding-top: 20px;
+}
+.form-body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.main{
+  background-color: rosybrown;
+  border-radius: 25px;
+  padding: 40px;
+  
+}
+.main div{
+  padding: 20px;
+}
+.main div label{
+  font-weight: bold;
+}
+.main div input{
+  height: 20px;
+  width: 50ch;
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px transparent solid;
+}
+.main div input:hover{
+  border:2px solid rgb(159, 159, 231);
+}
+.main a{
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.main button{
+margin-left: 20px;  
+padding: 10px;
+font-size: 15px;
+background-color: rgb(250, 225, 225);
+border-radius: 5px;
+}
+.main button:hover{
+  background-color:rgb(167, 126, 126);
 }
