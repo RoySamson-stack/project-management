@@ -1,0 +1,23 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+  
+    <div class="admin-main__body">
+      <div class="sidenav" id="nav-placeholder">
+
+      </div>
+      <div class="top-main__body">
+        <input type="text" class="" placeholder="Search"/>
+        <p>Profile</p>
+      </div>
+    </div>
+  </body>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script>
+  $.get("navbar.html", function(data){
+      $("#nav-placeholder").replaceWith(data);
+  });
+  </script>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "project-management",
+  "version": "1.0.0",
+  "description": "This is a simple projecy management web app that allows for collaboration among team members.The different member in a tema will be assigned different roles by the Admin and they get tio use the platform to collarborate.   The different members in the team will be :  ~ Admin  ~ Team leader   ~ Customer",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel serve index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoySamson-stack/project-management.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RoySamson-stack/project-management/issues"
+  },
+  "homepage": "https://github.com/RoySamson-stack/project-management#readme",
+  "keywords": [],
+  "dependencies": {
+    "fontawesome": "^5.6.3"
+  }
+}

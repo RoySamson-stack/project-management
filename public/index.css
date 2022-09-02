@@ -133,3 +133,29 @@ border-radius: 5px;
 .main button:hover{
   background-color:rgb(167, 126, 126);
 }
+.main-body{
+background-color: navy;
+height: 90vh;
+color: white;
+position: relative;
+border-bottom-right-radius: 100%70rem;
+
+}
+.main-body__innerupper {
+  margin-top: 25%;
+  margin-left: 5%;
+  position: absolute;
+
+}
+.main-body__innerupper button{
+  padding: 10px;
+  margin-top: 2px;
+  font-weight: 20px;
+  background-color: rgb(167, 70, 32);
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+.main-body__innerupper button:hover{
+  background-color: rgb(230, 91, 36);
+}
