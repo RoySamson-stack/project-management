@@ -4,7 +4,7 @@
   "description": "This is a simple projecy management web app that allows for collaboration among team members.The different member in a tema will be assigned different roles by the Admin and they get tio use the platform to collarborate.   The different members in the team will be :  ~ Admin  ~ Team leader   ~ Customer",
   "main": "index.js",
   "scripts": {
-    "start": "parcel serve index.html",
+    "start": "parcel serve public/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
