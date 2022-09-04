@@ -183,7 +183,16 @@ border-bottom-right-radius: 100%70rem;
 }
 .center-main__body{
   margin-left: 22%;
+  position: relative;
   padding: 20px;
+  /* background-color: red; */
+  width: 50%;
+}
+.team-chat{
+  right:20px;
+  position: absolute;
+  top: 20px;
+  margin-top:97px;
 }
 .card{
   background-color:#fff;
@@ -193,15 +202,28 @@ border-bottom-right-radius: 100%70rem;
   padding: 10px;
   box-shadow: 0 2px 4px 1px rgba(0,0,0,.7);
 }
+.chat-card{
+  background-color:#fff;
+  width: 400px;
+  height: 500px;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: 0 2px 4px 1px rgba(0,0,0,.7);
+}
 .body-grid{
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
   width: 55em;
+  
 }
 .table{
-  margin-left: 23%;
+  margin-top: 50px;
+}
+.table table{
+  /* margin-left: 23%; */
   background-color: red;
+  width: 100%;
 }
 .table-headers th{
 padding-right: 20px;
