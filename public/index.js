@@ -32,6 +32,8 @@ const login = () => {
   auth.signInWithEmailAndPassword(email, password)
   .then((res) => {
       console.log(res.user)
+      window.location = 'admin.html'
+
   })
   .catch((err) => {
       alert(err.message)
@@ -55,6 +57,7 @@ const saveData = () => {
   })
   .then((docRef) => {
       console.log("Document written with ID: ", docRef.id);
+      window.location = 'login.html'
   })
   .catch((error) => {
       console.error("Error adding document: ", error);
@@ -90,4 +93,25 @@ const deleteData = () => {
   .catch((err) =>{
       console.log(err)
   })
+}
+
+document.getElementById('createteam').addEventListener('click', saveTeam)
+
+const saveTeam = () => {
+  const name = document.getElementById('teamname').value
+  const members = document.getElementById('teammembers').value
+
+
+  db.collection('teams')
+  .add({
+      name:name,
+      members: members
+  })
+  .then((docRef) => {
+      console.log("Document written with ID: ", docRef.id);
+      console.log(name, members)
+  })
+  .catch((error) => {
+      console.error("Error adding document: ", error);
+  });
 }

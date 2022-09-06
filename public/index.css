@@ -68,6 +68,15 @@ position:fixed;
 .top-logo p{
   font-size: 25px
 }
+.top-nav__2{
+  font-size: 17px;
+  font-weight: bold;
+  display: flex;
+
+}
+.top-nav__2 p{
+  margin-right: 5px;
+}
 .line-break{
   color: white;
   background-color: white;
@@ -135,30 +144,73 @@ border-radius: 5px;
   background-color:rgb(167, 126, 126);
 }
 .main-body{
-background-color: navy;
 height: 90vh;
-color: white;
 position: relative;
-border-bottom-right-radius: 100%70rem;
+display: grid;
+grid-template-columns: 50% 2fr;
+background-color: blue;
 
 }
 .main-body__innerupper {
   margin-top: 25%;
   margin-left: 5%;
-  position: absolute;
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50% ;
+  background-color: blue;
 
 }
-.main-body__innerupper button{
+.column-1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.column-1 {
+  font-size: 50px;
+  font-weight: bold;
+  width: 40ch;
+}
+.small{
+  font-size: 20px;
+  width: 50ch;
+}
+.column-1 div{
+  position: absolute;
+  margin-left: 25px;
+}
+
+.column-2{
+  background-image: url("img/pexels-fauxels-3184423.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-color: red;
+
+}
+.column-1 a{
   padding: 10px;
   margin-top: 2px;
   font-weight: 20px;
-  background-color: rgb(167, 70, 32);
   color: white;
-  border: none;
-  border-radius: 10px;
+  font-size: 25px;
+  text-decoration: none;
 }
-.main-body__innerupper button:hover{
+.column-1 button:hover{
   background-color: rgb(230, 91, 36);
+}
+.number-stats{
+  height:150px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.number-stats tr{
+  justify-content: space-between;
+}
+.number-stats td{
+  font-size: 50px;
+  padding: 30px;
 }
 .top-main__body{
   margin-left:22%;
@@ -183,10 +235,10 @@ border-bottom-right-radius: 100%70rem;
 }
 .center-main__body{
   margin-left: 22%;
-  position: relative;
-  padding: 20px;
+  /* position: relative; */
+  /* padding: 20px; */
   /* background-color: red; */
-  width: 50%;
+  width: auto;
 }
 .team-chat{
   right:20px;
@@ -196,11 +248,23 @@ border-bottom-right-radius: 100%70rem;
 }
 .card{
   background-color:#fff;
-  width: 400px;
+  width: 300px;
   height: 200px;
   border-radius: 25px;
   padding: 10px;
   box-shadow: 0 2px 4px 1px rgba(0,0,0,.7);
+}
+.card-title{
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-count{
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .chat-card{
   background-color:#fff;
@@ -211,10 +275,9 @@ border-bottom-right-radius: 100%70rem;
   box-shadow: 0 2px 4px 1px rgba(0,0,0,.7);
 }
 .body-grid{
-  margin-top: 20px;
+  margin: 20px;
   display: flex;
   justify-content: space-between;
-  width: 55em;
   
 }
 .table{
@@ -222,7 +285,6 @@ border-bottom-right-radius: 100%70rem;
 }
 .table table{
   /* margin-left: 23%; */
-  background-color: red;
   width: 100%;
 }
 .table-headers th{
@@ -230,6 +292,106 @@ padding-right: 20px;
 padding-left: 20px;
 
 }
+.card-2{
+  background-color: #161616; 
+  width		: 45%;
+	height		: 500px; 
+}
+.card-white{
+  background-color: #fff;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#chartdiv {	
+   width		: 100%;
+	height		: 500px;
+	background-color: #161616;  
+}
+
+.amcharts-graph-g2 .amcharts-graph-stroke {
+  stroke-dasharray: 3px 3px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  -webkit-animation: am-moving-dashes 1s linear infinite;
+  animation: am-moving-dashes 1s linear infinite;
+}
+
+@-webkit-keyframes am-moving-dashes {
+  100% {
+    stroke-dashoffset: -31px;
+  }
+}
+@keyframes am-moving-dashes {
+  100% {
+    stroke-dashoffset: -31px;
+  }
+}
+
+
+.lastBullet {
+  -webkit-animation: am-pulsating 1s ease-out infinite;
+  animation: am-pulsating 1s ease-out infinite;
+}
+@-webkit-keyframes am-pulsating {
+  0% {
+    stroke-opacity: 1;
+    stroke-width: 0px;
+  }
+  100% {
+    stroke-opacity: 0;
+    stroke-width: 50px;
+  }
+}
+@keyframes am-pulsating {
+  0% {
+    stroke-opacity: 1;
+    stroke-width: 0px;
+  }
+  100% {
+    stroke-opacity: 0;
+    stroke-width: 50px;
+  }
+}
+
+.amcharts-graph-column-front {
+  -webkit-transition: all .3s .3s ease-out;
+  transition: all .3s .3s ease-out;
+}
+.amcharts-graph-column-front:hover {
+  fill: #496375;
+  stroke: #496375;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.amcharts-graph-g3 {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: 500%;
+  stroke-dasharray: 0 \0/;    /* fixes IE prob */
+  stroke-dashoffset: 0 \0/;   /* fixes IE prob */
+  -webkit-animation: am-draw 40s;
+  animation: am-draw 40s;
+}
+@-webkit-keyframes am-draw {
+    0% {
+        stroke-dashoffset: 500%;
+    }
+    100% {
+        stroke-dashoffset: 0%;
+    }
+}
+@keyframes am-draw {
+    0% {
+        stroke-dashoffset: 500%;
+    }
+    100% {
+        stroke-dashoffset: 0%;
+    }
+}
+								
 
 
 /* Smartphones (portrait and landscape) ----------- */

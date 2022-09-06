@@ -1,6 +1,6 @@
 <html>
   <head>
-
+<link rel="stylesheet" href="popup.css">
   </head>
   <body>
   
@@ -9,8 +9,11 @@
 
       </div>
       <div class="top-main__body">
-        <div class="">
-          <input type="text" class="" placeholder="Search"/>
+        <div class="top-nav__2">
+          <p>Overview </p>
+          <p> list</p>
+          <p>Board</p> 
+          
         </div>
         <div class="top-main__body-right">
           <i class="fa fa-bell" aria-hidden="true"></i>
@@ -20,24 +23,53 @@
       <div class="center-main__body">
         <div class="body-grid">
           <div class="card">
-            <p>Hello</p>
+            <h1 class="card-title">Completed tasks</h1>
+            <h1 class="card-count">0</h1>
           </div>
           <div class="card">
-            <p>Hello</p>
+            <h1 class="card-title">Incomplete tasks</h1>
+            <h1 class="card-count">0</h1>
+          </div>
+          <div class="card">
+            <h1 class="card-title">Overdue tasks</h1>
+            <h1 class="card-count">0</h1>
+          </div>
+          <div class="card">
+            <h1 class="card-title">Total tasks</h1>
+            <h1 class="card-count">0</h1>
           </div>
         </div>
         <div class="body-grid">
-          <div class="card">
-            <p>Hello</p>
+          <div class="card card-2">
           </div>
-          <div class="card">
-            <p>Hello</p>
+          <div class="card card-2 card-white">
+            <h3>Teams progress</h3>
+            <div class="grid">
+              <div class="grid-1">Hello</div>
+            </div>
           </div>
         </div>
+        <h1>create new team</h1>
+        <button id="btnOpenForm">new team</button>
         
-    
-      <div class="table">
-        <h1>Project summary</h1>
+        <div class="form-popup-bg">
+          <div class="form-container">
+            <button id="btnCloseForm" class="close-button">X</button>
+            <form action="" id="form-team">
+              <div class="form-group">
+                <label for="">Team name</label>
+                <input type="text" class="form-control" id="teamname" />
+              </div>
+              <div class="form-group">
+                <label for="">Team members</label>
+                <input class="form-control" type="text" id="teammembers"/>
+              </div>
+              <button onclick="" id="createteam">Submit</button>
+            </form>
+          </div>
+        </div>
+      <!-- <div class="table">
+        <h1>Project</h1>
         <table>
           <tr class="table-headers">
             <th>Project name</th>
@@ -59,16 +91,18 @@
             <td></td>
           </tr>
         </table>
-      </div>
+      </div> -->
     </div>
-    <div class="team-chat">
+
+    <!--Chat system-->
+    <!-- <div class="team-chat">
       <div class="chat">
         <div class="chat-card">
           <p>Team chat</p>
           
         </div>
       </div>
-    </div>
+    </div> -->
   </body>
   <script src="//code.jquery.com/jquery.min.js"></script>
   <script>
@@ -76,4 +110,10 @@
       $("#nav-placeholder").replaceWith(data);
   });
   </script>
+  <script src="https://www.amcharts.com/lib/3/amcharts.js?x"></script>
+  <script src="https://www.amcharts.com/lib/3/serial.js?x"></script>
+  <script src="https://www.amcharts.com/lib/3/themes/dark.js"></script>
+  <script src="graph.js"></script>
+  <script src="popup.js"></script>
+  <script src="index.js"></script>
 </html>
