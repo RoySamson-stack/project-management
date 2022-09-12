@@ -1,0 +1,15 @@
+{
+  "name": "firebasedb-crud-as-simple-todo-list-with-html-and-jquery-javascript-master",
+  "version": "1.0.0",
+  "description": "This is example of To-Do list using FirebaseDataBase and Jqury, Html, Basically CRUD operation in firebase and HTML,JQuery. You can Add , Edit, Update and Delete To-Do",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel public/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.7.0"
+  }
+}

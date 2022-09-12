@@ -1,37 +1,42 @@
-# project-management
-This is a simple projecy management web app that allows for collaboration among team members.The different member in a tema will be assigned different roles by the Admin and they get tio use the platform to collarborate. 
- The different members in the team will be :
- ~ Admin
- ~ Team leader 
- ~ Customer
+# Firebase CRUD as simple todo list with HTML and JQuery/Javscript
 
- ## Admin
- Teh admin willl be main user uin the system as they will have main task of assigning jonbs and also ahave function such as: 
-    - setting up the project
-    - Dividing the project into tasks
-    - assign tasks to teams
-    - Create new teams if necessary
-    - update any changes to the project
-    - track overall project progress
+This is example of To-Do list using FirebaseDataBase and Jqury, Html, Basically CRUD operation in firebase and HTML,JQuery. You can Add , Edit, Update and Delete To-Do
 
+# Prerequisites
 
-## Team leader
-Team leaders will be both internal and external. The different tasks the team leader will haev include:
-  - break tasks down into substasks
-  - estimate completion dates for new tasks
-  - assign subtasks to team members
-  - record prograss on a particular task
-  - record completed tasks
-  - report expeced delays, justify them and provide new estimated completion dates
+You need to have firebase Account.
+* Login to gmail.
+* Go to firebase console.
+* Create New Project.
+* Go to Database in Develop .
+* Click on "Get Started" with Realtime Database Start in Test Mode.
 
- ## Customer
- - View Projects,
-- View the structure of the projects/ related info
-- track the progress
-- update your progress, .pdf, screenshots, video, comments
+# To Run
+ 
+### You need to Clone Or Download zip of this code.
 
+### Need to replace two things in todo.html
 
-## Technologies used
-HTML, JAVASCRIPT
-## livesite
-https://project-management-53eab.web.app/
+Open Your Project You created with DB and go to Overview. Click on "Add Firebase to your web app" You will get code snippet look like below
+
+```
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  var config = {
+    apiKey: "<API_KEY>",
+    authDomain: "<PROJECT_ID>.firebaseapp.com",
+    databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
+    projectId: "<PROJECT_ID>",
+    storageBucket: "<BUCKET>.appspot.com",
+    messagingSenderId: "<SENDER_ID>",
+  };
+  firebase.initializeApp(config);
+</script>
+```
+now you have to replace your own code snippet in todo.html and you are good to go :tada:
+
+it would not work if you don't change code snippet add real one.
+
+### If you have done all above changes then just open todo.html in bowser and it's up and Runing you can now add, update and delete ToDo.
+
+:star2:

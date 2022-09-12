@@ -1,0 +1,1 @@
+{"mappings":"AAAA;;;;AAYA;;;;AAIA","sources":["public/style.css"],"sourcesContent":["body,\n table,\n    thead,\n    tr,\n    tbody,\n    th,\n    td {\n        text-align: center;\n    }\nbutton{\n\n}\ndiv{\n\tmargin-top: 10px;\n\t\n}\n.id{\n    display: none;\n}"],"names":[],"version":3,"file":"todo.83d9161e.css.map","sourceRoot":"/__parcel_source_root/"}

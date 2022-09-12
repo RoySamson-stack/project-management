@@ -17,6 +17,8 @@
   align-items: center;
   padding: 10px;
   height: 70px;
+  color: white;
+  background-color: #111;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.4);
 
 }
@@ -32,7 +34,7 @@ justify-content: space-around;
 }
 .form-links a{
   text-decoration: none;
-  color: black;
+  color:white;
 
 }
 .submit-btn{
@@ -148,7 +150,7 @@ height: 90vh;
 position: relative;
 display: grid;
 grid-template-columns: 50% 2fr;
-background-color: blue;
+background-color:#111;
 
 }
 .main-body__innerupper {
@@ -178,6 +180,8 @@ background-color: blue;
 .column-1 div{
   position: absolute;
   margin-left: 25px;
+  color: white;
+  background-color: #111;
 }
 
 .column-2{
@@ -186,6 +190,7 @@ background-color: blue;
   background-position: center;
   background-repeat: no-repeat; 
   background-color: red;
+  filter: grayscale(100%);
 
 }
 .column-1 a{
@@ -204,6 +209,10 @@ background-color: blue;
   display: flex;
   justify-content:center;
   align-items: center;
+  background-color: rgb(56, 53, 53);
+
+}
+.number-stats table{
 }
 .number-stats tr{
   justify-content: space-between;
@@ -211,6 +220,74 @@ background-color: blue;
 .number-stats td{
   font-size: 50px;
   padding: 30px;
+}
+.advantages-section{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #111;
+  color: white;
+  padding: 40px;
+}.features-section{
+  display: flex;
+  align-items: center;
+  height: 500px;
+  flex-direction: column;
+  background-color: rgb(68, 49, 231);
+  color: white;
+  padding: 40px;
+  font-size: 80px;
+  justify-content: center;
+}
+.features-section h2{
+  margin-left: 20px;
+  width: 20ch;
+}
+.features-section__2{
+  color: white;
+  background-color: #111;
+  /* margin-top: 50px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.features-section__2 h2{
+  margin-top: 50px;
+}
+.features-section__2-images{
+  display: flex;
+  margin: 30px;
+}
+.img-1{
+  width: 40rem;
+  height:25rem;
+  margin-right: 40px;
+}
+.img-2{
+  height:25rem;
+  width: 50rem;
+}.img-1, .img-2{
+  filter:grayscale(100%)
+}
+.features-table table{
+  color: #fff;
+  
+}
+.features-table table th{
+ font-size: 70px;
+}
+.features-table table tr{
+height: 100px;
+}
+.row-1{
+  border: 2px sloid white;}
+.adv-sec__grid{
+ display: flex;
+margin-top: 30px;
+}
+.card-adv{
+  margin-left: 40px;
 }
 .top-main__body{
   margin-left:22%;
@@ -303,7 +380,43 @@ padding-left: 20px;
   flex-direction: column;
   align-items: center;
 }
+.card-lead{
+  background-color:#fff;
+  width: 300px;
+  height: 100px;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: 0 2px 4px 1px rgba(0,0,0,.7);
+}
+.center-main__body--2{
+  margin-left: 20%;
+  width: 60%;
+}
+.center-body__right{
+  /* border: 20px solid red; */
+  position: absolute;
+  right: 30px;
+  top: 90px;
+  height: 80%;
+  width: 300px;
+  margin-left: 20px;
 
+}
+.sm{
+  font-weight: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.team-card{
+  margin-left: 20px;
+}
+.team-card__teams{
+  height: 300px;
+}
+.body-grid-2{
+  display: flex;
+}
 #chartdiv {	
    width		: 100%;
 	height		: 500px;
@@ -471,7 +584,7 @@ only screen and (-webkit-device-pixel-ratio: 3) {
 
 /* Samsung Galaxy S7 Edge ----------- */
 @media only screen
-and (-webkit-min-device-pixel-ratio: 3),
+and (-webkit-min-device-pixel-ratio: 3)
 and (min-resolution: 192dpi)and (max-width:640px) {
  /* Styles */
 }
