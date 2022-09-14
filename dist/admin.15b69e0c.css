@@ -1,0 +1,70 @@
+@import "https://fonts.googleapis.com/css?family=Roboto:300,500";
+@color-card-background : #2d3638;
+
+@color-tag-background : #191e20;
+
+@color-anchor : #e37544;
+
+@color-body-copy : #b9bcbd;
+
+@default-border-radius : 10px;
+
+@breakpoint-medium : "screen and (min-width: 700px)";
+
+.form-popup-bg {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10000;
+  background-color: #5e6e8de6;
+  flex-direction: column;
+  place-content: center;
+  transition: opacity .3s, visibility 0s .3s;
+  display: flex;
+  position: fixed;
+  inset: 0;
+  overflow-y: auto;
+}
+
+.form-popup-bg.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .3s, visibility;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 700px;
+  color: #fff;
+  background-color: #2d3638;
+  border-radius: 10px;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px;
+  display: flex;
+  position: relative;
+  box-shadow: 0 10px 20px #00000030, 0 6px 6px #0000003b;
+}
+
+.close-button {
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.form-popup-bg:before {
+  content: "";
+  opacity: .25;
+  background-color: #fff;
+  position: absolute;
+  inset: 0;
+}
+
+/*# sourceMappingURL=admin.15b69e0c.css.map */

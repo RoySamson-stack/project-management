@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>
-    CRUD
+    todo
   </title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -17,8 +17,6 @@
     $(document).ready(function(){
 
 
- ///// replace with Your code snippet
-////// Initialize Firebase
   var config = {
     apiKey: "AIzaSyDmOzvLfbJ74Ftv0QWQmdpoaE1LzNPUlo0",
     authDomain: "project-management-53eab.firebaseapp.com",
@@ -31,7 +29,6 @@
   firebase.initializeApp(config);
 
 
-//////todo display start ////////////////
     var getvalue = firebase.database().ref('to_do/');
     getvalue.on('value', function(snapshot) {
       var tbodyEl = $('tbody');
@@ -72,9 +69,7 @@
       updates['/to_do/' + newPostKey] = user;
       return firebase.database().ref().update(updates);
     }
-//////add todo end ////////////////
 
-//////update todo start ////////////////
     $('table').on('click', '.edit', function() {
 
       var rowEl = $(this).closest('tr');
@@ -104,9 +99,7 @@
       updates['to_do/' + id + "/name"] = name;
       return firebase.database().ref().update(updates);
     }
-//////update todo end ////////////////
 
-//////delete todo start ////////////////
     $('table').on('click', '#delete', function() {
       var rowEl = $(this).closest('tr');
       var id = rowEl.find('.id').text();
@@ -117,7 +110,6 @@
       var rootRef = firebase.database().ref().child('to_do');
       rootRef.child(id).remove();
     }
-//////delete todo end ////////////////
 });
 
   </script>

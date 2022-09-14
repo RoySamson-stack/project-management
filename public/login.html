@@ -8,8 +8,18 @@
   <body>
     <h1>Login</h1>
 
+
+    <div id="LoginScreen">
+      <button id="login-btn">login</button>
+    </div>
     <div id="LoginScreen">
       <button id="login">Google login</button>
+    </div>
+    <div id="">
+      <button id="github-login">Github login</button>
+    </div>
+    <div id="">
+      <button id="twitter-login" onclick="twitterSignin();">Twitter login</button>
     </div>
 
     <div id="dashboard">
@@ -42,9 +52,42 @@
 
       document.getElementById('login').addEventListener('click', GoogleLogin)
       document.getElementById('logout').addEventListener('click', LogoutUser)
+      document.getElementById('github-login').addEventListener('click', githubSignin)
+      
+
+
 
       let provider = new firebase.auth.GoogleAuthProvider()
+      var githubProvider = new firebase.auth.GithubAuthProvider();
 
+      var loginBtn = document.getElementById('login-btn')
+      loginBtn.addEventListener('click', async e => {
+          e.preventDefault();
+          if( $('#email').val() != '' && $('#password').val() != '' ){
+          //login the user
+          var data = {
+              email: $('#email').val(),
+              password: $('#password').val()
+          };
+          try{
+              const userCredential = await firebase.auth().signInWithEmailAndPassword(data.email, data.password);
+              let uid = userCredential.user.uid;
+              var documents = await firebase.firestore().collection("users").doc(uid);
+              documents.get().then(function(doc){
+                  if(doc.data['role'] = 'admin'){
+                      window.location.href = "admin.html"; 
+                  }
+                  else if(doc.data['role'] = 'teamleader'){
+                      window.location.href = "teamlead.html";  
+                  }                  
+              });
+          }    
+          catch(err){
+              console.log("Login Failed!", err);
+              window.alert("Login Failed!", err);
+          }
+      }
+});
       function GoogleLogin(){
         console.log('Login Btn Call')
         firebase.auth().signInWithPopup(provider).then(res=>{
@@ -86,6 +129,88 @@
           console.log(e)
         })
       }
+      function githubSignin() {
+        firebase.auth()
+        .getRedirectResult(githubProvider)
+        .then((result) => {
+          if (result.credential) {
+            var credential = result.credential;
+            var token = credential.accessToken;
+          }
+
+          var user = result.user;
+        }).catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          var email = error.email;
+          var credential = error.credential;
+          // ...
+        });
+    }
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        var displayName = user.displayName;
+        var email = user.email;
+        var emailVerified = user.emailVerified;
+        var photoURL = user.photoURL;
+        var isAnonymous = user.isAnonymous;
+        var uid = user.uid;
+        var providerData = user.providerData;
+        // ...
+      } else {
+        // User is signed out.
+        // ...
+      }
+    });
+    function githubSignout(){
+       firebase.auth().signOut()
+       .then(function() {
+          console.log('Signout successful!')
+       }, function(error) {
+          console.log('Signout failed')
+       });
+    }
+    function twitterSignin()
+    {
+    var provider = new firebase.auth.TwitterAuthProvider();
+    firebase.auth().useDeviceLanguage();
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+  
+  var token = result.credential.accessToken;
+  console.log(token);
+  var secret = result.credential.secret;
+  console.log(secret);
+ 
+  document.querySelector("#sign-out").style.display="block";
+  var user = result.user;
+  console.log(user.email);
+  var userImage = document.querySelector("#user-image");
+ 
+  // appending the user profile image
+ 
+  var userPic = document.createElement("img");
+  userPic.src=user.photoURL;
+  userImage.append(userPic);
+ 
+  // appending the user email address
+ 
+  var userEmail = document.querySelector("#user-email");
+  userEmail.innerHTML = user.displayName;
+ 
+  console.log(user);
+  // ...
+}).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+});
+    }
       checkAuthState()
     </script>
   </body>

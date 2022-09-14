@@ -40,16 +40,42 @@
     </div>
 
 
-    <!-- <button onclick="readData()">Read Data</button>
-
-    <button onclick="updateData()">Update one Field</button>
-
-    <button onclick="deleteData()">Delete one Field</button> -->
 </body>
 <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js" ></script>
 <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-auth-compat.js"></script>
+<script>
+function submitForm(e) {
+    e.preventDefault();
+
+    var name = getInputVal('name');
+    var address = getInputVal('address');
+    var email = getInputVal('email');
+    var phone = getInputVal('phone');
+    var password = getInputVal('password');
+
+    enterUser(email, password);
+    saveMessage(name, address, email, phone, password);
+    document.querySelector('.alert').style.display = 'block';
+    setTimeout(function() {
+        document.querySelector('.alert').style.display = 'none';
+    }, 3000);
+    document.getElementById('contactform').reset();
+ }
+
+
+ function enterUser(name, password) {
+    if ((name) && (password)) {
+        firebase.auth().createUserWithEmailAndPassword(name, 
+    password).then(function(user) {
+            // Enters the new user fields
+            console.log(user.email);
+            // ...
+        });
+    }
+ }
+</script>
 <script src="index.js"></script>
 
 </html>
