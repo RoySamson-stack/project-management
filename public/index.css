@@ -44,12 +44,93 @@ justify-content: space-around;
   margin-top: 50px;
 }
 
-.login-btn{
-  position: absolute;
-  left: 60%;
-  top: 50%;
-  margin-top: 50px;
+/* login form */
+.forms-body{
+  display: flex;
+  /* background-color: red; */
+  justify-content: center;
+  align-items: center;
 }
+.login-form{
+  margin-top: 10%;
+/* background-color:grey; */
+padding: 30px;
+width: 20rem;
+height: 20rem;
+font-size: 20px;
+box-shadow: 0 2px 4px 0 rgba(0,0,0,.9);
+}
+
+.login-form h1{
+  display: flex;
+  justify-content:center;
+}
+.form-input{
+width: 100%;
+}
+.form-input input{
+  width: 100%;
+  border-radius: 10px;
+  border:1px solid black;
+  padding: 10px;
+}
+.form-btn{
+  font-size: 20px;
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+}
+.social-login{
+  display: flex;
+  justify-content: center;
+
+}
+.social-login button{
+  background-color: transparent;
+  margin: 10px;
+  border: none;
+
+}
+.icon{
+  font-size: 30px;
+}
+.fa-twitter{
+  color: #1DA1F2;
+}
+
+
+/* teeam chat in team lead */
+.chat-input{
+  display: flex;
+  justify-content:space-between;
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  align-items:center;
+}
+#txt{
+  padding: 5px;
+  width: 200px;
+  margin-right:15px;
+  margin-left:15px;
+}
+#fromdevicefiles{
+  display: none;
+}
+.chat{
+  width: 50%;
+  margin: 5px;
+  background: blue;
+  padding: 10px ;
+  border-radius: 10px;}
+.chat2{
+  width: 50%;
+  margin: 5px;
+  background: rgb(20, 228, 48);
+  padding: 10px ;
+  border-radius: 10px;}
+/* end */
+
 .side-nav{
 color: white;
 background-color: rosybrown;

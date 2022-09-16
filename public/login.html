@@ -3,29 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css  ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+    <link rel="stylesheet" href="index.css">
     <title>HCRK</title>
   </head>
-  <body>
-    <h1>Login</h1>
-
-
-    <div id="LoginScreen">
-      <button id="login-btn">login</button>
+  <body class="forms-body">
+    <div class="login-form">
+      <h1>Login</h1>
+      <div class="form-input">
+        <label>Username/email</label>
+        <br>
+        <input type="text" id="email" class="" required/>
+      </div>
+      <div class="form-input">
+        <label>Password</label>
+        <br>
+        <input type="password" id="password" class="" required/>
+      </div>
+      <div id="LoginScreen">
+        <button id="login-btn" class="form-btn">login</button>
+      </div>
+      <a href="signup.html">Dont have an account?</a>
+      <br/>
+      <div class="social-login">
+      <div id="LoginScreen">
+        <button id="login"><i class="fa fa-google color-rainbow-google icon"></i></button>
+      </div>
+      <div id="">
+        <button id="github-login" ><i class="fa fa-github icon"></i></button>
+      </div>
+      <div id="">
+        <button id="twitter-login" onclick="twitterSignin();" ><i class="fa fa-twitter icon"></i></button>
+      </div>
+      <div id="">
+        <button id="anon-login"><i class="fa-sharp fa-solid fa-user-secret icon"></i></button>
+      </div>
+      </div>
+      <div id="dashboard">
+        <div id="userDetails"></div>
+        <button id="logout">Logout</button>
+      </div>
     </div>
-    <div id="LoginScreen">
-      <button id="login">Google login</button>
-    </div>
-    <div id="">
-      <button id="github-login">Github login</button>
-    </div>
-    <div id="">
-      <button id="twitter-login" onclick="twitterSignin();">Twitter login</button>
-    </div>
-
-    <div id="dashboard">
-      <div id="userDetails"></div>
-      <button id="logout">Logout</button>
-    </div>
+ 
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
@@ -53,12 +73,17 @@
       document.getElementById('login').addEventListener('click', GoogleLogin)
       document.getElementById('logout').addEventListener('click', LogoutUser)
       document.getElementById('github-login').addEventListener('click', githubSignin)
-      
+      document.getElementById('login-btn').addEventListener('click', emailSignin)
+      document.getElementById('anon-login').addEventListener('click', isAnonymous)
 
 
+      const email = document.getElementById('email');
+      const password = document.getElementById('password');
 
       let provider = new firebase.auth.GoogleAuthProvider()
       var githubProvider = new firebase.auth.GithubAuthProvider();
+      const twitterProvider = new firebase.auth.TwitterAuthProvider();
+
 
       var loginBtn = document.getElementById('login-btn')
       loginBtn.addEventListener('click', async e => {
@@ -95,18 +120,19 @@
           document.getElementById('LoginScreen').style.display="none"
           document.getElementById('dashboard').style.display="block"
           showUserDetails(res.user)
+          window.location = 'admin.html'
         }).catch(e=>{
           console.log(e)
         })
       }
 
-      function showUserDetails(user){
-        document.getElementById('userDetails').innerHTML = `
-          <img src="${user.photoURL}" style="width:10%">
-          <p>Name: ${user.displayName}</p>
-          <p>Email: ${user.email}</p>
-        `
-      }
+      // function showUserDetails(user){
+      //   document.getElementById('userDetails').innerHTML = `
+      //     <img src="${user.photoURL}" style="width:10%">
+      //     <p>Name: ${user.displayName}</p>
+      //     <p>Email: ${user.email}</p>
+      //   `
+      // }
 
       function checkAuthState(){
         firebase.auth().onAuthStateChanged(user=>{
@@ -129,24 +155,19 @@
           console.log(e)
         })
       }
-      function githubSignin() {
-        firebase.auth()
-        .getRedirectResult(githubProvider)
-        .then((result) => {
-          if (result.credential) {
-            var credential = result.credential;
-            var token = credential.accessToken;
-          }
-
-          var user = result.user;
-        }).catch((error) => {
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          var email = error.email;
-          var credential = error.credential;
-          // ...
-        });
-    }
+      function githubSignin(){
+        console.log('github btn')
+        firebase.auth().signInWithPopup(githubProvider).then(res=>{
+          console.log(res.user)
+          document.getElementById('LoginScreen').style.display="none"
+          document.getElementById('dashboard').style.display="block"
+          showUserDetails(res.user)
+          window.location = 'admin.html'
+        }).catch(e=>{
+          console.log(e)
+        })
+      }
+  
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         // User is signed in.
@@ -171,46 +192,51 @@
           console.log('Signout failed')
        });
     }
-    function twitterSignin()
-    {
-    var provider = new firebase.auth.TwitterAuthProvider();
-    firebase.auth().useDeviceLanguage();
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-  
-  var token = result.credential.accessToken;
-  console.log(token);
-  var secret = result.credential.secret;
-  console.log(secret);
- 
-  document.querySelector("#sign-out").style.display="block";
-  var user = result.user;
-  console.log(user.email);
-  var userImage = document.querySelector("#user-image");
- 
-  // appending the user profile image
- 
-  var userPic = document.createElement("img");
-  userPic.src=user.photoURL;
-  userImage.append(userPic);
- 
-  // appending the user email address
- 
-  var userEmail = document.querySelector("#user-email");
-  userEmail.innerHTML = user.displayName;
- 
-  console.log(user);
-  // ...
-}).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // The email of the user's account used.
-  var email = error.email;
-  // The firebase.auth.AuthCredential type that was used.
-  var credential = error.credential;
-  // ...
-});
+  function twitterSignin(){
+    console.log('twitter btn')
+        firebase.auth().signInWithPopup(twitterProvider).then(res=>{
+          console.log(res.user)
+          document.getElementById('LoginScreen').style.display="none"
+          document.getElementById('dashboard').style.display="block"
+          showUserDetails(res.user)
+          window.location = 'admin.html'
+        }).catch(e=>{
+          console.log(e)
+        })
     }
+    function emailSignin(){
+      const email = document.getElementById('email');
+      const password = document.getElementById('password');
+
+      const emailVal = email.value;
+      const passwordVal = password.value;
+
+      //Built in firebase function responsible for authentication
+      firebase.auth().signInWithEmailAndPassword(emailVal, passwordVal)
+      .then(() => {
+        //Signed in successfully
+        window.location = 'admin.html'
+        console.log(emailVal)
+      })
+      .catch(error => {
+        //Something went wrong
+        console.error(error);
+      })
+    }
+function isAnonymous(){
+  firebase.auth().signInAnonymously()
+  .then(() => {
+    // Signed in..
+    window.location = 'admin.html'
+    consolelog(success)
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ...
+  });
+}
+ 
       checkAuthState()
     </script>
   </body>

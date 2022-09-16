@@ -51,7 +51,7 @@
           </div>
         </div>
         <h1>create new team</h1>
-        <button id="btnOpenForm">new team</button>
+        <button id="btnOpenForm" name="new_team">new team</button>
         
         <div class="form-popup-bg">
           <div class="form-container">
@@ -106,10 +106,45 @@
     </div> -->
   </body>
   <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js" ></script>
+<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-auth-compat.js"></script>
   <script>
   $.get("navbar.html", function(data){
       $("#nav-placeholder").replaceWith(data);
   });
+
+  var config = {
+        apiKey: "AIzaSyDmOzvLfbJ74Ftv0QWQmdpoaE1LzNPUlo0",
+        authDomain: "project-management-53eab.firebaseapp.com",
+        databaseURL: "https://project-management-53eab-default-rtdb.firebaseio.com",
+        projectId: "project-management-53eab",
+        storageBucket: "project-management-53eab.appspot.com",
+        messagingSenderId: "61242591551",
+        appId: "1:61242591551:web:d1707b994cb68028d1ab8a"
+      };
+      firebase.initializeApp(config);
+
+
+  document.getElementsByName('new_team').addEventListener('click', newTeam)  
+function Team(e) {
+    const teamName = document.getElementById('teamname');
+    const teamMemebers = document.getElementById('teammemebers');
+   
+
+    var  database = firebase.firestore();
+    var userCollection = database.collection('teams');
+    // ------------ Add Data to FireStore ---------------------------------------------//
+    e.preventDefault();  
+     userCollection.doc(teamName.value).set({ 
+    teamName: teamName.value,
+    teammembers: teamMembers.value,
+    })
+    .then(()=> {console.log('Data Successfully Written ');
+})
+    .catch(error => {console.error(error)});
+ }
   </script>
   <script src="popup.js"></script>
   <script src="index.js"></script>
