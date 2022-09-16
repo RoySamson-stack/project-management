@@ -34,7 +34,7 @@
         <button id="github-login" ><i class="fa fa-github icon"></i></button>
       </div>
       <div id="">
-        <button id="twitter-login" onclick="twitterSignin();" ><i class="fa fa-twitter icon"></i></button>
+        <button id="twitter-login"><i class="fa fa-twitter icon"></i></button>
       </div>
       <div id="">
         <button id="anon-login"><i class="fa-sharp fa-solid fa-user-secret icon"></i></button>
@@ -75,6 +75,7 @@
       document.getElementById('github-login').addEventListener('click', githubSignin)
       document.getElementById('login-btn').addEventListener('click', emailSignin)
       document.getElementById('anon-login').addEventListener('click', isAnonymous)
+      document.getElementById('twitter-login').addEventListener('click', twitterSignin)
 
 
       const email = document.getElementById('email');
@@ -192,6 +193,8 @@
           console.log('Signout failed')
        });
     }
+
+
   function twitterSignin(){
     console.log('twitter btn')
         firebase.auth().signInWithPopup(twitterProvider).then(res=>{
@@ -204,6 +207,9 @@
           console.log(e)
         })
     }
+    
+    
+    
     function emailSignin(){
       const email = document.getElementById('email');
       const password = document.getElementById('password');
