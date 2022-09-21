@@ -28,15 +28,83 @@
         <i class="fa-solid fa-message"></i>
         <a href="#" class="">Messages</a>
       </div>
-      <div class="">
-        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+      <!-- <div class="">
         <button class="" >Logout</button>
+      </div> -->
+      <div id="">
+        <!-- <div id="userDetails"></div> -->
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <button id="logout">Logout</button>
       </div>
     </div>
     
     <div class="side-nav--bottom">
     </div>
   </div>
+  <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js" ></script>
+<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-auth-compat.js"></script>
+<script>
+
+    var config = {
+          apiKey: "AIzaSyDmOzvLfbJ74Ftv0QWQmdpoaE1LzNPUlo0",
+          authDomain: "project-management-53eab.firebaseapp.com",
+          databaseURL: "https://project-management-53eab-default-rtdb.firebaseio.com",
+          projectId: "project-management-53eab",
+          storageBucket: "project-management-53eab.appspot.com",
+          messagingSenderId: "61242591551",
+          appId: "1:61242591551:web:d1707b994cb68028d1ab8a"
+        };
+
+    firebase.initializeApp(config);
+
+    document.getElementById('logout').addEventListener('click', LogoutUser)
+
+
+
+      function checkAuthState(){
+            firebase.auth().onAuthStateChanged(user=>{
+              if(user){
+                document.getElementById('LoginScreen').style.display="none"
+                document.getElementById('dashboard').style.display="block"
+                showUserDetails(user)
+              }else{
+
+              }
+            })
+          }
+
+
+      function LogoutUser(){
+        console.log('Logout Btn Call')
+        firebase.auth().signOut().then(()=>{
+          document.getElementById('LoginScreen').style.display="block"
+          document.getElementById('dashboard').style.display="none"
+        }).catch(e=>{
+          console.log(e)
+        })
+      }
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        var displayName = user.displayName;
+        var email = user.email;
+        var emailVerified = user.emailVerified;
+        var photoURL = user.photoURL;
+        var isAnonymous = user.isAnonymous;
+        var uid = user.uid;
+        var providerData = user.providerData;
+        // ...
+      } else {
+        // User is signed out.
+        // ...
+      }
+    });
+    checkAuthState()
+
+</script>
 </body>
-<script src="index.js"></script>
+
 </html>

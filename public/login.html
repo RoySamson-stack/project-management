@@ -41,7 +41,7 @@
       </div>
       </div>
       <div id="dashboard">
-        <div id="userDetails"></div>
+        <!-- <div id="userDetails"></div> -->
         <button id="logout">Logout</button>
       </div>
     </div>
@@ -120,7 +120,7 @@
           console.log(res.user)
           document.getElementById('LoginScreen').style.display="none"
           document.getElementById('dashboard').style.display="block"
-          showUserDetails(res.user)
+          // showUserDetails(res.user)
           window.location = 'admin.html'
         }).catch(e=>{
           console.log(e)
@@ -140,7 +140,7 @@
           if(user){
             document.getElementById('LoginScreen').style.display="none"
             document.getElementById('dashboard').style.display="block"
-            showUserDetails(user)
+            // showUserDetails(user)
           }else{
 
           }
@@ -162,7 +162,7 @@
           console.log(res.user)
           document.getElementById('LoginScreen').style.display="none"
           document.getElementById('dashboard').style.display="block"
-          showUserDetails(res.user)
+          // showUserDetails(res.user)
           window.location = 'admin.html'
         }).catch(e=>{
           console.log(e)
@@ -201,7 +201,7 @@
           console.log(res.user)
           document.getElementById('LoginScreen').style.display="none"
           document.getElementById('dashboard').style.display="block"
-          showUserDetails(res.user)
+          // showUserDetails(res.user)
           window.location = 'admin.html'
         }).catch(e=>{
           console.log(e)

@@ -38,14 +38,18 @@
       snapshot.forEach(function(product) {
         a = a+1;
         tbodyEl.append('\
-          <tr>\
-          <td class="id">' + product.val().id + '</td>\
+          <tr class="show-todo">\
+          <div>\
+          <td class="id">' + product.val().id+ '</td>\
           <td>' + a + '</td>\
-          <td><input type="text" class="form-control" id='+ product.val().id +' value= '+ product.val().name +' readonly></td>\
-          <td>\
+          <td><h5 class="todo-product"> '+ product.val().name +'</h5></td>\
+          </div>\
+          <div class="todo-card__bottom">\
+          <td class="todo-btn">\
           <button class="btn edit" id="edit'+ product.val().id +'">Edit</button>\
           <button class="btn" id="delete">Done/Delete</button>\
           </td>\
+          </div>\
           </tr>\
           ');
       });
@@ -107,35 +111,47 @@
       delete_todo(id);
     });
 
-    function delete_todo(id) {
+    function delete_todo(name) {
       var rootRef = firebase.database().ref().child('to_do');
-      rootRef.child(id).remove();
+      rootRef.child(name).remove();
     }
 });
 
+
+$.get("navbar.html", function(data){
+      $("#nav-placeholder").replaceWith(data);
+  });
   </script>
 
 </head>
 <body>
-  <div class="container">
+  <!-- <div class="sidenav" id="nav-placeholder">
+
+  </div> -->
+  <div class="todo-page__container">
+  
     <div class="row">
       <p class="h1">Add Todo</p>
     </div>
-    <div class="row">
-      <form id="form" class="form-inline">
-        <input type="text" class="form-control" id="todo" name="todo">
-        <button type="submit" name="Add" id="add" value="add" class="btn">Add Todo</button>
-      </form>
+    <div class="row row-input">
+      <div>
+
+      </div>
+      <div>
+        <form id="form" class="form-inline">
+          <input type="text" class="form-control todo-input" id="todo" name="todo">
+          <button type="submit" name="Add" id="add" value="add" class="btn btn-add">New task</button>
+        </form>
+      </div>
     </div>
     <div class="row">
 
       <table class="table table-striped" >
         <thead>
-          <tr>
-            <th>ID</th>
-            <th>Todos</th>
-            <th>Action</th>
-          </tr>
+          <th>Doing</th>
+            <th>New Request</th>
+            <th>Done</th>
+           
         </thead>
         <tbody>
 
