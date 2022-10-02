@@ -6,36 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup Form</title>
-    <script src="/admin.488ef020.js"></script>
+    <script src="/signup.488ef020.js"></script>
     <link rel="stylesheet" href="/index.a0bde794.css">
 </head>
 
-<body class="form-body">
-    <div class="main">
-        <div>
+<body class="forms-body">
+    <div class="form login">
+        <div class="form-input">
             <label>Name</label>
             <br>
-            <input name="email" placeholder="Name" id="name" type="name">
+            <input name="email" placeholder="Name" id="name" type="name" required="">
         </div>
-        <div>
+        <div class="form-input">
           <label>Email</label>
           <br>
-          <input name="email" placeholder="Email" id="email" type="email">
+          <input name="email" placeholder="Email" id="email" type="email" required="">
       </div>
-      <div>
+      <div class="form-input">
         <label>Password</label>
         <br>
-        <input name="password" placeholder="Password" id="password" type="password">
+        <input name="password" placeholder="Password" id="password" type="password" required="">
     </div>
-        <div>
+        <div class="form-input">
             <label>repeat password</label>
             <br>
-            <input name="password" placeholder="Password" id="password" type="password">
+            <input name="password" placeholder="Password" type="password">
         </div>
 
             <a href="/login.html">Already have an account?</a>
             <br>
-        <button id="google-login">Signup</button>
+        <button id="signup" class="form-btn">Signup</button>
 
     </div>
 
@@ -45,30 +45,38 @@
 <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-auth-compat.js"></script>
-<script>function submitForm(e) {
+<script>var config = {
+    apiKey: "AIzaSyDmOzvLfbJ74Ftv0QWQmdpoaE1LzNPUlo0",
+    authDomain: "project-management-53eab.firebaseapp.com",
+    databaseURL: "https://project-management-53eab-default-rtdb.firebaseio.com",
+    projectId: "project-management-53eab",
+    storageBucket: "project-management-53eab.appspot.com",
+    messagingSenderId: "61242591551",
+    appId: "1:61242591551:web:d1707b994cb68028d1ab8a"
+};
+firebase.initializeApp(config);
+document.getElementById("signup").addEventListener("click", signup);
+function signup(e) {
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    var database = firebase.firestore();
+    var userCollection = database.collection("users");
+    // ------------ Add Data to FireStore ---------------------------------------------//
     e.preventDefault();
-    var name = getInputVal("name");
-    var address = getInputVal("address");
-    var email = getInputVal("email");
-    var phone = getInputVal("phone");
-    var password = getInputVal("password");
-    enterUser(email, password);
-    saveMessage(name, address, email, phone, password);
-    document.querySelector(".alert").style.display = "block";
-    setTimeout(function() {
-        document.querySelector(".alert").style.display = "none";
-    }, 3000);
-    document.getElementById("contactform").reset();
-}
-function enterUser(name, password) {
-    if (name && password) firebase.auth().createUserWithEmailAndPassword(name, password).then(function(user) {
-        // Enters the new user fields
-        console.log(user.email);
-    // ...
+    userCollection.doc(name.value).set({
+        name: name.value,
+        email: email.value,
+        password: password.value
+    }).then(()=>{
+        console.log("Data Successfully Written ");
+        console.log(name, email, password);
+    }).catch((error)=>{
+        console.error(error);
     });
 }
 
 </script>
-<script src="/admin.488ef020.js"></script>
+<script src="/signup.488ef020.js"></script>
 
 </html>

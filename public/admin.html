@@ -1,121 +1,152 @@
-<html>
-  <head>
-<link rel="stylesheet" href="popup.css">
-<link rel="stylesheet" href="index.css">
-  </head>
-  <body>
-  
-    <div class="admin-main__body">
-      <div class="sidenav" id="nav-placeholder">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="popup.css">
+  <!-- <link rel="stylesheet" href="index.css"> -->
+  <link rel="stylesheet" href="main.css">
+  <!-- box icon -->
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo_details">
+      <i class='bx bx-code-alt'></i>
+      <div class="logo_name">
+        End Dev
+      </div>
+    </div>
+    <ul>
+      <li>
+        <a href="#" class="active">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">
+            Dashboard
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-user'></i>
+          <span class="links_name">
+            Profile
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-cart-alt'></i>
+          <span class="links_name">
+            calendar
+          </span>
+        </a>
+      </li>
+      <li class="login">
+        <!-- <a href="#">
+          <span class="links_name login_out" id="dashboard">
+            Login Out
+          </span>
+          <i class='bx bx-log-out' id="log_out"></i>
+        </a> -->
+         <div id="dashboard">
+         <div id="userDetails"></div> 
+        <button id="logout">Logout</button>
+      </div> 
+      </li>
+    </ul>
+  </div>
+  <!-- End Sideber -->
+  <section class="home_section">
+    <div class="topbar">
+      <div class="toggle">
+        <i class='bx bx-menu' id="btn"></i>
+      </div>
+      <div class="search_wrapper">
+        <label>
+          <span>
+            <i class='bx bx-search'></i>
+          </span>
+          <input type="search" placeholder="Search...">
+        </label>
+      </div>
+      <div class="user_wrapper">
+        <!-- <img src="img/user.jpg" alt=""> -->
+      </div>
+    </div>
+    <!-- End Top Bar -->
+ 
+    <!-- End Card Boxs -->
+    <div class="details">
+      <div class="recent_project">
+        <div class="card_header">
+          <h2>Teams</h2>
+        </div>
+        <table id="tbl_teams_list" border="2"  style="border-collapse:collapse;" class="admin-table">
+          <thead>
+              <th>team name</th>
+              <th>team members</th>
+              <th>assigned</th>
+               <th>team lead</th>  
+          </thead>
+        </table>
+        <button id="btnOpenForm" class="fo" name="new_team">new team</button>
 
       </div>
-      <div class="top-main__body">
-        <div class="top-nav__2">
-          <p>Overview </p>
-          <p> list</p>
-          <p>Board</p> 
-          
+      
+      <div class="recent_customers">
+        <div class="card_header">
+          <h2>Team leads</h2>
         </div>
-        <div class="top-main__body-right">
-          <i class="fa fa-bell" aria-hidden="true"></i>
-          <p>Profile</p>
-        </div>
-      </div>
-      <div class="center-main__body">
-        <div class="body-grid">
-          <div class="card">
-            <h1 class="card-title">Completed tasks</h1>
-            <h1 class="card-count">0</h1>
-          </div>
-          <div class="card">
-            <h1 class="card-title">Incomplete tasks</h1>
-            <h1 class="card-count">0</h1>
-          </div>
-          <div class="card">
-            <h1 class="card-title">Overdue tasks</h1>
-            <h1 class="card-count">0</h1>
-          </div>
-          <div class="card">
-            <h1 class="card-title">Total tasks</h1>
-            <h1 class="card-count">0</h1>
-          </div>
-        </div>
-        <div class="body-grid">
-          <div class="card card-2">
-          </div>
-          <div class="card card-2 card-white">
-            <h3>Teams progress</h3>
-            <div class="grid">
-              <div class="grid-1">Hello</div>
-            </div>
-          </div>
-        </div>
-        <h1>create new team</h1>
-        <button id="btnOpenForm" name="new_team">new team</button>
-        
-        <div class="form-popup-bg">
+        <table id="tbl_users_list">
+          <tbody>      
+          </tbody>
+       </div> 
+      </div> 
+      <div class="form-popup-bg modal-dialog  modal-dialog-centered modal-lg">
           <div class="form-container">
             <button id="btnCloseForm" class="close-button">X</button>
             <form action="" id="form-team">
-              <div class="form-group">
+              <div class="form-group mb-3">
                 <label for="">Team name</label>
-                <input type="text" class="form-control" id="teamname" />
+                <br>
+                <input type="text" class="form-control" id="teamname" required/>
               </div>
-              <div class="form-group">
+              <div class="form-group mb-3">
                 <label for="">Team members</label>
-                <input class="form-control" type="text" id="teammembers"/>
+                <br>
+                <input class="form-control" type="text" id="teamlead" required/>
               </div>
-              <button onclick="" id="createteam">Submit</button>
+              <button  id="signup" class="form-btn">Submit</button>
             </form>
           </div>
         </div>
-      <!-- <div class="table">
-        <h1>Project</h1>
-        <table>
-          <tr class="table-headers">
-            <th>Project name</th>
-            <th>Due date</th>
-            <th>Status</th>
-            <th>Detail project</th>
-            <th>Team</th>
-            <th>Progress</th>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
         </table>
-      </div> -->
-    </div>
-
-    <!--Chat system-->
-    <!-- <div class="team-chat">
-      <div class="chat">
-        <div class="chat-card">
-          <p>Team chat</p>
-          
-        </div>
       </div>
-    </div> -->
-  </body>
-  <script src="//code.jquery.com/jquery.min.js"></script>
+      <div class="recent_project">
+        <div class="card_header">
+          <h2>Latest Projects</h2>
+        </div>
+        <table id="tbl_projects_list" border="2"  style="border-collapse:collapse;" class="admin-table">
+          <thead>
+              <th>project name</th>
+            <th>project description</th>
+              <!-- <th>assigned</th> -->
+               <!-- <th>UNI_ID</th>   -->
+          </thead>
+        </table>
+      </div>
+    </div>
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js" ></script>
-<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-auth-compat.js"></script>
-<script>
-  $.get("navbar.html", function(data){
-      $("#nav-placeholder").replaceWith(data);
-  });
-
-  var config = {
+  <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script>
+  <script>
+     var config = {
         apiKey: "AIzaSyDmOzvLfbJ74Ftv0QWQmdpoaE1LzNPUlo0",
         authDomain: "project-management-53eab.firebaseapp.com",
         databaseURL: "https://project-management-53eab-default-rtdb.firebaseio.com",
@@ -126,26 +157,119 @@
       };
       firebase.initializeApp(config);
 
-
-  document.getElementsByName('new_team').addEventListener('click', newTeam)  
-function Team(e) {
-    const teamName = document.getElementById('teamname');
-    const teamMemebers = document.getElementById('teammemebers');
    
+    $(document).ready(function(){
+              // teams js code
+              firebase.firestore().collection('teams').get().then((snapshot) => {
+                            snapshot.docs.forEach(doc => {
+                                renderAccount(doc);
+                            })
+                        })
+
+                        const teamList = document.querySelector('#tbl_teams_list') ;
+                        function renderAccount(doc){
+                            let tr = document.createElement('tr');
+                            let td_email = document.createElement('td');
+                            let td_full_name = document.createElement('td');
+                            let td_uni_id = document.createElement('td');
+
+                            tr.setAttribute('data-id', doc.id);
+                            td_email.textContent = doc.data().teamname;
+                            td_full_name.textContent = doc.data().teamlead;
+                            td_uni_id.textContent = doc.data().teamleader;
+
+                            tr.appendChild(td_email);
+                            tr.appendChild(td_full_name);
+                            tr.appendChild(td_uni_id);
+                            // tr.appendChild(td_uni_id)
+
+                            teamList.appendChild(tr);
+
+                        }
+            })
+            $(document).ready(function(){
+              // teams js code
+              firebase.firestore().collection('users').get().then((snapshot) => {
+                            snapshot.docs.forEach(doc => {
+                                renderAccount(doc);
+                            })
+                        })
+
+                        const teamList = document.querySelector('#tbl_users_list') ;
+                        function renderAccount(doc){
+                            let tr = document.createElement('tr');
+                            let td_email = document.createElement('h4');
+                            let td_full_name = document.createElement('td');
+                            let td_uni_id = document.createElement('td');
+
+                            tr.setAttribute('data-id', doc.id);
+                            td_email.textContent = doc.data().name;
+                            td_full_name.textContent = doc.data().teamlead;
+                            td_uni_id.textContent = doc.data().uni_id;
+
+                            tr.appendChild(td_email);
+                            tr.appendChild(td_full_name);
+                            tr.appendChild(td_uni_id);
+
+                            teamList.appendChild(tr);
+
+                 
+                          }
+            })
+
+            $(document).ready(function(){
+              // teams js code
+              firebase.firestore().collection('projects').get().then((snapshot) => {
+                            snapshot.docs.forEach(doc => {
+                                renderAccount(doc);
+                            })
+                        })
+
+                        const teamList = document.querySelector('#tbl_projects_list') ;
+                        function renderAccount(doc){
+                            let tr = document.createElement('tr');
+                            let td_email = document.createElement('td');
+                            let td_full_name = document.createElement('td');
+                            // let td_uni_id = document.createElement('td');
+
+                            tr.setAttribute('data-id', doc.id);
+                            td_email.textContent = doc.data().projectname;
+                            td_full_name.textContent = doc.data().projectdescription;
+                            // td_uni_id.textContent = doc.data().uni_id;
+
+                            tr.appendChild(td_email);
+                            tr.appendChild(td_full_name);
+                            // tr.appendChild(td_uni_id);
+
+                            teamList.appendChild(tr);
+
+                 
+                          }
+            })
+
+
+            document.getElementById('signup').addEventListener('click', signup)  
+
+function signup(e) {
+    const teamname = document.getElementById('teamname');
+    const teamlead = document.getElementById('teamlead');
 
     var  database = firebase.firestore();
     var userCollection = database.collection('teams');
     // ------------ Add Data to FireStore ---------------------------------------------//
     e.preventDefault();  
-     userCollection.doc(teamName.value).set({ 
-    teamName: teamName.value,
-    teammembers: teamMembers.value,
+    userCollection.doc(teamname.value).set({ 
+    teamname: teamname.value,
+    teamlead: teamlead.value,
     })
     .then(()=> {console.log('Data Successfully Written ');
+    console.log(teamname, teamlead)
 })
     .catch(error => {console.error(error)});
- }
+}
   </script>
   <script src="popup.js"></script>
   <script src="index.js"></script>
+
+</body>
 </html>

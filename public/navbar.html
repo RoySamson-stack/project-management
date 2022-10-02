@@ -81,6 +81,7 @@
         firebase.auth().signOut().then(()=>{
           document.getElementById('LoginScreen').style.display="block"
           document.getElementById('dashboard').style.display="none"
+          console.log("log out press")
         }).catch(e=>{
           console.log(e)
         })

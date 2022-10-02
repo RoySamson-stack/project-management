@@ -1,0 +1,199 @@
+<html>
+  <head>
+<link rel="stylesheet" href="popup.css">
+<link rel="stylsheet" href="index.css">
+  </head>
+  <body>
+    <div class="sidenav" id="nav-placeholder">
+
+    </div>
+    <div class="admin-main__body">
+      
+      <!-- <div class="top-main__body">
+        <div class="top-nav__2">
+          <p>Overview </p>
+          <p>
+            <a href="todo.html">Todo</a>
+          </p>
+          <p>Board</p> 
+          
+        </div>
+        <div class="top-main__body-right">
+          <i class="fa fa-bell" aria-hidden="true"></i>
+          <p>Profile</p>
+        </div>
+      </div> -->
+      <div class="center-main__body--2">
+        <div class="body-grid">
+          <div class="card-lead">
+            <h1 class="card-title">2 Projects</h1>
+            <p class="sm">Upcoming</p>
+          </div>
+          <div class="card-lead">
+            <h1 class="card-title">4 Projects</h1>
+            <p class="sm">On Progress</p>
+          </div>
+          <div class="card-lead">
+            <h1 class="card-title">10 Projects</h1>
+            <p class="sm">Completed</p>
+          </div>
+        </div>
+        <div class="body-grid-2">
+          <div class="card card-2 card-white team-card__teams">
+            <h3>My Tasks</h3>
+            
+          </div>
+          <div class="card card-2 card-white team-card team-card__teams">
+            <h3>Teams progress</h3>
+            <div class="grid">
+              <div class="grid-1">Hello</div>
+            </div>
+          </div>
+        </div> 
+        <br>
+        <div class="card card-2 card-white team-card team-card">
+          <h3>Teams progress</h3>
+          <div class="grid">
+            <div class="grid-1">Hello</div>
+          </div>
+        </div>
+        <!-- <h1>create new team</h1>
+        <button id="btnOpenForm">new team</button>
+        
+        <div class="form-popup-bg">
+          <div class="form-container">
+            <button id="btnCloseForm" class="close-button">X</button>
+            <form action="" id="form-team">
+              <div class="form-group">
+                <label for="">Team name</label>
+                <input type="text" class="form-control" id="teamname" />
+              </div>
+              <div class="form-group">
+                <label for="">Team members</label>
+                <input class="form-control" type="text" id="teammembers"/>
+              </div>
+              <button onclick="" id="createteam">Submit</button>
+            </form>
+          </div>
+        </div>
+      <div class="table">
+         <h1>Project</h1> -->
+        <!-- <table>
+          <tr class="table-headers">
+            <th>ToDo</th>
+            <th>Doing</th>
+            <th>Completed</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table> -->
+      </div>
+      <div class="center-body__right card">
+        <div class="team-mem__icons">
+        </div>
+        <p>Team chat</p>
+        <div class="activity-comment">
+          <div class="uploaded"></div>
+          <div class="data chat-input">
+            <label class="fromdevice" for="fromdevicefiles">
+              <input type="file" id="fromdevicefiles" multiple><i class="fa-sharp fa-solid fa-upload"></i>
+            </label>
+            <br>
+            <input type="text" id="txt">
+            <br>
+            <div class="send"><i class="fa-sharp fa-solid fa-paper-plane"></i></div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Chat system-->
+    <!-- <div class="team-chat">
+      <div class="chat">
+        <div class="chat-card">
+          <p>Team chat</p>
+          
+        </div>
+      </div>
+    </div> -->
+  </body>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script type="module">
+  $.get("navbar.html", function(data){
+      $("#nav-placeholder").replaceWith(data);
+  });
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+        import { getFirestore,doc, getDoc,addDoc, collection,
+             getDocs, onSnapshot, query, where,setDoc, orderBy, limit , Timestamp 
+              } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js";
+              import { getStorage, ref, uploadBytes , getDownloadURL } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-storage.js";
+        const firebaseConfig = {
+        apiKey: "AIzaSyDmOzvLfbJ74Ftv0QWQmdpoaE1LzNPUlo0",
+        authDomain: "project-management-53eab.firebaseapp.com",
+        databaseURL: "https://project-management-53eab-default-rtdb.firebaseio.com",
+        projectId: "project-management-53eab",
+        storageBucket: "project-management-53eab.appspot.com",
+        messagingSenderId: "61242591551",
+        appId: "1:61242591551:web:d1707b994cb68028d1ab8a"
+        };
+      
+        
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        
+      
+        document.getElementsByClassName("send")[0].addEventListener('click' ,async function(){
+
+            var time = (new Date().getTime())
+        
+            
+          const docRef = await addDoc(collection(db, "group+messages"), {
+                value:document.getElementById("txt").value,
+                sentby:"",
+                time:time
+            });
+            document.getElementById("txt").value = "";
+
+        })
+
+
+       
+        const q = query(collection(db, "group+messages") , orderBy("time" , "asc"));
+        const unsubscribe = onSnapshot(q, (snapshot) => {
+          snapshot.docChanges().forEach((change) => {
+    if (change.type === "added") {
+        //console.log("New city: ", change.doc.data());
+        
+        if (change.doc.data().sentby == "") {
+            var msgdiv = document.createElement("div")
+
+                    msgdiv.className = "chat2"
+                    msgdiv.innerHTML = change.doc.data().value
+                    document.getElementsByClassName("uploaded")[0].appendChild(msgdiv)
+        }else{
+            var msgdiv = document.createElement("div")
+                    msgdiv.className = "chat"
+                    msgdiv.innerHTML = change.doc.data().value
+                    document.getElementsByClassName("uploaded")[0].appendChild(msgdiv)
+        }
+    }
+    if (change.type === "modified") {
+        console.log("Modified city: ", change.doc.data());
+    }
+    if (change.type === "removed") {
+        console.log("Removed city: ", change.doc.data());
+    }
+  });
+});
+  </script>
+  <script src="popup.js"></script>
+</html>
