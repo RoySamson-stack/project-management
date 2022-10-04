@@ -1,4 +1,4 @@
-$.getScript('"https://www.gstatic.com/firebasejs/9.10.0/firebase.js', function() {  
+$.getScript('"https://www.gstatic.com/firebasejs/8.0.0/firebase.js', function() {  
   
 
 // Your web app's Firebase configuration
@@ -16,7 +16,7 @@ $.getScript('"https://www.gstatic.com/firebasejs/9.10.0/firebase.js', function()
         // document.getElementById('dashboard').style.display="block"
 
       document.getElementById('login').addEventListener('click', GoogleLogin)
-      document.getElementById('logout').addEventListener('click', LogoutUser)
+      // document.getElementById('logout').addEventListener('click', LogoutUser)
       document.getElementById('github-login').addEventListener('click', githubSignin)
       document.getElementById('login-btn').addEventListener('click', emailSignin)
       document.getElementById('anon-login').addEventListener('click', isAnonymous)
@@ -59,6 +59,16 @@ $.getScript('"https://www.gstatic.com/firebasejs/9.10.0/firebase.js', function()
             }
         }
   });
+
+  const readData = () => {
+    db.collection('users')
+    .get()
+    .then((data) => {
+        console.log(data.docs.map((item) => {
+            return {...item.data(), id: item.id}
+        }))
+    })
+  }
         function GoogleLogin(){
           console.log('Login Btn Call')
           firebase.auth().signInWithPopup(provider).then(res=>{
@@ -66,6 +76,7 @@ $.getScript('"https://www.gstatic.com/firebasejs/9.10.0/firebase.js', function()
             // document.getElementById('LoginScreen').style.display="none"
             // document.getElementById('dashboard').style.display="block"
             // showUserDetails(res.user)
+            console.log(res.user)
             window.location = 'admin.html'
           }).catch(e=>{
             console.log(e)
@@ -75,7 +86,10 @@ $.getScript('"https://www.gstatic.com/firebasejs/9.10.0/firebase.js', function()
         function showUserDetails(user){
           document.getElementById('user_wrapper').innerHTML = `
             <p>Name: ${user.name}</p>
+
+
           `
+          console.log(user.name)
         }
   
         function checkAuthState(){

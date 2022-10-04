@@ -312,6 +312,34 @@ button, a {
   width: full;
 }
 
+.profile-page {
+  width: 500px;
+  height: 50%;
+  background-color: #fff;
+  box-shadow: 0 13px 27px -5px #32325d40, 0 8px 16px -8px #0000004d;
+}
+
+.recent_project input[type="text"] {
+  width: 30rem;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.recent_project input[type="submit"] {
+  color: #fff;
+  background-color: #00f;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+#delete {
+  color: #fff;
+  background-color: red;
+  border: none;
+}
+
 .upload {
   height: auto;
   width: 95%;

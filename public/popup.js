@@ -1,5 +1,5 @@
 function closeForm() {
-  $('.form-popup-bg').removeClass('is-visible');
+  $('.mem-team').removeClass('is-visible');
 }
 
 $(document).ready(function($) {
@@ -8,18 +8,43 @@ $(document).ready(function($) {
   $('#btnOpenForm').on('click', function(event) {
     event.preventDefault();
 
-    $('.form-popup-bg').addClass('is-visible');
+    $('.mem-team').addClass('is-visible');
   });
   
     //close popup when clicking x or off popup
-  $('.form-popup-bg').on('click', function(event) {
-    if ($(event.target).is('.form-popup-bg') || $(event.target).is('#btnCloseForm')) {
+  $('.mem-team').on('click', function(event) {
+    if ($(event.target).is('.mem-team') || $(event.target).is('#btnCloseForm')) {
       event.preventDefault();
       $(this).removeClass('is-visible');
     }
   });
   
   });
+
+
+  function closeForm() {
+    $('.teamlead-form').removeClass('is-visible');
+  }
+  
+  $(document).ready(function($) {
+    
+    /* Contact Form Interactions */
+    $('#btnOpenFormLead').on('click', function(event) {
+      event.preventDefault();
+  
+      $('.teamlead-form').addClass('is-visible');
+    });
+    
+      //close popup when clicking x or off popup
+    $('.teamlead-form').on('click', function(event) {
+      if ($(event.target).is('.teamlead-form') || $(event.target).is('#btnCloseFormLead')) {
+        event.preventDefault();
+        $(this).removeClass('is-visible');
+      }
+    });
+    
+    });
+
 $(document).ready(function(){
   let sidebar = document.querySelector(".sidebar");
   let closeBtn = document.querySelector("#btn");

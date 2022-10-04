@@ -1,23 +1,23 @@
-16707
+16710
 62/home/roy/Documents/JENGASCHOOL/project-management/.firebaserc1662976608100045507 0
-78/home/roy/Documents/JENGASCHOOL/project-management/dist/signup.630f7c2a.js.map1664437011172846149 0
-67/home/roy/Documents/JENGASCHOOL/project-management/dist/signup.html1664437010892817372 0
+78/home/roy/Documents/JENGASCHOOL/project-management/dist/signup.630f7c2a.js.map1664820019709245892 0
+67/home/roy/Documents/JENGASCHOOL/project-management/dist/signup.html1664820019581243338 0
 72/home/roy/Documents/JENGASCHOOL/project-management/dist/todo.cf4c4685.js1662920842715252000 0
-77/home/roy/Documents/JENGASCHOOL/project-management/dist/login.0c611bc6.js.map1664437011180846970 0
+77/home/roy/Documents/JENGASCHOOL/project-management/dist/login.0c611bc6.js.map1664820019709245892 0
 73/home/roy/Documents/JENGASCHOOL/project-management/dist/todo.83d9161e.css1662920842715252000 0
-74/home/roy/Documents/JENGASCHOOL/project-management/dist/signup.488ef020.js1664438267225945550 0
-73/home/roy/Documents/JENGASCHOOL/project-management/dist/login.0c611bc6.js1664437010916819843 0
+74/home/roy/Documents/JENGASCHOOL/project-management/dist/signup.488ef020.js1664911241664349371 0
+73/home/roy/Documents/JENGASCHOOL/project-management/dist/login.0c611bc6.js1664820019581243338 0
 80/home/roy/Documents/JENGASCHOOL/project-management/dist/teamlead.5f8168a6.js.map1663134673393330320 0
 66/home/roy/Documents/JENGASCHOOL/project-management/dist/admin.html1663134673145305746 0
 79/home/roy/Documents/JENGASCHOOL/project-management/dist/signup.a0bde794.css.map1662960998308929118 0
-92/home/roy/Documents/JENGASCHOOL/project-management/dist/pexels-belle-co-1000445.80e7f4b3.jpg1664437011184847381 0
-78/home/roy/Documents/JENGASCHOOL/project-management/dist/signup.488ef020.js.map1664438267225945550 0
+92/home/roy/Documents/JENGASCHOOL/project-management/dist/pexels-belle-co-1000445.80e7f4b3.jpg1664820019769247089 0
+78/home/roy/Documents/JENGASCHOOL/project-management/dist/signup.488ef020.js.map1664911241688350150 0
 65/home/roy/Documents/JENGASCHOOL/project-management/dist/todo.html1662920842719252000 0
-78/home/roy/Documents/JENGASCHOOL/project-management/dist/public.0ba7c674.js.map1664437011180846970 0
+78/home/roy/Documents/JENGASCHOOL/project-management/dist/public.0ba7c674.js.map1664820019709245892 0
 91/home/roy/Documents/JENGASCHOOL/project-management/dist/pexels-fauxels-3184423.5d11aa6d.jpg1663134673477338644 0
 76/home/roy/Documents/JENGASCHOOL/project-management/dist/teamlead.1728bba5.js1662960882409559562 0
-66/home/roy/Documents/JENGASCHOOL/project-management/dist/index.html1664437010892817372 0
-74/home/roy/Documents/JENGASCHOOL/project-management/dist/index.a0bde794.css1664437010916819843 0
+66/home/roy/Documents/JENGASCHOOL/project-management/dist/index.html1664820019581243338 0
+74/home/roy/Documents/JENGASCHOOL/project-management/dist/index.a0bde794.css1664911241664349371 0
 73/home/roy/Documents/JENGASCHOOL/project-management/dist/login.1728bba5.js1664362615507546691 0
 76/home/roy/Documents/JENGASCHOOL/project-management/dist/teamlead.5f8168a6.js1663134673333324373 0
 73/home/roy/Documents/JENGASCHOOL/project-management/dist/admin.488ef020.js1663134673333324373 0
@@ -3715,7 +3715,7 @@
 119/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/cordova/src/core/util/event_id.d.ts1664363123679814514 0
 83/home/roy/Documents/JENGASCHOOL/project-management/node_modules/has-flag/index.d.ts1662918974359740000 0
 126/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/cordova/src/core/util/validate_origin.d.ts1664363128207855055 0
-91/home/roy/Documents/JENGASCHOOL/project-management/dist/pexels-fauxels-3184430.5a52babf.jpg1664437011212850255 0
+91/home/roy/Documents/JENGASCHOOL/project-management/dist/pexels-fauxels-3184430.5a52babf.jpg1664820019777247248 0
 113/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/installations/dist/esm/index.esm2017.js1664363115947746376 0
 123/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/cordova/src/core/util/browser.test.d.ts1664363121339793746 0
 128/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/cordova/src/core/util/instantiator.test.d.ts1664363126791842326 0
@@ -3922,14 +3922,6 @@
 82/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@parcel/events/lib1662918974799776000 1
 119/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/database-compat/dist/database-compat/src/util1664363118439768186 1
 116/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/cordova/test/helpers/integration1664363127883852137 1
-90/home/roy/Documents/JENGASCHOOL/project-management/node_modules/yaml/browser/types/omap.js1662918974927786000 0
-112/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/database/dist/compat/app/index.cdn.d.ts1664363120667787806 0
-97/home/roy/Documents/JENGASCHOOL/project-management/node_modules/css-select/lib/procedure.d.ts.map1662918974931787000 0
-83/home/roy/Documents/JENGASCHOOL/project-management/public/assets/images/icon/11.png1663699547137592208 0
-97/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/database/dist/compat/app1664363127887852173 1
-114/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/database/dist/compat/analytics/index.d.ts1664363127883852137 0
-93/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/app-types/README.md1664363114991738047 0
-113/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/System/login-box-fill.svg1663699550813831439 0
 103/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@parcel/packager-css/src/CSSPackager.js1662918974639763000 0
 118/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/database/dist/compat/installations/index.d.ts1664363127903852317 0
 81/home/roy/Documents/JENGASCHOOL/project-management/node_modules/jszip/sponsors.md1664363117567760538 0
@@ -4993,7 +4985,7 @@
 100/home/roy/Documents/JENGASCHOOL/project-management/node_modules/css-tree/lib/lexer/prepare-tokens.js1662918975599841000 0
 113/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/compat/performance/dist/compat/firestore1664363127459848326 1
 123/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/compat/performance/dist/compat/database/index.d.ts1664363127459848326 0
-78/home/roy/Documents/JENGASCHOOL/project-management/dist/index.a0bde794.css.map1664437011180846970 0
+78/home/roy/Documents/JENGASCHOOL/project-management/dist/index.a0bde794.css.map1664911241688350150 0
 94/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/firebase-analytics.js1664363115783744947 0
 107/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/node-esm/src/index.d.ts1664363126443839205 0
 112/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/compat/performance/dist/compat/database1664363127459848326 1
@@ -5796,7 +5788,7 @@
 126/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/firestore-compat/dist/node-esm/test/fields.test.d.ts1664363117823762780 0
 104/home/roy/Documents/JENGASCHOOL/project-management/node_modules/type-fest/source/conditional-except.d.ts1662918974771774000 0
 110/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Logos/windows-fill.svg1663699550273796358 0
-74/home/roy/Documents/JENGASCHOOL/project-management/dist/public.0ba7c674.js1664437010916819843 0
+74/home/roy/Documents/JENGASCHOOL/project-management/dist/public.0ba7c674.js1664820019581243338 0
 131/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/src/platform_browser/messagechannel/sender.d.ts1664363127867851994 0
 143/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/esm2017/src/platform_cordova/popup_redirect/utils.test.d.ts1664363128199854983 0
 107/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/firestore/dist/firestore/src/auth1664363127087844982 1
@@ -5831,6 +5823,7 @@
 135/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/node/src/platform_browser/providers/phone.test.d.ts1664363127287846779 0
 120/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/System/arrow-left-right-fill.svg1663699550721825463 0
 109/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Logos/coreos-fill.svg1663699550165789342 0
+69/home/roy/Documents/JENGASCHOOL/project-management/firebase-debug.log1664911193590800503 0
 107/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/compat/app/dist/app/index.cdn.d.ts1664363119987781803 0
 101/home/roy/Documents/JENGASCHOOL/project-management/node_modules/yargs/build/lib/utils/process-argv.js1664363116591751999 0
 85/home/roy/Documents/JENGASCHOOL/project-management/public/assets/images/rating/01.jpg1663699547637624803 0
@@ -5963,7 +5956,7 @@
 119/home/roy/Documents/JENGASCHOOL/project-management/node_modules/caniuse-lite/data/features/css-container-query-units.js1662918975563838000 0
 77/home/roy/Documents/JENGASCHOOL/project-management/dist/admin.6e627cf9.js.map1663134673389329924 0
 94/home/roy/Documents/JENGASCHOOL/project-management/public/assets/images/profile/service/02.png1663699547593621934 0
-66/home/roy/Documents/JENGASCHOOL/project-management/dist/login.html1664437010896817783 0
+66/home/roy/Documents/JENGASCHOOL/project-management/dist/login.html1664820019581243338 0
 94/home/roy/Documents/JENGASCHOOL/project-management/public/assets/images/profile/service/04.png1663699547593621934 0
 121/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Document/folder-download-fill.svg1663699549857769321 0
 116/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/installations-compat/dist/index.cjs.js.map1664363115699744215 0
@@ -5976,6 +5969,10 @@
 79/home/roy/Documents/JENGASCHOOL/project-management/public/assets/images/profile1663699547589621674 1
 90/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/storage/dist/auth1664363128411856893 1
 109/home/roy/Documents/JENGASCHOOL/project-management/node_modules/caniuse-lite/data/features/contenteditable.js1662918975287815000 0
+97/home/roy/Documents/JENGASCHOOL/project-management/node_modules/css-select/lib/procedure.d.ts.map1662918974931787000 0
+83/home/roy/Documents/JENGASCHOOL/project-management/public/assets/images/icon/11.png1663699547137592208 0
+90/home/roy/Documents/JENGASCHOOL/project-management/node_modules/yaml/browser/types/omap.js1662918974927786000 0
+112/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/database/dist/compat/app/index.cdn.d.ts1664363120667787806 0
 112/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/analytics/dist/src/tsdoc-metadata.json1664363116167748296 0
 83/home/roy/Documents/JENGASCHOOL/project-management/public/assets/images/icon/21.png1663699547145592730 0
 120/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/firestore/lite/dist/compat/functions/index.d.ts1664363127987853073 0
@@ -6362,6 +6359,8 @@
 94/home/roy/Documents/JENGASCHOOL/project-management/node_modules/node-addon-api/tools/README.md1662918974979790000 0
 128/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/tui-calendar/tui-calendar/src/css/image/ic-delete@2x.png1663699551265860786 0
 121/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/node-esm/test/helpers/mock_fetch.d.ts1664363127155845593 0
+134/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/cordova/test/integration/flows/anonymous.test.d.ts1664363119663778950 0
+103/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/compat/messaging/dist/database1664363127407847858 1
 83/home/roy/Documents/JENGASCHOOL/project-management/public/assets/images/icon/16.png1663699547141592470 0
 120/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/esm5/src/platform_browser/index.d.ts1664363126419838990 0
 150/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/firestore/dist/packages/firestore/test/integration/util/firebase_export.d.ts1664363124215819287 0
@@ -6738,7 +6737,7 @@
 119/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@grpc/grpc-js/node_modules/protobufjs/node_modules/long1664363115823745295 1
 121/home/roy/Documents/JENGASCHOOL/project-management/node_modules/lmdb/dependencies/lmdb-data-v1/libraries/liblmdb/mtest6.c1662918975551837000 0
 121/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/System/arrow-down-circle-fill.svg1663699550713824943 0
-66/home/roy/Documents/JENGASCHOOL/project-management/public/index.js1664438256049634758 0
+66/home/roy/Documents/JENGASCHOOL/project-management/public/index.js1664911188286630950 0
 107/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@grpc/grpc-js/build/src/call-credentials.js1664363117663761379 0
 108/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/compat/analytics/dist/remote-config1664363126303837950 1
 96/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@protobufjs/float/tests/index.js1664363115759744738 0
@@ -7489,7 +7488,7 @@
 108/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/System/more-fill.svg1663699550829832480 0
 127/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/performance-compat/dist/esm/src/performance.test.d.ts1664363116231748855 0
 136/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/node/src/platform_cordova/popup_redirect/events.d.ts1664363125483830610 0
-68/home/roy/Documents/JENGASCHOOL/project-management/public/login.html1664434751948562973 0
+68/home/roy/Documents/JENGASCHOOL/project-management/public/login.html1664530653095324635 0
 112/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@swc/helpers/src/_class_private_field_update.mjs1662918975195808000 0
 126/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/firestore/dist/firestore/src/lite-api/geo_point.d.ts1664363124311820144 0
 119/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Document/file-shield-2-fill.svg1663699549837768020 0
@@ -8186,6 +8185,7 @@
 77/home/roy/Documents/JENGASCHOOL/project-management/public/assets/js/croppy.js1663699548241664159 0
 108/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/compat/installations/dist/analytics1664363127299846888 1
 126/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/tui-calendar/tui-code-snippet/test/customEvent.test.js1663699552281926699 0
+72/home/roy/Documents/JENGASCHOOL/project-management/.vscode/settings.json1664523806534536734 0
 102/home/roy/Documents/JENGASCHOOL/project-management/node_modules/css-tree/lib/syntax/node/MediaQuery.js1662918975579839000 0
 111/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/auth/cordova/dist/compat/index.rn.d.ts1664363128487857578 0
 105/home/roy/Documents/JENGASCHOOL/project-management/node_modules/caniuse-lite/data/features/input-color.js1662918975707849000 0
@@ -8327,7 +8327,7 @@
 95/home/roy/Documents/JENGASCHOOL/project-management/node_modules/caniuse-lite/data/regions/DO.js1662918975655845000 0
 122/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/storage/dist/node-esm/test/node/stream.test.d.ts1664363118499768713 0
 115/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Media/phone-camera-line.svg1663699550449807792 0
-50/home/roy/Documents/JENGASCHOOL/project-management1664369953694968749 1
+50/home/roy/Documents/JENGASCHOOL/project-management1664523806170528040 1
 107/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/compat/dist/compat/index.perf.d.ts1664363128471857433 0
 84/home/roy/Documents/JENGASCHOOL/project-management/public/assets/images/small/04.svg1663699547641625063 0
 101/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@parcel/transformer-babel/lib/flow.js1662918974823778000 0
@@ -8399,6 +8399,8 @@
 114/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Media/volume-down-fill.svg1663699550505811430 0
 123/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Finance/money-pound-circle-fill.svg1663699550037781026 0
 120/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/System/arrow-drop-right-line.svg1663699550717825204 0
+58/home/roy/Documents/JENGASCHOOL/project-management/.vscode1664523806174528136 1
+110/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Device/router-line.svg1663699549733761256 0
 107/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/component/dist/src/component.d.ts1664363116487751091 0
 118/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Finance/shopping-cart-line.svg1663699550053782065 0
 117/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Buildings/building-2-line.svg1663699548933709218 0
@@ -8576,8 +8578,6 @@
 104/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/database/dist/node-esm/src/api1664363119367776344 1
 98/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/firebase-firestore.js.map1664363119311775851 0
 155/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/tui-calendar/tui-time-picker/node_modules/tui-code-snippet/formatDate/formatDate.js1663699552413935255 0
-103/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/compat/messaging/dist/database1664363127407847858 1
-134/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/cordova/test/integration/flows/anonymous.test.d.ts1664363119663778950 0
 117/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/remote-config/dist/compat/storage/index.d.ts1664363128391856713 0
 115/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Business/mail-star-fill.svg1663699549197726394 0
 130/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/esm2017/test/helpers/mock_auth_credential.d.ts1664363127139845449 0
@@ -8610,7 +8610,7 @@
 108/home/roy/Documents/JENGASCHOOL/project-management/node_modules/node-gyp-build-optional-packages/optional.js1662918974507752000 0
 113/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/compat/performance/dist/index.esm.js.map1664363119391776555 0
 108/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Map/pushpin-line.svg1663699550365802335 0
-68/home/roy/Documents/JENGASCHOOL/project-management/public/admin.html1664367282367131084 0
+68/home/roy/Documents/JENGASCHOOL/project-management/public/admin.html1664876157803168934 0
 109/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/compat/storage/dist/compat/messaging1664363127759851022 1
 113/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Document/keynote-line.svg1663699549889771401 0
 106/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Map/train-fill.svg1663699550389803894 0
@@ -8622,7 +8622,7 @@
 82/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@parcel/logger/lib1662918974463749000 1
 149/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/tui-calendar/tui-time-picker/node_modules/tui-code-snippet/type/isFunction.js1663699552429936292 0
 110/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Others/scales-fill.svg1663699550669822085 0
-70/home/roy/Documents/JENGASCHOOL/project-management/public/profile.html1664434336225002771 0
+70/home/roy/Documents/JENGASCHOOL/project-management/public/profile.html1664910346976236052 0
 109/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/remote-config/dist/compat/index.d.ts1664363128383856641 0
 138/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@grpc/grpc-js/build/src/generated/grpc/channelz/v1/GetChannelResponse.d.ts1664363118643769977 0
 116/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/System/shield-flash-line.svg1663699550849833779 0
@@ -8681,6 +8681,9 @@
 117/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/compat/performance/dist/app-check/index.d.ts1664363127439848146 0
 112/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/System/subtract-fill.svg1663699550873835338 0
 112/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Media/equalizer-line.svg1663699550413805452 0
+93/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/app-types/README.md1664363114991738047 0
+113/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/System/login-box-fill.svg1663699550813831439 0
+114/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/database/dist/compat/analytics/index.d.ts1664363127883852137 0
 105/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Media/dv-fill.svg1663699550413805452 0
 113/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@babel/highlight/node_modules/ansi-styles/license1662918974383742000 0
 117/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/esm2017/src/core/errors.test.d.ts1664363123679814514 0
@@ -9529,7 +9532,7 @@
 104/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@jridgewell/set-array/dist/set-array.mjs1662918974627762000 0
 145/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/firestore/dist/lite/firestore/src/platform/node/byte_stream_reader.d.ts1664363121699796933 0
 125/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/tui-calendar/tui-calendar/src/js/view/week/dayname.js1663699552157918661 0
-66/home/roy/Documents/JENGASCHOOL/project-management/public/popup.js1664362763426522253 0
+66/home/roy/Documents/JENGASCHOOL/project-management/public/popup.js1664875820873522532 0
 130/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/src/api/authentication/email_and_password.d.ts1664363121735797252 0
 87/home/roy/Documents/JENGASCHOOL/project-management/node_modules/color-convert/README.md1662918974591759000 0
 126/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Document/contacts-book-upload-line.svg1663699549797765417 0
@@ -9555,7 +9558,7 @@
 110/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/User/contacts-line.svg1663699550933839236 0
 81/home/roy/Documents/JENGASCHOOL/project-management/dist/teamlead.15b69e0c.css.map1662960882785613987 0
 137/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/firestore/dist/packages/firestore/test/unit/core/view.test.d.ts1664363127171845737 0
-71/home/roy/Documents/JENGASCHOOL/project-management/public/customer.html1664367377427963475 0
+71/home/roy/Documents/JENGASCHOOL/project-management/public/customer.html1664702703321239126 0
 114/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Finance/price-tag-fill.svg1663699550037781026 0
 105/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/firebase-messaging-compat.js.map1664363119319775921 0
 106/home/roy/Documents/JENGASCHOOL/project-management/node_modules/caniuse-lite/data/features/font-feature.js1662918975683847000 0
@@ -9710,7 +9713,7 @@
 108/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/compat/remote-config/dist/app-check1664363127659850124 1
 114/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/System/settings-4-fill.svg1663699550837832999 0
 113/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/esm2017/src/mfa/mfa_user.d.ts1664363126931843582 0
-67/home/roy/Documents/JENGASCHOOL/project-management/public/index.css1664361266621697634 0
+67/home/roy/Documents/JENGASCHOOL/project-management/public/index.css1664910283748772188 0
 95/home/roy/Documents/JENGASCHOOL/project-management/node_modules/caniuse-lite/data/regions/MO.js1662918975731851000 0
 114/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/rn/src/platform_browser/iframe1664363126327838165 1
 108/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/System/more-line.svg1663699550829832480 0
@@ -10021,7 +10024,7 @@
 112/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Document/book-2-fill.svg1663699549785764637 0
 106/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/compat/auth/dist/index.esm.js.map1664363119387776520 0
 112/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/System/arrow-up-fill.svg1663699550737826502 0
-71/home/roy/Documents/JENGASCHOOL/project-management/public/teamlead.html1664367335764183116 0
+71/home/roy/Documents/JENGASCHOOL/project-management/public/teamlead.html1664868666608232277 0
 128/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/firestore/dist/firestore/test/unit/core/view.test.d.ts1664363127171845737 0
 151/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/firestore/dist/lite/packages/firestore/test/unit/model/object_value.test.d.ts1664363125859833972 0
 102/home/roy/Documents/JENGASCHOOL/project-management/node_modules/caniuse-lite/data/features/svg-smil.js1662918975779855000 0
@@ -10247,7 +10250,6 @@
 138/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/firestore/dist/firestore/src/local/indexeddb_mutation_queue.d.ts1664363125275828749 0
 139/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/firestore/dist/packages/firestore/test/util/equality_matcher.d.ts1664363123315811275 0
 118/home/roy/Documents/JENGASCHOOL/project-management/node_modules/caniuse-lite/data/features/css-file-selector-button.js1662918975583839000 0
-110/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Device/router-line.svg1663699549733761256 0
 109/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Device/radar-line.svg1663699549725760735 0
 118/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/System/checkbox-blank-line.svg1663699550745827023 0
 82/home/roy/Documents/JENGASCHOOL/project-management/node_modules/strip-ansi/license1664363114791736309 0
@@ -11624,6 +11626,7 @@
 109/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/esm2017/index-4dc22a28.js1664363117527760188 0
 122/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Business/customer-service-fill.svg1663699549157723791 0
 123/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/esm2017/src/core/util/browser.test.d.ts1664363121339793746 0
+97/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/database/dist/compat/app1664363127887852173 1
 108/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/database/dist/compat/app/index.d.ts1664363127887852173 0
 103/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/database/dist/compat/app-check1664363127887852173 1
 114/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/database/dist/compat/app-check/index.d.ts1664363127887852173 0
@@ -11733,7 +11736,7 @@
 134/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/esm2017/test/integration/flows/anonymous.test.d.ts1664363119667778985 0
 77/home/roy/Documents/JENGASCHOOL/project-management/node_modules/immediate/lib1664363115771744842 1
 111/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/firestore/lite/dist/storage/index.d.ts1664363128007853252 0
-55/home/roy/Documents/JENGASCHOOL/project-management/dist1664438267225945550 1
+55/home/roy/Documents/JENGASCHOOL/project-management/dist1664911241692350279 1
 131/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/firestore/dist/packages/firestore/src/model/mutation.d.ts1664363125807833507 0
 99/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/firestore/dist/compat/auth1664363127951852748 1
 129/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/rn/src/platform_browser/strategies/popup.d.ts1664363127359847427 0
@@ -12080,6 +12083,11 @@
 94/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/app/dist/auth/cordova1664363125219828249 1
 83/home/roy/Documents/JENGASCHOOL/project-management/node_modules/cosmiconfig/LICENSE1662918974295735000 0
 117/home/roy/Documents/JENGASCHOOL/project-management/node_modules/caniuse-lite/data/features/css-repeating-gradients.js1662918975627843000 0
+106/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@parcel/markdown-ansi/lib/markdown-ansi.js1662918974519753000 0
+104/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/cordova/test/helpers1664363127923852497 1
+111/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/compat/app-check/dist/compat/firestore1664363126339838273 1
+103/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/auth/dist/analytics/index.d.ts1664363125787833329 0
+93/home/roy/Documents/JENGASCHOOL/project-management/node_modules/websocket-driver/CHANGELOG.md1664363116571751825 0
 87/home/roy/Documents/JENGASCHOOL/project-management/node_modules/csso/lib/replace/atrule1662918975111801000 1
 84/home/roy/Documents/JENGASCHOOL/project-management/node_modules/websocket-driver/lib1664363114775736170 1
 139/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@grpc/grpc-js/build/src/generated/grpc/channelz/v1/GetServersRequest.js.map1664363118415767976 0
@@ -13926,6 +13934,8 @@
 105/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/messaging/dist/esm/src/api.d.ts1664363117123756649 0
 134/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/src/core/strategies/action_code_settings.test.d.ts1664363119499777507 0
 95/home/roy/Documents/JENGASCHOOL/project-management/node_modules/caniuse-lite/data/regions/TO.js1662918975783855000 0
+130/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/cordova/test/helpers/mock_auth_credential.d.ts1664363127139845449 0
+95/home/roy/Documents/JENGASCHOOL/project-management/node_modules/caniuse-lite/data/regions/DM.js1662918975651845000 0
 95/home/roy/Documents/JENGASCHOOL/project-management/node_modules/caniuse-lite/data/regions/PR.js1662918975759853000 0
 95/home/roy/Documents/JENGASCHOOL/project-management/node_modules/caniuse-lite/data/regions/HN.js1662918975695848000 0
 95/home/roy/Documents/JENGASCHOOL/project-management/node_modules/caniuse-lite/data/regions/PF.js1662918975751853000 0
@@ -14863,7 +14873,7 @@
 89/home/roy/Documents/JENGASCHOOL/project-management/node_modules/dotenv/lib/env-options.js1662918974687767000 0
 126/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/esm2017/src/core/auth/middleware.test.d.ts1664363127115845233 0
 82/home/roy/Documents/JENGASCHOOL/project-management/node_modules/dotenv/lib/main.js1662918974707768000 0
-74/home/roy/Documents/JENGASCHOOL/project-management/dist/signup.630f7c2a.js1664437010916819843 0
+74/home/roy/Documents/JENGASCHOOL/project-management/dist/signup.630f7c2a.js1664820019581243338 0
 110/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Map/compass-2-fill.svg1663699550301798177 0
 114/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/functions/dist/compat/database/index.d.ts1664363128019853360 0
 113/home/roy/Documents/JENGASCHOOL/project-management/public/assets/vendor/remixicon/icons/Finance/swap-box-line.svg1663699550057782324 0
@@ -16699,10 +16709,3 @@
 145/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/cordova/test/integration/flows/middleware_test_generator.d.ts1664363127071844838 0
 130/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/cordova/test/integration/flows/phone.test.d.ts1664363127275846672 0
 137/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/cordova/test/integration/flows/custom.local.test.d.ts1664363121679796756 0
-106/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@parcel/markdown-ansi/lib/markdown-ansi.js1662918974519753000 0
-111/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/compat/app-check/dist/compat/firestore1664363126339838273 1
-103/home/roy/Documents/JENGASCHOOL/project-management/node_modules/firebase/auth/dist/analytics/index.d.ts1664363125787833329 0
-93/home/roy/Documents/JENGASCHOOL/project-management/node_modules/websocket-driver/CHANGELOG.md1664363116571751825 0
-104/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/cordova/test/helpers1664363127923852497 1
-95/home/roy/Documents/JENGASCHOOL/project-management/node_modules/caniuse-lite/data/regions/DM.js1662918975651845000 0
-130/home/roy/Documents/JENGASCHOOL/project-management/node_modules/@firebase/auth/dist/cordova/test/helpers/mock_auth_credential.d.ts1664363127139845449 0

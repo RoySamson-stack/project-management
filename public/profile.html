@@ -1,40 +1,207 @@
-<html>
-  <head>
-    <link rel="stylesheet" href="index.css"/>
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project management</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css  ">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="main.css">
+  <!-- box icon -->
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo_details">
+      <i class='bx bx-code-alt'></i>
+      <div class="logo_name">
+      HCKR
+      </div>
+    </div>
+    <ul>
+      <li>
+        <a href="admin.html" class="active">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">
+            Dashboard
+          </span>
+        </a>
+      </li>
+      <!-- <li>
+        <a href="profile.html">
+          <i class='bx bx-user'></i>
+          <span class="links_name">
+            Profile
+          </span>
+        </a>
+      </li> -->
+      <li>
+        <a href="#">
+          <i class='bx bxs-truck'></i>
+          <span class="links_name">
+            calendar
+          </span>
+        </a>
+      </li>
+     
+     
+    </ul>
+  </div>
+  <!-- End Sideber -->
+  <section class="home_section">
+    <div class="topbar">
+      <div class="toggle">
+        <i class='bx bx-menu' id="btn"></i>
+      </div>
+      <div class="search_wrapper">
+        <label>
+          <span>
+            <i class='bx bx-search'></i>
+          </span>
+          <input type="search" placeholder="Search...">
+        </label>
+      </div>
+      <div class="user_wrapper">
+        <img src="img/user.jpg" alt="">
+      </div>
+    </div>
+    <!-- End Top Bar -->
+ 
+    <!-- End Card Boxs -->
+    <div class="details">
+      <div class="recent_project">
+        <h4>Profile </h4>
+        <div class="">
+          <input type="text" class="" placeholder="name"/>
+        </div>
+        <div class="">
+          <input type="text" class="" placeholder="name"/>
+        </div>
+        <div class="">
+          <input type="text" class="" placeholder="name"/>
+        </div>
+        <div class="">
+          <input type="submit" value="Update"/>
+          <input type="submit" value="Delete" id="delete"/>
+
+        </div>
+    </div>
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js" ></script>
+  <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script>
+  <script src="popup.js"></script>
+  <script>
+     var config = {
+        apiKey: "AIzaSyDmOzvLfbJ74Ftv0QWQmdpoaE1LzNPUlo0",
+        authDomain: "project-management-53eab.firebaseapp.com",
+        databaseURL: "https://project-management-53eab-default-rtdb.firebaseio.com",
+        projectId: "project-management-53eab",
+        storageBucket: "project-management-53eab.appspot.com",
+        messagingSenderId: "61242591551",
+        appId: "1:61242591551:web:d1707b994cb68028d1ab8a"
+      };
+      firebase.initializeApp(config);
+
+   
+    $(document).ready(function(){
+              // teams js code
+              firebase.firestore().collection('teams').get().then((snapshot) => {
+                            snapshot.docs.forEach(doc => {
+                                renderAccount(doc);
+                            })
+                        })
+
+                        const teamList = document.querySelector('#tbl_teams_list') ;
+                        function renderAccount(doc){
+                            let tr = document.createElement('tr');
+                            let td_email = document.createElement('td');
+                            let td_full_name = document.createElement('td');
+                            let td_uni_id = document.createElement('td');
+
+                            tr.setAttribute('data-id', doc.id);
+                            td_email.textContent = doc.data().teamname;
+                            td_full_name.textContent = doc.data().teamlead;
+                            td_uni_id.textContent = doc.data().teamleader;
+
+                            tr.appendChild(td_email);
+                            tr.appendChild(td_full_name);
+                            tr.appendChild(td_uni_id);
+                            // tr.appendChild(td_uni_id)
+
+                            teamList.appendChild(tr);
+
+                        }
+            })
+  </script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+          import { getFirestore,doc, getDoc,addDoc, collection,
+               getDocs, onSnapshot, query, where,setDoc, orderBy, limit , Timestamp 
+                } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js";
+                import { getStorage, ref, uploadBytes , getDownloadURL } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-storage.js";
+          const firebaseConfig = {
+          apiKey: "AIzaSyDmOzvLfbJ74Ftv0QWQmdpoaE1LzNPUlo0",
+          authDomain: "project-management-53eab.firebaseapp.com",
+          databaseURL: "https://project-management-53eab-default-rtdb.firebaseio.com",
+          projectId: "project-management-53eab",
+          storageBucket: "project-management-53eab.appspot.com",
+          messagingSenderId: "61242591551",
+          appId: "1:61242591551:web:d1707b994cb68028d1ab8a"
+          };
+        
+          
+          const app = initializeApp(firebaseConfig);
+          const db = getFirestore(app);
+          
+        
+          document.getElementsByClassName("send")[0].addEventListener('click' ,async function(){
   
-    <form class="">
-      <div class="">
-        <div>
-          <label></label>
-          <input type=""/>
-        </div>
-        <div>
-          <label></label>
-          <input type=""/>
-        </div>
-      </div>
-      <div>
-        <label></label>
-        <input type=""/>
-      </div>
-      <div>
-        <label></label>
-        <input type=""/>
-      </div>
-      <div>
-        <label></label>
-        <input type=""/>
-      </div>
-      <div>
-        <label></label>
-        <input type=""/>
-      </div>
-    </form>
-    <script>
-      
+              var time = (new Date().getTime())
+          
+              
+            const docRef = await addDoc(collection(db, user, "group+messages"), {
+                  value:document.getElementById("txt").value,
+                  sentby:res.user,
+                  time:time
+              });
+              document.getElementById("txt").value = "";
+  
+          })
+  
+  
+         
+          const q = query(collection(db, "group+messages") , orderBy("time" , "asc"));
+          const unsubscribe = onSnapshot(q, (snapshot) => {
+            snapshot.docChanges().forEach((change) => {
+      if (change.type === "added") {
+          //console.log("New city: ", change.doc.data());
+          
+          if (change.doc.data().sentby == "") {
+              var msgdiv = document.createElement("div")
+  
+                      msgdiv.className = "chat2"
+                      msgdiv.innerHTML = change.doc.data().value
+                      document.getElementsByClassName("uploaded")[0].appendChild(msgdiv)
+          }else{
+              var msgdiv = document.createElement("div")
+                      msgdiv.className = "chat"
+                      msgdiv.innerHTML = change.doc.data().value
+                      document.getElementsByClassName("uploaded")[0].appendChild(msgdiv)
+          }
+      }
+      if (change.type === "modified") {
+          console.log("Modified city: ", change.doc.data());
+      }
+      if (change.type === "removed") {
+          console.log("Removed city: ", change.doc.data());
+      }
+    });
+  });
     </script>
-  </body>
-  
+</body>
 </html>

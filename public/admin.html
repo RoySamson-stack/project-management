@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="popup.css">
-  <!-- <link rel="stylesheet" href="index.css"> -->
+  <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="main.css">
   <!-- box icon -->
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -29,7 +29,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="profile.html">
           <i class='bx bx-user'></i>
           <span class="links_name">
             Profile
@@ -84,12 +84,12 @@
         <div class="card_header">
           <h2>Teams</h2>
         </div>
-        <table id="tbl_teams_list" border="2"  style="border-collapse:collapse;" class="admin-table">
+        <table id="tbl_teams_list">
           <thead>
-              <th>team name</th>
-              <th>team members</th>
-              <th>assigned</th>
-               <th>team lead</th>  
+              <th>Team Name</th>
+              <th>Team members</th>
+              <th>Team lead</th>
+              <th>Team Members</th>
           </thead>
         </table>
         <button id="btnOpenForm" class="fo" name="new_team">new team</button>
@@ -98,14 +98,46 @@
       
       <div class="recent_customers">
         <div class="card_header">
-          <h2>Team leads</h2>
+          <h2>create team lead</h2>
         </div>
         <table id="tbl_users_list">
-          <tbody>      
-          </tbody>
+          <!-- <tbody>      
+          </tbody> -->
+          <button id="btnOpenFormLead" class="fo" name="new_team">new team</button>
+
        </div> 
-      </div> 
-      <div class="form-popup-bg modal-dialog  modal-dialog-centered modal-lg">
+      </div>  
+      <div class="form-popup-bg teamlead-form modal-dialog  modal-dialog-centered modal-lg">
+          <div class="form-container">
+            <button id="btnCloseFormLead" class="close-button">X</button>
+            <form action="" id="form-team">
+              <div class="form-group mb-3">
+                <label for="">name</label>
+                <br>
+                <input type="text" class="form-control" id="teamname" required/>
+              </div>
+              <div class="form-group mb-3">
+                <label for="">Team name</label>
+                <br>
+                <input class="form-control" type="text" id="teamlead" required/>
+              </div>
+              <div class="form-group mb-3">
+                <label for="">password</label>
+                <br>
+                <input class="form-control" type="text" id="teamlead" required/>
+              </div>
+              <!-- <div class="form-group mb-3">
+                <label for=""></label>
+                <br>
+                <input class="form-control" type="text" id="teamlead" required/>
+              </div> -->
+              
+            </form>
+           <button  id="signup" class="form-btn">Submit</button>
+          </div>
+        </div>
+
+      <div class="form-popup-bg mem-team modal-dialog  modal-dialog-centered modal-lg">
           <div class="form-container">
             <button id="btnCloseForm" class="close-button">X</button>
             <form action="" id="form-team">
@@ -129,13 +161,14 @@
         <div class="card_header">
           <h2>Latest Projects</h2>
         </div>
-        <table id="tbl_projects_list" border="2"  style="border-collapse:collapse;" class="admin-table">
+        <table id="tbl_projects_list">
           <thead>
-              <th>project name</th>
-            <th>project description</th>
-              <!-- <th>assigned</th> -->
-               <!-- <th>UNI_ID</th>   -->
+              <th>Project Name</th>
+              <th>Project description</th>
+              <th>Assigned team</th>
+              <th>Team lead</th>
           </thead>
+         
         </table>
       </div>
     </div>
@@ -189,7 +222,37 @@
             })
             $(document).ready(function(){
               // teams js code
-              firebase.firestore().collection('users').get().then((snapshot) => {
+              firebase.firestore().collection('admin').get().then((snapshot) => {
+                            snapshot.docs.forEach(doc => {
+                                renderAccount(doc);
+                            })
+                        })
+
+                        const teamList = document.querySelector('#tbl_users_list') ;
+                        function renderAccount(doc){
+                            let tr = document.createElement('tr');
+                            let td_email = document.createElement('h4');
+                            let td_full_name = document.createElement('td');
+                            let td_uni_id = document.createElement('td');
+
+                            tr.setAttribute('data-id', doc.id);
+                            td_email.textContent = doc.data().name;
+                            td_full_name.textContent = doc.data().team;
+                            // td_uni_id.textContent = doc.data().uni_id;
+
+                            tr.appendChild(td_email);
+                            tr.appendChild(td_full_name);
+                            // tr.appendChild(td_uni_id);
+
+                            teamList.appendChild(tr);
+
+                 
+                          }
+            })
+
+            $(document).ready(function(){
+              // teams js code
+              firebase.firestore().collection('').get().then((snapshot) => {
                             snapshot.docs.forEach(doc => {
                                 renderAccount(doc);
                             })

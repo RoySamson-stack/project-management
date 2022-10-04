@@ -307,6 +307,36 @@ font-weight: bold;
 
 /*end of admin page*/
 
+/*------profile page------*/
+
+.profile-page{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  width: 500px;
+  height: 50%;
+  background-color: #fff;
+}
+.recent_project input[type="text"]{
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 30rem
+}
+.recent_project input[type="submit"]{
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  background-color: blue;
+  color: #fff;
+}
+#delete{
+  border: none;
+  background-color: red;
+  color: #fff;
+}
+
+
+/*------end profile page---*/
+
 /*-------chat styling-----*/
 .upload{
   height: auto;width: 95%;background-color: whitesmoke;border-radius: 4px;margin:  0 0 10px 0;

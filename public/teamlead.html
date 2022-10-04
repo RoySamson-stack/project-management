@@ -30,7 +30,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="profile.html">
           <i class='bx bx-user'></i>
           <span class="links_name">
             Profile
@@ -75,17 +75,14 @@
         <div class="card_header">
           <h2>Lat Projects</h2>
         </div>
-        <table id="tbl_projects_list">
+        <table id="tbl_teams_list">
           <thead>
-            <tr>
-              <td>Project Name</td>
-              <td>Hours</td>
-              <td>Priority</td>
-              <td>Members</td>
-            </tr>
+              <th>Team name</th>
+              <th>Members</th>
+              <th>teamleader</th>
+              <th>Team Members</th>
           </thead>
-          <tbody>   
-          </tbody>
+         
         </table>
       </div>
         <!-- <table>
@@ -124,9 +121,13 @@
     </div>
   </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js" ></script>
+  <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script>
   <script src="popup.js"></script>
   <script>
-      var config = {
+     var config = {
         apiKey: "AIzaSyDmOzvLfbJ74Ftv0QWQmdpoaE1LzNPUlo0",
         authDomain: "project-management-53eab.firebaseapp.com",
         databaseURL: "https://project-management-53eab-default-rtdb.firebaseio.com",
@@ -156,11 +157,12 @@
                             tr.setAttribute('data-id', doc.id);
                             td_email.textContent = doc.data().teamname;
                             td_full_name.textContent = doc.data().teamlead;
-                            td_uni_id.textContent = doc.data().uni_id;
+                            td_uni_id.textContent = doc.data().teamleader;
 
                             tr.appendChild(td_email);
                             tr.appendChild(td_full_name);
                             tr.appendChild(td_uni_id);
+                            // tr.appendChild(td_uni_id)
 
                             teamList.appendChild(tr);
 
