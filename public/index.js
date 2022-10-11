@@ -1,4 +1,4 @@
-$.getScript('"https://www.gstatic.com/firebasejs/8.0.0/firebase.js', function() {  
+$.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {  
   
 
 // Your web app's Firebase configuration
@@ -32,32 +32,34 @@ $.getScript('"https://www.gstatic.com/firebasejs/8.0.0/firebase.js', function() 
   
   
         var loginBtn = document.getElementById('login-btn')
+
         loginBtn.addEventListener('click', async e => {
-            e.preventDefault();
-            if( $('#email').val() != '' && $('#password').val() != '' ){
-            //login the user
-            var data = {
-                email: $('#email').val(),
-                password: $('#password').val()
-            };
-            try{
-                const userCredential = await firebase.auth().signInWithEmailAndPassword(data.email, data.password);
-                let uid = userCredential.user.uid;
-                var documents = await firebase.firestore().collection("users").doc(uid);
-                documents.get().then(function(doc){
-                    if(doc.data['role'] = 'admin'){
-                        window.location.href = "admin.html"; 
-                    }
-                    else if(doc.data['role'] = 'teamleader'){
-                        window.location.href = "teamlead.html";  
-                    }                  
-                });
-            }    
-            catch(err){
-                console.log("Login Failed!", err);
-                window.alert("Login Failed!", err);
-            }
-        }
+        //     e.preventDefault();
+        //     if( $('#email').val() != '' && $('#password').val() != '' ){
+        //     //login the user
+        //     var data = {
+        //         email: $('#email').val(),
+        //         password: $('#password').val()
+        //     };
+        //     try{
+        //         const userCredential = await firebase.auth().signInWithEmailAndPassword(data.email, data.password);
+        //         let uid = userCredential.user.uid;
+        //         var documents = await firebase.firestore().collection("users").doc(uid);
+        //         documents.get().then(function(doc){
+        //             if(doc.data['role'] = 'admin'){
+        //                 window.location.href = "admin.html"; 
+        //             }
+        //             else if(doc.data['role'] = 'teamleader'){
+        //                 window.location.href = "teamlead.html";  
+        //             }                  
+        //         });
+        //     }    
+        //     catch(err){
+        //         console.log("Login Failed!", err);
+        //         window.alert("Login Failed!", err);
+        //     }
+        // }
+        console.log('press')
   });
 
   const readData = () => {
@@ -70,13 +72,13 @@ $.getScript('"https://www.gstatic.com/firebasejs/8.0.0/firebase.js', function() 
     })
   }
         function GoogleLogin(){
+          const user = firebase.auth.currentUser
           console.log('Login Btn Call')
           firebase.auth().signInWithPopup(provider).then(res=>{
-            console.log(res.user)
+            alert(user)
             // document.getElementById('LoginScreen').style.display="none"
             // document.getElementById('dashboard').style.display="block"
             // showUserDetails(res.user)
-            console.log(res.user)
             window.location = 'admin.html'
           }).catch(e=>{
             console.log(e)

@@ -16,7 +16,7 @@
     <div class="logo_details">
       <i class='bx bx-code-alt'></i>
       <div class="logo_name">
-        End Dev
+        HCRK
       </div>
     </div>
     <ul>
@@ -89,53 +89,48 @@
               <th>Team Name</th>
               <th>Team members</th>
               <th>Team lead</th>
-              <th>Team Members</th>
           </thead>
         </table>
-        <button id="btnOpenForm" class="fo" name="new_team">new team</button>
+        <!-- <button id="btnOpenForm" class="fo" name="new_team">new team</button> -->
 
       </div>
       
       <div class="recent_customers">
         <div class="card_header">
-          <h2>create team lead</h2>
+          <h2>create team</h2>
         </div>
         <table id="tbl_users_list">
           <!-- <tbody>      
           </tbody> -->
-          <button id="btnOpenFormLead" class="fo" name="new_team">new team</button>
+          <button id="btnOpenForm" class="fo" name="new_team">new team</button>
 
        </div> 
       </div>  
-      <div class="form-popup-bg teamlead-form modal-dialog  modal-dialog-centered modal-lg">
+      <!-- <div class="form-popup-bg teamlead-form modal-dialog  modal-dialog-centered modal-lg">
           <div class="form-container">
             <button id="btnCloseFormLead" class="close-button">X</button>
             <form action="" id="form-team">
               <div class="form-group mb-3">
-                <label for="">name</label>
+                <label for="">Team lead</label>
                 <br>
                 <input type="text" class="form-control" id="teamname" required/>
               </div>
               <div class="form-group mb-3">
                 <label for="">Team name</label>
                 <br>
-                <input class="form-control" type="text" id="teamlead" required/>
+                <input class="form-control" type="text" id="teamleads" required/>
               </div>
-              <div class="form-group mb-3">
-                <label for="">password</label>
-                <br>
-                <input class="form-control" type="text" id="teamlead" required/>
-              </div>
+          
               <!-- <div class="form-group mb-3">
                 <label for=""></label>
                 <br>
                 <input class="form-control" type="text" id="teamlead" required/>
-              </div> -->
+              </div> 
               
             </form>
            <button  id="signup" class="form-btn">Submit</button>
           </div>
-        </div>
+        </div> -->
 
       <div class="form-popup-bg mem-team modal-dialog  modal-dialog-centered modal-lg">
           <div class="form-container">
@@ -147,9 +142,19 @@
                 <input type="text" class="form-control" id="teamname" required/>
               </div>
               <div class="form-group mb-3">
-                <label for="">Team members</label>
+                <label for="">Team Lead</label>
                 <br>
                 <input class="form-control" type="text" id="teamlead" required/>
+              </div>
+              <div class="form-group mb-3">
+                <label for="">Team members</label>
+                <br>
+                <input class="form-control" type="text" id="teammemebers" required/>
+              </div>
+              <div class="form-group mb-3">
+                <label for="">password</label>
+                <br>
+                <input class="form-control" type="password" id="password" required/>
               </div>
               <button  id="signup" class="form-btn">Submit</button>
             </form>
@@ -208,8 +213,8 @@
 
                             tr.setAttribute('data-id', doc.id);
                             td_email.textContent = doc.data().teamname;
-                            td_full_name.textContent = doc.data().teamlead;
-                            td_uni_id.textContent = doc.data().teamleader;
+                            td_full_name.textContent = doc.data().teammembers;
+                            td_uni_id.textContent = doc.data().teamlead;
 
                             tr.appendChild(td_email);
                             tr.appendChild(td_full_name);
@@ -250,35 +255,35 @@
                           }
             })
 
-            $(document).ready(function(){
-              // teams js code
-              firebase.firestore().collection('').get().then((snapshot) => {
-                            snapshot.docs.forEach(doc => {
-                                renderAccount(doc);
-                            })
-                        })
+            // $(document).ready(function(){
+            //   // teams js code
+            //   firebase.firestore().collection('').get().then((snapshot) => {
+            //                 snapshot.docs.forEach(doc => {
+            //                     renderAccount(doc);
+            //                 })
+            //             })
 
-                        const teamList = document.querySelector('#tbl_users_list') ;
-                        function renderAccount(doc){
-                            let tr = document.createElement('tr');
-                            let td_email = document.createElement('h4');
-                            let td_full_name = document.createElement('td');
-                            let td_uni_id = document.createElement('td');
+            //             const teamList = document.querySelector('#tbl_users_list') ;
+            //             function renderAccount(doc){
+            //                 let tr = document.createElement('tr');
+            //                 let td_email = document.createElement('h4');
+            //                 let td_full_name = document.createElement('td');
+            //                 let td_uni_id = document.createElement('td');
 
-                            tr.setAttribute('data-id', doc.id);
-                            td_email.textContent = doc.data().name;
-                            td_full_name.textContent = doc.data().teamlead;
-                            td_uni_id.textContent = doc.data().uni_id;
+            //                 tr.setAttribute('data-id', doc.id);
+            //                 td_email.textContent = doc.data().name;
+            //                 td_full_name.textContent = doc.data().teamlead;
+            //                 td_uni_id.textContent = doc.data().uni_id;
 
-                            tr.appendChild(td_email);
-                            tr.appendChild(td_full_name);
-                            tr.appendChild(td_uni_id);
+            //                 tr.appendChild(td_email);
+            //                 tr.appendChild(td_full_name);
+            //                 tr.appendChild(td_uni_id);
 
-                            teamList.appendChild(tr);
+            //                 teamList.appendChild(tr);
 
                  
-                          }
-            })
+            //               }
+            // })
 
             $(document).ready(function(){
               // teams js code
@@ -316,6 +321,9 @@
 function signup(e) {
     const teamname = document.getElementById('teamname');
     const teamlead = document.getElementById('teamlead');
+    const teammembers = document.getElementById('teammembers');
+    const password = document.getElementById('password');
+
 
     var  database = firebase.firestore();
     var userCollection = database.collection('teams');
@@ -324,6 +332,8 @@ function signup(e) {
     userCollection.doc(teamname.value).set({ 
     teamname: teamname.value,
     teamlead: teamlead.value,
+    teammemebers: teammemebers.value,
+    password: password.value,
     })
     .then(()=> {console.log('Data Successfully Written ');
     console.log(teamname, teamlead)
