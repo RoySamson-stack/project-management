@@ -210,15 +210,50 @@
                             let td_email = document.createElement('td');
                             let td_full_name = document.createElement('td');
                             let td_uni_id = document.createElement('td');
+                            var del_button = document.createElement("button");
+
+                            let update_btn = document.createElement("button")
+
 
                             tr.setAttribute('data-id', doc.id);
                             td_email.textContent = doc.data().teamname;
                             td_full_name.textContent = doc.data().teammembers;
                             td_uni_id.textContent = doc.data().teamlead;
+                            del_button.data = "hi";
+                            del_button.innerHTML = 'Delete';
+                            del_button.onclick = function()
+                            {
+                                // alert("hello, world");
+                                firebase.firestore().collection('teams').doc(doc.id).delete()
+                              .then(() => {
+                                  alert('Data Deleted')
+                              })
+                              .catch((err) =>{
+                                  console.log(err)
+                              })
+                             }
+                             update_btn.data = "hi";
+                            update_btn.innerHTML = 'Update';
+                            update_btn.onclick = function()
+                            {
+                                // alert("hello, world");
+                                firebase.firestore().collection('users').doc('rWXzfhHwgofbBO8u16JT')
+                                .update({
+                                  email: 'ashishisagoodboy1234@gmail.com',
+                                  password: '123456'
+                                })
+                                .then(() => {
+                                  alert('Data Updated')
+                                })
+                                                          }
 
                             tr.appendChild(td_email);
                             tr.appendChild(td_full_name);
                             tr.appendChild(td_uni_id);
+                            tr.appendChild(del_button)
+                            tr.appendChild(update_btn)
+
+
                             // tr.appendChild(td_uni_id)
 
                             teamList.appendChild(tr);
@@ -239,11 +274,27 @@
                             let td_email = document.createElement('h4');
                             let td_full_name = document.createElement('td');
                             let td_uni_id = document.createElement('td');
+                                                        var del_button = document.createElement("button");
+
 
                             tr.setAttribute('data-id', doc.id);
                             td_email.textContent = doc.data().name;
                             td_full_name.textContent = doc.data().team;
                             // td_uni_id.textContent = doc.data().uni_id;
+
+                            del_button.data = "hi";
+                            del_button.innerHTML = 'Delete';
+                            del_button.onclick = function()
+                            {
+                                // alert("hello, world");
+                                firebase.firestore().collection('projects').doc(doc.id).delete()
+                              .then(() => {
+                                  alert('Data Deleted')
+                              })
+                              .catch((err) =>{
+                                  console.log(err)
+                              })
+                             }
 
                             tr.appendChild(td_email);
                             tr.appendChild(td_full_name);
@@ -299,14 +350,51 @@
                             let td_email = document.createElement('td');
                             let td_full_name = document.createElement('td');
                             // let td_uni_id = document.createElement('td');
+                            var del_button = document.createElement("button");
+                            var assign = document.createElement("select")
+                            assign.innerHTML = "assign";
+                            assign.className = 'select'
+                            assign.onclick = function()
+                            {
+                                // alert("hello, world");
+                                firebase.firestore().collection('teams').get().then((snapshot) => {
+                            snapshot.docs.forEach(doc => {
+                                renderAccount(doc);
+                                    })
+                                })
+                                const teamList = document.querySelector('.select')
+                                let opt = document.createElement('option')
+                                opt.textContent = doc.data().teamname
+
+
+                             }
+
+                          
+
 
                             tr.setAttribute('data-id', doc.id);
                             td_email.textContent = doc.data().projectname;
                             td_full_name.textContent = doc.data().projectdescription;
                             // td_uni_id.textContent = doc.data().uni_id;
+                            del_button.data = "hi";
+                            del_button.innerHTML = 'Delete';
+                            del_button.onclick = function()
+                            {
+                                // alert("hello, world");
+                                firebase.firestore().collection('projects').doc(doc.id).delete()
+                              .then(() => {
+                                  alert('Data Deleted')
+                              })
+                              .catch((err) =>{
+                                  console.log(err)
+                              })
+                             }
 
                             tr.appendChild(td_email);
                             tr.appendChild(td_full_name);
+                            tr.appendChild(assign)
+                            tr.appendChild(del_button)
+
                             // tr.appendChild(td_uni_id);
 
                             teamList.appendChild(tr);

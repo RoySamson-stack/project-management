@@ -22,10 +22,6 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
       document.getElementById('anon-login').addEventListener('click', isAnonymous)
       document.getElementById('twitter-login').addEventListener('click', twitterSignin)
 
-
-      const email = document.getElementById('email');
-      const password = document.getElementById('password');
-
       const provider = new firebase.auth.GoogleAuthProvider()
       const  githubProvider = new firebase.auth.GithubAuthProvider();
       const twitterProvider = new firebase.auth.TwitterAuthProvider();
@@ -72,14 +68,14 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
     })
   }
         function GoogleLogin(){
-          const user = firebase.auth.currentUser
+          const user = firebase.auth().currentUser.displayName;
           console.log('Login Btn Call')
           firebase.auth().signInWithPopup(provider).then(res=>{
             alert(user)
             // document.getElementById('LoginScreen').style.display="none"
             // document.getElementById('dashboard').style.display="block"
-            // showUserDetails(res.user)
-            window.location = 'admin.html'
+            showUserDetails(user)
+            window.location = 'profile.html'
           }).catch(e=>{
             console.log(e)
           })
@@ -87,10 +83,9 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
   
         function showUserDetails(user){
           document.getElementById('user_wrapper').innerHTML = `
-            <p>Name: ${user.name}</p>
+            <p>Name:${user}</p>
 
-
-          `
+          ```
           console.log(user.name)
         }
   
@@ -116,12 +111,14 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
           })
         }
         function githubSignin(){
+          const user = firebase.auth().currentUser.displayName
+
           console.log('github btn')
           firebase.auth().signInWithPopup(githubProvider).then(res=>{
-            console.log(res.user)
+            console.log(user)
             document.getElementById('LoginScreen').style.display="none"
             document.getElementById('dashboard').style.display="block"
-            showUserDetails(res.user)
+            showUserDetails(user)
             window.location = 'admin.html'
           }).catch(e=>{
             console.log(e)
@@ -155,12 +152,14 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
   
   
     function twitterSignin(){
+      const user = firebase.auth().currentUser.displayName
+
       console.log('twitter btn')
           firebase.auth().signInWithPopup(twitterProvider).then(res=>{
-            console.log(res.user)
+            console.log(user)
             document.getElementById('LoginScreen').style.display="none"
             document.getElementById('dashboard').style.display="block"
-            showUserDetails(res.user)
+            showUserDetails(user)
             window.location = 'admin.html'
           }).catch(e=>{
             console.log(e)
@@ -172,6 +171,8 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
       function emailSignin(){
         const email = document.getElementById('email');
         const password = document.getElementById('password');
+        const user = firebase.auth().currentUser.displayName
+
   
         const emailVal = email.value;
         const passwordVal = password.value;

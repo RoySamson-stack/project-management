@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="popup.css">
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="customer.css">
   <!-- box icon -->
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -80,18 +81,18 @@
         <div class="card_header">
           <h2>Latest Projects</h2>
         </div>
-        <table id="tbl_teams_list" border="2"  style="border-collapse:collapse;" class="admin-table">
+        <table id="tbl_projects_list" border="2"  style="border-collapse:collapse;" class="admin-table">
           <thead>
-              <th>team name</th>
-              <th>team members</th>
-              <th>assigned</th>
+              <th>project name</th>
+              <th>Porject description</th>
+              <th></th>
                <!-- <th>UNI_ID</th>   -->
           </thead>
         </table>
         <button id="btnOpenForm" name="new_team">new team</button>
 
       </div>
-      <div class="recent_customers">
+      <!-- <div class="recent_customers">
         <div class="card_header">
           <h2>Team leads</h2>
         </div>
@@ -110,7 +111,7 @@
             </tr>
             
           </tbody>
-       </div> 
+       </div>  -->
       </div> 
         <div class="form-popup-bg">
           <div class="form-container">
@@ -152,7 +153,7 @@
       firebase.initializeApp(config);
     $(document).ready(function(){
               // teams js code
-              firebase.firestore().collection('teams').get().then((snapshot) => {
+              firebase.firestore().collection('projects').get().then((snapshot) => {
                             snapshot.docs.forEach(doc => {
                                 renderAccount(doc);
                             })
@@ -180,33 +181,52 @@
             })
             $(document).ready(function(){
               // teams js code
-              firebase.firestore().collection('users').get().then((snapshot) => {
+              firebase.firestore().collection('projects').get().then((snapshot) => {
                             snapshot.docs.forEach(doc => {
                                 renderAccount(doc);
                             })
                         })
 
-                        const teamList = document.querySelector('#tbl_users_list') ;
+                        const teamList = document.querySelector('#tbl_projects_list') ;
                         function renderAccount(doc){
                             let tr = document.createElement('tr');
-                            let td_email = document.createElement('h4');
+                            let td_email = document.createElement('td');
                             let td_full_name = document.createElement('td');
-                            let td_uni_id = document.createElement('td');
+                            // let td_uni_id = document.createElement('td');
+                            var del_button = document.createElement("button");
+                          
+
 
                             tr.setAttribute('data-id', doc.id);
-                            td_email.textContent = doc.data().name;
-                            td_full_name.textContent = doc.data().teamlead;
-                            td_uni_id.textContent = doc.data().uni_id;
+                            td_email.textContent = doc.data().projectname;
+                            td_full_name.textContent = doc.data().projectdescription;
+                            // td_uni_id.textContent = doc.data().uni_id;
+                            del_button.data = "hi";
+                            del_button.className = "add_btn"
+                            del_button.innerHTML = 'Add';
+                            del_button.onclick = function()
+                            {
+                                // alert("hello, world");
+                                firebase.firestore().collection('projects').doc(doc.id).delete()
+                              .then(() => {
+                                  alert('Data Saved')
+                              })
+                              .catch((err) =>{
+                                  console.log(err)
+                              })
+                             }
 
                             tr.appendChild(td_email);
                             tr.appendChild(td_full_name);
-                            tr.appendChild(td_uni_id);
+                            tr.appendChild(del_button)
+                            // tr.appendChild(td_uni_id);
 
                             teamList.appendChild(tr);
 
                  
                           }
             })
+
 
             document.getElementById('signup').addEventListener('click', signup)  
 

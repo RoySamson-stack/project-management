@@ -1,0 +1,10 @@
+.admin-table {
+width: 100vw;
+}
+.add_btn{
+  color: white;
+  background-color: blue;
+  border: none;
+  padding: 5px;
+  margin-left: 5px;
+}
