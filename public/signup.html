@@ -61,23 +61,24 @@
 
   document.getElementById('signup').addEventListener('click', signup)  
 function signup(e) {
-    const name = document.getElementById('name');
-    const email = document.getElementById('email');
-    const password = document.getElementById('password');
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    console.log(email, password)
+    // firebase code
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((result) => {
+            // Signed in 
+            document.write("You are Signed Up")
+            console.log(result)
+            window.location='login.html'
+            // ...
+        })
+        .catch((error) => {
+            console.log(error.code);
+            console.log(error.message)
+            // ..
+        });
 
-    var  database = firebase.firestore();
-    var userCollection = database.collection('users');
-    // ------------ Add Data to FireStore ---------------------------------------------//
-    e.preventDefault();  
-     userCollection.doc(name.value).set({ 
-    name: name.value,
-    email: email.value,
-    password: password.value,  
-    })
-    .then(()=> {console.log('Data Successfully Written ');
-    console.log(name, email, password)
-})
-    .catch(error => {console.error(error)});
  }
 </script>
 <script src="index.js"></script>

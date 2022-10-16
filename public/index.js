@@ -16,9 +16,9 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
         // document.getElementById('dashboard').style.display="block"
 
       document.getElementById('login').addEventListener('click', GoogleLogin)
-      // document.getElementById('logout').addEventListener('click', LogoutUser)
+      document.getElementById('logout').addEventListener('click', LogoutUser)
       document.getElementById('github-login').addEventListener('click', githubSignin)
-      document.getElementById('login-btn').addEventListener('click', emailSignin)
+      document.getElementById('login-btn').addEventListener('click', emailsignIn)
       document.getElementById('anon-login').addEventListener('click', isAnonymous)
       document.getElementById('twitter-login').addEventListener('click', twitterSignin)
 
@@ -75,7 +75,7 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
             // document.getElementById('LoginScreen').style.display="none"
             // document.getElementById('dashboard').style.display="block"
             showUserDetails(user)
-            window.location = 'profile.html'
+            window.location = 'customer.html'
           }).catch(e=>{
             console.log(e)
           })
@@ -119,7 +119,7 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
             document.getElementById('LoginScreen').style.display="none"
             document.getElementById('dashboard').style.display="block"
             showUserDetails(user)
-            window.location = 'admin.html'
+            window.location = 'customer.html'
           }).catch(e=>{
             console.log(e)
           })
@@ -160,7 +160,7 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
             document.getElementById('LoginScreen').style.display="none"
             document.getElementById('dashboard').style.display="block"
             showUserDetails(user)
-            window.location = 'admin.html'
+            window.location = 'customer.html'
           }).catch(e=>{
             console.log(e)
           })
@@ -168,27 +168,24 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
       
       
       
-      function emailSignin(){
-        const email = document.getElementById('email');
-        const password = document.getElementById('password');
-        const user = firebase.auth().currentUser.displayName
+      function emailsignIn(){
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        // firebase code
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then((result) => {
+                // Signed in 
+                document.write("You are Signed In")
+                console.log(result)
+                window.location = 'customer.html'
 
-  
-        const emailVal = email.value;
-        const passwordVal = password.value;
-  
-        //Built in firebase function responsible for authentication
-        firebase.auth().signInWithEmailAndPassword(emailVal, passwordVal)
-        .then(() => {
-          //Signed in successfully
-          window.location = 'admin.html'
-          console.log(emailVal)
-        })
-        .catch(error => {
-          //Something went wrong
-          console.error(error);
-        })
-      }
+            })
+            .catch((error) => {
+                console.log(error.code);
+                console.log(error.message)
+            });
+    }
+
   function isAnonymous(){
     firebase.auth().signInAnonymously()
     .then(() => {
