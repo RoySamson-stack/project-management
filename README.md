@@ -9,7 +9,7 @@ CSS
 Firebase
 
 ### Admin
-The admin willl be main user uin the system as they will have main task of assigning jonbs and also ahave function such as: - setting up the project - Dividing the project into tasks - assign tasks to teams - Create new teams if necessary - update any changes to the project - track overall project progress
+The admin will be main user uin the system as they will have main task of assigning jobs and also have function such as: - setting up the project - Dividing the project into tasks - assign tasks to teams - Create new teams if necessary - update any changes to the project - track overall project progress
 
 ### Team leader
 
@@ -24,6 +24,7 @@ report expeced delays, justify them and provide new estimated completion dates
 ### Customer
 View Projects,
 track the progress
+sve projects
 
 
 ## live site
