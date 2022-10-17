@@ -52,7 +52,7 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
         //     }    
         //     catch(err){
         //         console.log("Login Failed!", err);
-        //         window.alert("Login Failed!", err);
+        //         window.console.log("Login Failed!", err);
         //     }
         // }
         console.log('press')
@@ -68,10 +68,10 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
     })
   }
         function GoogleLogin(){
-          const user = firebase.auth().currentUser.displayName;
+          // const user = firebase.auth().currentUser.displayName;
           console.log('Login Btn Call')
           firebase.auth().signInWithPopup(provider).then(res=>{
-            alert(user)
+            console.log(user)
             // document.getElementById('LoginScreen').style.display="none"
             // document.getElementById('dashboard').style.display="block"
             showUserDetails(user)
@@ -111,7 +111,7 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
           })
         }
         function githubSignin(){
-          const user = firebase.auth().currentUser.displayName
+          // const user = firebase.auth().currentUser.displayName
 
           console.log('github btn')
           firebase.auth().signInWithPopup(githubProvider).then(res=>{
@@ -125,22 +125,22 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
           })
         }
     
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in.
-          var displayName = user.displayName;
-          var email = user.email;
-          var emailVerified = user.emailVerified;
-          var photoURL = user.photoURL;
-          var isAnonymous = user.isAnonymous;
-          var uid = user.uid;
-          var providerData = user.providerData;
-          // ...
-        } else {
-          // User is signed out.
-          // ...
-        }
-      });
+      // firebase.auth().onAuthStateChanged(function(user) {
+      //   if (user) {
+      //     // User is signed in.
+      //     var displayName = user.displayName;
+      //     var email = user.email;
+      //     var emailVerified = user.emailVerified;
+      //     var photoURL = user.photoURL;
+      //     var isAnonymous = user.isAnonymous;
+      //     var uid = user.uid;
+      //     var providerData = user.providerData;
+      //     // ...
+      //   } else {
+      //     // User is signed out.
+      //     // ...
+      //   }
+      // });
       function githubSignout(){
          firebase.auth().signOut()
          .then(function() {
@@ -152,7 +152,7 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
   
   
     function twitterSignin(){
-      const user = firebase.auth().currentUser.displayName
+      // const user = firebase.auth().currentUser.displayName
 
       console.log('twitter btn')
           firebase.auth().signInWithPopup(twitterProvider).then(res=>{
@@ -218,4 +218,9 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
        closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
      }
    }
+
+
+
+
+
 })

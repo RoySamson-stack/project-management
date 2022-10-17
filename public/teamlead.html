@@ -17,7 +17,7 @@
     <div class="logo_details">
       <i class='bx bx-code-alt'></i>
       <div class="logo_name">
-        PRO-MAN
+        PROJECTMANG
       </div>
     </div>
     <ul>
@@ -29,22 +29,22 @@
           </span>
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a href="profile.html">
           <i class='bx bx-user'></i>
           <span class="links_name">
             Profile
           </span>
         </a>
-      </li>
-      <li>
+      </li> -->
+      <!-- <li>
         <a href="#">
           <i class='bx bxs-truck'></i>
           <span class="links_name">
             calendar
           </span>
         </a>
-      </li>
+      </li> -->
      
      
     </ul>
@@ -75,12 +75,12 @@
         <div class="card_header">
           <h2>Lat Projects</h2>
         </div>
-        <table id="tbl_teams_list">
+        <table id="tbl_teamss_list">
           <thead>
               <th>Team name</th>
-              <th>Members</th>
-              <th>teamleader</th>
-              <th>Team Members</th>
+              <th>Teamlead</th>
+              <th>memebers</th>
+              <th></th>
           </thead>
          
         </table>
@@ -120,13 +120,14 @@
         </div>
     </div>
   </section>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js" ></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js" ></script>
   <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="indexT.js"></script>
   <script src="popup.js"></script>
-  <script>
+  <!-- <script>
      var config = {
         apiKey: "AIzaSyDmOzvLfbJ74Ftv0QWQmdpoaE1LzNPUlo0",
         authDomain: "project-management-53eab.firebaseapp.com",
@@ -147,7 +148,7 @@
                             })
                         })
 
-                        const teamList = document.querySelector('#tbl_teams_list') ;
+                        const teamList = document.querySelector('#tbl_teamss_list') ;
                         function renderAccount(doc){
                             let tr = document.createElement('tr');
                             let td_email = document.createElement('td');
@@ -157,7 +158,7 @@
                             tr.setAttribute('data-id', doc.id);
                             td_email.textContent = doc.data().teamname;
                             td_full_name.textContent = doc.data().teamlead;
-                            td_uni_id.textContent = doc.data().teamleader;
+                            td_uni_id.textContent = doc.data().teammembers;
 
                             tr.appendChild(td_email);
                             tr.appendChild(td_full_name);
@@ -167,7 +168,7 @@
                             teamList.appendChild(tr);
 
                         }
-            })
+            }) -->
   </script>
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
@@ -234,5 +235,6 @@
     });
   });
     </script>
+
 </body>
 </html>

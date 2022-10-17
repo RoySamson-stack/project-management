@@ -17,7 +17,7 @@
     <div class="logo_details">
       <i class='bx bx-code-alt'></i>
       <div class="logo_name">
-        End Dev
+        PROJECTMANG
       </div>
     </div>
     <ul>
@@ -29,22 +29,22 @@
           </span>
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a href="profile.html">
           <i class='bx bx-user'></i>
           <span class="links_name">
             Profile
           </span>
         </a>
-      </li>
-      <li>
+      </li> -->
+      <!-- <li>
         <a href="#">
           <i class='bx bxs-truck'></i>
           <span class="links_name">
         Calendar
           </span>
         </a>
-      </li>
+      </li> -->
       <li class="login">
         <a href="#">
           <span class="links_name login_out">
@@ -79,61 +79,66 @@
     <div class="details">
       <div class="recent_project">
         <div class="card_header">
-          <h2>Latest Projects</h2>
+          <h2>Teams</h2>
         </div>
-        <table id="tbl_projects_list" border="2"  style="border-collapse:collapse;" class="admin-table">
+        <table id="tbl_projects_list">
           <thead>
-              <th>project name</th>
-              <th>Porject description</th>
-              <th></th>
-               <!-- <th>UNI_ID</th>   -->
+              <th>Project</th>
+              <th>Project description</th>
+              <th>save</th>
           </thead>
         </table>
-        <button id="btnOpenForm" name="new_team">new team</button>
-
+        <!-- <button id="btnOpenForm" class="fo" name="new_team">new team</button> -->
       </div>
-      <!-- <div class="recent_customers">
+      
+      <div class="recent_customers">
         <div class="card_header">
-          <h2>Team leads</h2>
+          <h2>new project</h2>
         </div>
         <table id="tbl_users_list">
-          <tbody>
-            <tr>
-              <td>
-                <div class="info_img">
-                  <img src="img/avatar-2.jpg" alt="">
-                </div>
-              </td>
-              <td>
-                <h4>Willams Harris</h4>
-                <span>Willams@gmail.com</span>
-              </td>
-            </tr>
-            
-          </tbody>
-       </div>  -->
-      </div> 
-        <div class="form-popup-bg">
-          <div class="form-container">
-            <button id="btnCloseForm" class="close-button">X</button>
-            <form action="" id="form-team">
-              <div class="form-group">
-                <label for="">Project name</label>
-                <br>
-                <input type="text" class="form-control" id="projectname" required/>
-              </div>
-              <div class="form-group">
-                <label for="">Porject description</label>
-                <br>
-                <input class="form-control" type="text" id="projectdescription" required/>
-              </div>
-              <button  id="signup">Submit</button>
-            </form>
-          </div>
+          <!-- <tbody>      
+          </tbody> -->
+          <button id="btnOpenForm" class="fo" name="new_team">new Project</button>
+
+       </div>  
+       
+       
+      <div class="form-popup-bg mem-team modal-dialog  modal-dialog-centered modal-lg">
+        <div class="form-container">
+          <button id="btnCloseForm" class="close-button">X</button>
+          <form action="" id="form-team">
+            <div class="form-group mb-3">
+              <label for="">project</label>
+              <br>
+              <input type="text" class="form-control" id="projectname" required/>
+            </div>
+            <div class="form-group mb-3">
+              <label for="">Project description</label>
+              <br>
+              <input class="form-control" type="text" id="projectdescription" required/>
+            </div>
+            <button  id="signup" class="form-btn">Submit</button>
+          </form>
         </div>
+      </div>
         </table>
+        
+      </div>
+      <div class="recent_project">
+        <div class="card_header">
+          <h2>Saved projects</h2>
+        </div>
+        <table id="tbl_savedprojects_list">
+          <thead>
+              <th>Project</th>
+              <th>Project description</th>
+          </thead>
+        </table>
+        <!-- <button id="btnOpenForm" class="fo" name="new_team">new team</button> -->
+
       </div>
     </div>
+    
   </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js" ></script>
@@ -151,34 +156,7 @@
         appId: "1:61242591551:web:d1707b994cb68028d1ab8a"
       };
       firebase.initializeApp(config);
-    $(document).ready(function(){
-              // teams js code
-              firebase.firestore().collection('projects').get().then((snapshot) => {
-                            snapshot.docs.forEach(doc => {
-                                renderAccount(doc);
-                            })
-                        })
-
-                        const teamList = document.querySelector('#tbl_teams_list') ;
-                        function renderAccount(doc){
-                            let tr = document.createElement('tr');
-                            let td_email = document.createElement('td');
-                            let td_full_name = document.createElement('td');
-                            let td_uni_id = document.createElement('td');
-
-                            tr.setAttribute('data-id', doc.id);
-                            td_email.textContent = doc.data().teamname;
-                            td_full_name.textContent = doc.data().teamlead;
-                            td_uni_id.textContent = doc.data().uni_id;
-
-                            tr.appendChild(td_email);
-                            tr.appendChild(td_full_name);
-                            tr.appendChild(td_uni_id);
-
-                            teamList.appendChild(tr);
-
-                        }
-            })
+ 
             $(document).ready(function(){
               // teams js code
               firebase.firestore().collection('projects').get().then((snapshot) => {
@@ -193,7 +171,7 @@
                             let td_email = document.createElement('td');
                             let td_full_name = document.createElement('td');
                             // let td_uni_id = document.createElement('td');
-                            var del_button = document.createElement("button");
+                            var check = document.createElement("input");
                           
 
 
@@ -201,15 +179,19 @@
                             td_email.textContent = doc.data().projectname;
                             td_full_name.textContent = doc.data().projectdescription;
                             // td_uni_id.textContent = doc.data().uni_id;
-                            del_button.data = "hi";
-                            del_button.className = "add_btn"
-                            del_button.innerHTML = 'Add';
-                            del_button.onclick = function()
+                            check.data = "hi";
+                            check.type = 'checkbox'
+                            check.value = "Save"
+                            check.className = "add_btn"
+                            check.innerHTML = 'Save';
+                            check.onclick = function()
                             {
-                                // alert("hello, world");
-                                firebase.firestore().collection('projects').doc(doc.id).delete()
+                                // console.log("hello, world");
+                                firebase.firestore().collection('projects').doc(doc.id).update({
+                                  'save':true,
+                                })
                               .then(() => {
-                                  alert('Data Saved')
+                                  console.log('Data Saved')
                               })
                               .catch((err) =>{
                                   console.log(err)
@@ -218,7 +200,7 @@
 
                             tr.appendChild(td_email);
                             tr.appendChild(td_full_name);
-                            tr.appendChild(del_button)
+                            tr.appendChild(check)
                             // tr.appendChild(td_uni_id);
 
                             teamList.appendChild(tr);
@@ -226,7 +208,58 @@
                  
                           }
             })
+            $(document).ready(function(){
+              // teams js code
+               // teams js code
+               firebase.firestore().collection('projects').where('save', "==", true).get().then((snapshot) => {
+                            snapshot.docs.forEach(doc => {
+                                renderAccount(doc);
+                            })
+                        })
 
+                        const teamList = document.querySelector('#tbl_savedprojects_list') ;
+                        function renderAccount(doc){
+                            let tr = document.createElement('tr');
+                            let td_email = document.createElement('td');
+                            let td_full_name = document.createElement('td');
+                            // let td_uni_id = document.createElement('td');
+                            var check = document.createElement("input");
+                          
+
+
+                            tr.setAttribute('data-id', doc.id);
+                            td_email.textContent = doc.data().projectname;
+                            td_full_name.textContent = doc.data().projectdescription;
+                            // td_uni_id.textContent = doc.data().uni_id;
+                            check.data = "hi";
+                            check.type = 'checkbox'
+                            check.value = "Save"
+                            check.className = "add_btn"
+                            check.innerHTML = 'Save';
+                            check.onclick = function()
+                            {
+                                // console.log("hello, world");
+                                firebase.firestore().collection('projects').doc(doc.id).update({
+                                  'save':false,
+                                })
+                              .then(() => {
+                                  console.log('Data Saved')
+                              })
+                              .catch((err) =>{
+                                  console.log(err)
+                              })
+                             }
+
+                            tr.appendChild(td_email);
+                            tr.appendChild(td_full_name);
+                            tr.appendChild(check)
+                            // tr.appendChild(td_uni_id);
+
+                            teamList.appendChild(tr);
+
+                 
+                          }
+            })
 
             document.getElementById('signup').addEventListener('click', signup)  
 
@@ -249,6 +282,7 @@ function signup(e) {
 }
   </script>
   <script src="popup.js"></script>
+  <script src="index.js"></script>
 
 </body>
 </html>

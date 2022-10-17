@@ -304,6 +304,16 @@ font-weight: bold;
   height: 500px;
   width: full;
 }
+.del{
+background-color: red;
+color: white;
+border: none;
+padding: 5px;
+
+}
+.del:hover{
+  background-color: rgb(214, 3, 3);  
+  }
 
 /*end of admin page*/
 
