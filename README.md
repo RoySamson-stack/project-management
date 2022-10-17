@@ -1,6 +1,13 @@
 # project-management
 This is a simple projecy management web app that allows for collaboration among team members.The different member in a tema will be assigned different roles by the Admin and they get tio use the platform to collarborate. The different members in the team will be : ~ Admin ~ Team leader ~ Customer
 
+
+## Technologies and Tools used
+HTML
+Javascript 
+CSS
+Firebase
+
 ### Admin
 The admin willl be main user uin the system as they will have main task of assigning jonbs and also ahave function such as: - setting up the project - Dividing the project into tasks - assign tasks to teams - Create new teams if necessary - update any changes to the project - track overall project progress
 
@@ -19,8 +26,6 @@ View Projects,
 track the progress
 update your progress, .pdf, screenshots, video, comments
 
-## Technologies used
-HTML, Javascript, CSS
 
 ## live site
-https://project-management-53eab.web.app/login.html
+https://project-management-53eab.web.app
