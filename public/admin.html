@@ -100,44 +100,23 @@
           <h2>create team</h2>
         </div>
         <table id="tbl_users_list">
+          <thead>
+            <th>Team lead</th>
+            <th>Project</th>
+        </thead>
           <!-- <tbody>      
           </tbody> -->
           <button id="btnOpenForm" class="fo" name="new_team">new team</button>
 
        </div> 
       </div>  
-      <!-- <div class="form-popup-bg teamlead-form modal-dialog  modal-dialog-centered modal-lg">
-          <div class="form-container">
-            <button id="btnCloseFormLead" class="close-button">X</button>
-            <form action="" id="form-team">
-              <div class="form-group mb-3">
-                <label for="">Team lead</label>
-                <br>
-                <input type="text" class="form-control" id="teamname" required/>
-              </div>
-              <div class="form-group mb-3">
-                <label for="">Team name</label>
-                <br>
-                <input class="form-control" type="text" id="teamleads" required/>
-              </div>
-          
-              <!-- <div class="form-group mb-3">
-                <label for=""></label>
-                <br>
-                <input class="form-control" type="text" id="teamlead" required/>
-              </div> 
-              
-            </form>
-           <button  id="signup" class="form-btn">Submit</button>
-          </div>
-        </div> -->
 
       <div class="form-popup-bg mem-team modal-dialog  modal-dialog-centered modal-lg">
           <div class="form-container">
             <button id="btnCloseForm" class="close-button">X</button>
             <form action="" id="form-team">
               <div class="form-group mb-3">
-                <label for="">Team name</label>
+                <label for="">Program</label>
                 <br>
                 <input type="text" class="form-control" id="teamname" required/>
               </div>
@@ -169,18 +148,34 @@
       </div>
       <div class="recent_project">
         <div class="card_header">
-          <h2>Latest Projects</h2>
+          <h2>Projects</h2>
         </div>
         <table id="tbl_projects_list">
           <thead>
               <th>Project Name</th>
               <th>Project description</th>
               <th>Assigned team</th>
-              <th>Team lead</th>
           </thead>
          
         </table>
+        
       </div>
+      <div class="recent_customers">
+        <div class="card_header">
+          <h2>Projects</h2>
+        </div>
+        <table id="tbl_userss_list">
+          <thead>
+            <th>Project</th>
+        </thead>
+          <!-- <tbody>      
+          </tbody> -->
+
+       </div> 
+      </div>  
+      
+
+        </table>
     </div>
   </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -229,10 +224,10 @@
                             del_button.className="del"
                             del_button.onclick = function()
                             {
-                                // alert("hello, world");
+                                // console.log("hello, world");
                                 firebase.firestore().collection('teams').doc(doc.id).delete()
                               .then(() => {
-                                  alert('Data Deleted')
+                                  console.log('Data Deleted')
                               })
                               .catch((err) =>{
                                   console.log(err)
@@ -242,14 +237,14 @@
                             update_btn.innerHTML = 'Update';
                             update_btn.onclick = function()
                             {
-                                // alert("hello, world");
+                                // console.log("hello, world");
                                 firebase.firestore().collection('users').doc('rWXzfhHwgofbBO8u16JT')
                                 .update({
                                   email: 'ashishisagoodboy1234@gmail.com',
                                   password: '123456'
                                 })
                                 .then(() => {
-                                  alert('Data Updated')
+                                  console.log('Data Updated')
                                 })
                                                           }
 
@@ -267,7 +262,7 @@
             })
             $(document).ready(function(){
               // teams js code
-              firebase.firestore().collection('admin').get().then((snapshot) => {
+              firebase.firestore().collection('teams').get().then((snapshot) => {
                             snapshot.docs.forEach(doc => {
                                 renderAccount(doc);
                             })
@@ -276,15 +271,15 @@
                         const teamList = document.querySelector('#tbl_users_list') ;
                         function renderAccount(doc){
                             let tr = document.createElement('tr');
-                            let td_email = document.createElement('h4');
+                            let td_email = document.createElement('td');
                             let td_full_name = document.createElement('td');
                             let td_uni_id = document.createElement('td');
                                                         var del_button = document.createElement("button");
 
 
                             tr.setAttribute('data-id', doc.id);
-                            td_email.textContent = doc.data().name;
-                            td_full_name.textContent = doc.data().team;
+                            td_full_name.textContent = doc.data().teamlead;
+                            td_email.textContent = doc.data().teamname;
                             // td_uni_id.textContent = doc.data().uni_id;
 
                             del_button.data = "hi";
@@ -292,18 +287,18 @@
                             del_button.innerHTML = 'Delete';
                             del_button.onclick = function()
                             {
-                                // alert("hello, world");
+                                // console.log("hello, world");
                                 firebase.firestore().collection('projects').doc(doc.id).delete()
                               .then(() => {
-                                  alert('Data Deleted')
+                                  console.log('Data Deleted')
                               })
                               .catch((err) =>{
                                   console.log(err)
                               })
                              }
-
+                             tr.appendChild(td_full_name);
                             tr.appendChild(td_email);
-                            tr.appendChild(td_full_name);
+                           
                             // tr.appendChild(td_uni_id);
 
                             teamList.appendChild(tr);
@@ -362,7 +357,7 @@
                             assign.className = 'select'
                             assign.onclick = function()
                             {
-                                // alert("hello, world");
+                                // console.log("hello, world");
                                 firebase.firestore().collection('teams').get().then((snapshot) => {
                             snapshot.docs.forEach(doc => {
                                 renderAccount(doc);
@@ -388,10 +383,10 @@
 
                             del_button.onclick = function()
                             {
-                                // alert("hello, world");
+                                // console.log("hello, world");
                                 firebase.firestore().collection('projects').doc(doc.id).delete()
                               .then(() => {
-                                  alert('Data Deleted')
+                                  console.log('Data Deleted')
                               })
                               .catch((err) =>{
                                   console.log(err)
@@ -400,7 +395,7 @@
 
                             tr.appendChild(td_email);
                             tr.appendChild(td_full_name);
-                            tr.appendChild(del_button)
+                            // tr.appendChild(del_button)
 
                             // tr.appendChild(td_uni_id);
 
@@ -425,7 +420,7 @@ function signup(e) {
             // Signed in 
             document.write("You are Signed Up")
             console.log(result)
-            window.location='login.html'
+            // window.location='login.html'
             // ...
         })
         .catch((error) => {

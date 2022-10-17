@@ -24,7 +24,6 @@ report expeced delays, justify them and provide new estimated completion dates
 ### Customer
 View Projects,
 track the progress
-update your progress, .pdf, screenshots, video, comments
 
 
 ## live site

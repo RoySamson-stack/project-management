@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project management</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css  ">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <title>project management</title>
+  <link rel="stylesheet" href="popup.css">
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="customer.css">
   <!-- box icon -->
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -41,12 +41,18 @@
         <a href="#">
           <i class='bx bxs-truck'></i>
           <span class="links_name">
-            calendar
+        Calendar
           </span>
         </a>
       </li> -->
-     
-     
+      <li class="login">
+        <a href="#">
+          <span class="links_name login_out">
+            Login Out
+          </span>
+          <i class='bx bx-log-out' id="log_out"></i>
+        </a>
+      </li>
     </ul>
   </div>
   <!-- End Sideber -->
@@ -73,61 +79,54 @@
     <div class="details">
       <div class="recent_project">
         <div class="card_header">
-          <h2>Lat Projects</h2>
+          <h2>Projects</h2>
         </div>
-        <table id="tbl_teamss_list">
+        <table id="tbl_projects_list">
           <thead>
-              <th>Team name</th>
-              <th>Teamlead</th>
-              <th>memebers</th>
-              <th></th>
+              <th>Project</th>
+              <th>Project description</th>
+              <th>save</th>
           </thead>
-         
         </table>
+        <!-- <button id="btnOpenForm" class="fo" name="new_team">new team</button> -->
       </div>
-        <!-- <table>
-          <tbody>
-            <tr>
-              <td>
-                <div class="info_img">
-                  <img src="img/avatar-2.jpg" alt="">
-                </div>
-              </td>
-              <td>
-                <h4>Willams Harris</h4>
-                <span>Willams@gmail.com</span>
-              </td>
-            </tr>           
-          </tbody>
-        </table> -->
-        <div class="recent_customers">
-          <div class="card_header">
-            <h2>Team chat</h2>
-          </div>
-          
-          <div class="activity-comment">
-            <div class="uploaded"></div>
-            <div class="data chat-input">
-              <label class="fromdevice" for="fromdevicefiles">
-                <input type="file" id="fromdevicefiles" multiple><i class="fa-sharp fa-solid fa-upload"></i>
-              </label>
-              <br>
-              <input type="text" id="txt">
-              <br>
-              <div class="send"><i class="fa-sharp fa-solid fa-paper-plane"></i></div>
-              </div>
-          </div>
+      
+      <div class="recent_customers">
+        <div class="card_header">
+          <h2>ongoing</h2>
         </div>
+        <table id="tbl_users_list">
+          <thead>
+            <th>Project</th>
+        </thead>
+          <!-- <tbody>      
+          </tbody> -->
+       </div>  
+        </table>
+        
+      </div>
+      <div class="recent_project">
+        <div class="card_header">
+          <h2>completed projects</h2>
+        </div>
+        <table id="tbl_savedprojects_list">
+          <thead>
+              <th>Project</th>
+              <th>Project description</th>
+          </thead>
+        </table>
+        <!-- <button id="btnOpenForm" class="fo" name="new_team">new team</button> -->
+
+      </div>
     </div>
+    
   </section>
-  <!-- <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js" ></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js" ></script>
   <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="indexT.js"></script>
-  <script src="popup.js"></script>
-  <!-- <script>
+<script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script>
+  <script>
      var config = {
         apiKey: "AIzaSyDmOzvLfbJ74Ftv0QWQmdpoaE1LzNPUlo0",
         authDomain: "project-management-53eab.firebaseapp.com",
@@ -138,103 +137,186 @@
         appId: "1:61242591551:web:d1707b994cb68028d1ab8a"
       };
       firebase.initializeApp(config);
-
-   
-    $(document).ready(function(){
+ 
+            $(document).ready(function(){
               // teams js code
-              firebase.firestore().collection('teams').get().then((snapshot) => {
+              firebase.firestore().collection('projects').get().then((snapshot) => {
                             snapshot.docs.forEach(doc => {
                                 renderAccount(doc);
                             })
                         })
 
-                        const teamList = document.querySelector('#tbl_teamss_list') ;
+                        const teamList = document.querySelector('#tbl_projects_list') ;
                         function renderAccount(doc){
                             let tr = document.createElement('tr');
                             let td_email = document.createElement('td');
                             let td_full_name = document.createElement('td');
-                            let td_uni_id = document.createElement('td');
+                            // let td_uni_id = document.createElement('td');
+                            var check = document.createElement("input");
+                          
+
 
                             tr.setAttribute('data-id', doc.id);
-                            td_email.textContent = doc.data().teamname;
-                            td_full_name.textContent = doc.data().teamlead;
-                            td_uni_id.textContent = doc.data().teammembers;
+                            td_email.textContent = doc.data().projectname;
+                            td_full_name.textContent = doc.data().projectdescription;
+                            // td_uni_id.textContent = doc.data().uni_id;
+                            check.data = "hi";
+                            check.type = 'checkbox'
+                            check.value = "Save"
+                            check.className = "add_btn"
+                            check.innerHTML = 'Save';
+                            check.onclick = function()
+                            {
+                                // console.log("hello, world");
+                                firebase.firestore().collection('projects').doc(doc.id).update({
+                                  'save':true,
+                                })
+                              .then(() => {
+                                  console.log('Data Saved')
+                              })
+                              .catch((err) =>{
+                                  console.log(err)
+                              })
+                             }
 
                             tr.appendChild(td_email);
                             tr.appendChild(td_full_name);
-                            tr.appendChild(td_uni_id);
-                            // tr.appendChild(td_uni_id)
+                            tr.appendChild(check)
+                            // tr.appendChild(td_uni_id);
 
                             teamList.appendChild(tr);
 
-                        }
-            }) -->
+                 
+                          }
+            })
+            $(document).ready(function(){
+              // teams js code
+               // teams js code
+               firebase.firestore().collection('projects').where('completed', "==", true).get().then((snapshot) => {
+                            snapshot.docs.forEach(doc => {
+                                renderAccount(doc);
+                            })
+                        })
+
+                        const teamList = document.querySelector('#tbl_savedprojects_list') ;
+                        function renderAccount(doc){
+                            let tr = document.createElement('tr');
+                            let td_email = document.createElement('td');
+                            let td_full_name = document.createElement('td');
+                            // let td_uni_id = document.createElement('td');
+                            var check = document.createElement("input");
+                          
+
+
+                            tr.setAttribute('data-id', doc.id);
+                            td_email.textContent = doc.data().projectname;
+                            td_full_name.textContent = doc.data().projectdescription;
+                            // td_uni_id.textContent = doc.data().uni_id;
+                            check.data = "hi";
+                            check.type = 'checkbox'
+                            check.value = "Save"
+                            check.className = "add_btn"
+                            check.innerHTML = 'Save';
+                            check.onclick = function()
+                            {
+                                // console.log("hello, world");
+                                firebase.firestore().collection('projects').doc(doc.id).update({
+                                  'save':false,
+                                })
+                              .then(() => {
+                                  console.log('Data Saved')
+                              })
+                              .catch((err) =>{
+                                  console.log(err)
+                              })
+                             }
+
+                            tr.appendChild(td_email);
+                            tr.appendChild(td_full_name);
+                            tr.appendChild(check)
+                            // tr.appendChild(td_uni_id);
+
+                            teamList.appendChild(tr);
+
+                 
+                          }
+            })
+
+
+            $(document).ready(function(){
+              // teams js code
+               // teams js code
+               firebase.firestore().collection('projects').where('completed', "==", false).get().then((snapshot) => {
+                            snapshot.docs.forEach(doc => {
+                                renderAccount(doc);
+                            })
+                        })
+
+                        const teamList = document.querySelector('#tbl_users_list') ;
+                        function renderAccount(doc){
+                            let tr = document.createElement('tr');
+                            let td_email = document.createElement('td');
+                            let td_full_name = document.createElement('td');
+                            // let td_uni_id = document.createElement('td');
+                            var check = document.createElement("input");
+                          
+
+
+                            tr.setAttribute('data-id', doc.id);
+                            td_email.textContent = doc.data().projectname;
+                            td_full_name.textContent = doc.data().projectdescription;
+                            // td_uni_id.textContent = doc.data().uni_id;
+                            check.data = "hi";
+                            check.type = 'checkbox'
+                            check.value = "Save"
+                            check.className = "add_btn"
+                            check.innerHTML = 'Save';
+                            check.onclick = function()
+                            {
+                                // console.log("hello, world");
+                                firebase.firestore().collection('projects').doc(doc.id).update({
+                                  'completed':true,
+                                })
+                              .then(() => {
+                                  console.log('Data Saved')
+                              })
+                              .catch((err) =>{
+                                  console.log(err)
+                              })
+                             }
+
+                            tr.appendChild(td_email);
+                            // tr.appendChild(td_full_name);
+                            tr.appendChild(check)
+                            // tr.appendChild(td_uni_id);
+
+                            teamList.appendChild(tr);
+
+                 
+                          }
+            })
+            document.getElementById('signup').addEventListener('click', signup)  
+
+function signup(e) {
+    const projectname = document.getElementById('projectname');
+    const projectdescription = document.getElementById('projectdescription');
+
+    var  database = firebase.firestore();
+    var userCollection = database.collection('projects');
+    // ------------ Add Data to FireStore ---------------------------------------------//
+    e.preventDefault();  
+    userCollection.doc(projectname.value).set({ 
+    projectname: projectname.value,
+    projectdescription: projectdescription.value,
+    })
+    .then(()=> {console.log('Data Successfully Written ');
+    // console.log(teamname, teamlead)
+})
+    .catch(error => {console.error(error)});
+}
   </script>
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
-          import { getFirestore,doc, getDoc,addDoc, collection,
-               getDocs, onSnapshot, query, where,setDoc, orderBy, limit , Timestamp 
-                } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js";
-                import { getStorage, ref, uploadBytes , getDownloadURL } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-storage.js";
-          const firebaseConfig = {
-          apiKey: "AIzaSyDmOzvLfbJ74Ftv0QWQmdpoaE1LzNPUlo0",
-          authDomain: "project-management-53eab.firebaseapp.com",
-          databaseURL: "https://project-management-53eab-default-rtdb.firebaseio.com",
-          projectId: "project-management-53eab",
-          storageBucket: "project-management-53eab.appspot.com",
-          messagingSenderId: "61242591551",
-          appId: "1:61242591551:web:d1707b994cb68028d1ab8a"
-          };
-        
-          
-          const app = initializeApp(firebaseConfig);
-          const db = getFirestore(app);
-          
-        
-          document.getElementsByClassName("send")[0].addEventListener('click' ,async function(){
-  
-              var time = (new Date().getTime())
-          
-              
-            const docRef = await addDoc(collection(db, user, "group+messages"), {
-                  value:document.getElementById("txt").value,
-                  sentby:res.user,
-                  time:time
-              });
-              document.getElementById("txt").value = "";
-  
-          })
-  
-  
-         
-          const q = query(collection(db, "group+messages") , orderBy("time" , "asc"));
-          const unsubscribe = onSnapshot(q, (snapshot) => {
-            snapshot.docChanges().forEach((change) => {
-      if (change.type === "added") {
-          //console.log("New city: ", change.doc.data());
-          
-          if (change.doc.data().sentby == "") {
-              var msgdiv = document.createElement("div")
-  
-                      msgdiv.className = "chat2"
-                      msgdiv.innerHTML = change.doc.data().value
-                      document.getElementsByClassName("uploaded")[0].appendChild(msgdiv)
-          }else{
-              var msgdiv = document.createElement("div")
-                      msgdiv.className = "chat"
-                      msgdiv.innerHTML = change.doc.data().value
-                      document.getElementsByClassName("uploaded")[0].appendChild(msgdiv)
-          }
-      }
-      if (change.type === "modified") {
-          console.log("Modified city: ", change.doc.data());
-      }
-      if (change.type === "removed") {
-          console.log("Removed city: ", change.doc.data());
-      }
-    });
-  });
-    </script>
+  <script src="popup.js"></script>
+  <script src="index.js"></script>
 
 </body>
 </html>
