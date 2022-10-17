@@ -162,16 +162,33 @@
       </div>
       <div class="recent_customers">
         <div class="card_header">
-          <h2>Projects</h2>
+          <h2>new project</h2>
         </div>
-        <table id="tbl_userss_list">
-          <thead>
-            <th>Project</th>
-        </thead>
+        <table id="tbl_users_list">
           <!-- <tbody>      
           </tbody> -->
-
-       </div> 
+          <button id="btnOpenForm1" class="fo" name="new_team">new Project</button>
+        </div>
+       
+        <div class="form-popup-bg mem-team1 modal-dialog  modal-dialog-centered modal-lg">
+          <div class="form-container">
+            <button id="btnCloseForm" class="close-button">X</button>
+            <form action="" id="form-team">
+              <div class="form-group mb-3">
+                <label for="">project</label>
+                <br>
+                <input type="text" class="form-control" id="projectname" required/>
+              </div>
+              <div class="form-group mb-3">
+                <label for="">Project description</label>
+                <br>
+                <input class="form-control" type="text" id="projectdescription" required/>
+              </div>
+              <button  id="signup-pro" class="form-btn">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div> 
       </div>  
       
 
@@ -441,6 +458,26 @@ function signup(e) {
     })
     .then(()=> {console.log('Data Successfully Written ');
     console.log(teamname, teamlead)
+})
+    .catch(error => {console.error(error)});
+}
+
+document.getElementById('signup-pro').addEventListener('click', signupPro)  
+
+function signupPro(e) {
+    const projectname = document.getElementById('projectname');
+    const projectdescription = document.getElementById('projectdescription');
+
+    var  database = firebase.firestore();
+    var userCollection = database.collection('projects');
+    // ------------ Add Data to FireStore ---------------------------------------------//
+    e.preventDefault();  
+    userCollection.doc(projectname.value).set({ 
+    projectname: projectname.value,
+    projectdescription: projectdescription.value,
+    })
+    .then(()=> {console.log('Data Successfully Written ');
+    // console.log(teamname, teamlead)
 })
     .catch(error => {console.error(error)});
 }

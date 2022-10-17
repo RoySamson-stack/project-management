@@ -45,6 +45,30 @@ $(document).ready(function($) {
     
     });
 
+
+    function closeForm() {
+      $('.mem-team').removeClass('is-visible');
+    }
+    
+    $(document).ready(function($) {
+      
+      /* Contact Form Interactions */
+      $('#btnOpenForm1').on('click', function(event) {
+        event.preventDefault();
+    
+        $('.mem-team1').addClass('is-visible');
+      });
+      
+        //close popup when clicking x or off popup
+      $('.mem-team1').on('click', function(event) {
+        if ($(event.target).is('.mem-team1') || $(event.target).is('#btnCloseFormLead')) {
+          event.preventDefault();
+          $(this).removeClass('is-visible');
+        }
+      });
+      
+      });
+
 $(document).ready(function(){
   let sidebar = document.querySelector(".sidebar");
   let closeBtn = document.querySelector("#btn");

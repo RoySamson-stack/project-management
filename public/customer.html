@@ -103,7 +103,7 @@
        </div>  
        
        
-      <!-- <div class="form-popup-bg mem-team modal-dialog  modal-dialog-centered modal-lg">
+      <div class="form-popup-bg mem-team modal-dialog  modal-dialog-centered modal-lg">
         <div class="form-container">
           <button id="btnCloseForm" class="close-button">X</button>
           <form action="" id="form-team">
@@ -120,8 +120,8 @@
             <button  id="signup" class="form-btn">Submit</button>
           </form>
         </div>
-      </div> -->
-      </table>
+      </div>
+        </table>
         
       </div>
       <div class="recent_project">
@@ -186,12 +186,12 @@
                             check.innerHTML = 'Save';
                             check.onclick = function()
                             {
-                                // console.log("hello, world");
+                                // alert("hello, world");
                                 firebase.firestore().collection('projects').doc(doc.id).update({
                                   'save':true,
                                 })
                               .then(() => {
-                                  console.log('Data Saved')
+                                  alert('Data Saved')
                               })
                               .catch((err) =>{
                                   console.log(err)
@@ -238,12 +238,12 @@
                             check.innerHTML = 'Save';
                             check.onclick = function()
                             {
-                                // console.log("hello, world");
+                                // alert("hello, world");
                                 firebase.firestore().collection('projects').doc(doc.id).update({
-                                  'save':false,
+                                  'save':true,
                                 })
                               .then(() => {
-                                  console.log('Data Saved')
+                                  alert('Data Saved')
                               })
                               .catch((err) =>{
                                   console.log(err)
@@ -252,7 +252,7 @@
 
                             tr.appendChild(td_email);
                             tr.appendChild(td_full_name);
-                            tr.appendChild(check)
+                            tr.append
                             // tr.appendChild(td_uni_id);
 
                             teamList.appendChild(tr);
