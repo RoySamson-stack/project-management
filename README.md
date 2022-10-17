@@ -8,7 +8,6 @@ The admin willl be main user uin the system as they will have main task of assig
 
 Team leaders will be both internal and external. The different tasks the team leader will haev include:
 
-break tasks down into substasks
 estimate completion dates for new tasks
 assign subtasks to team members
 record prograss on a particular task
@@ -17,8 +16,11 @@ report expeced delays, justify them and provide new estimated completion dates
 
 ### Customer
 View Projects,
-View the structure of the projects/ related info
 track the progress
 update your progress, .pdf, screenshots, video, comments
-Technologies used
+
+## Technologies used
 HTML, Javascript, CSS
+
+## live site
+https://project-management-53eab.web.app/login.html
