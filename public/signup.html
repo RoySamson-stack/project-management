@@ -61,17 +61,22 @@
 
   document.getElementById('signup').addEventListener('click', signup)  
 function signup(e) {
+    const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     console.log(email, password)
     // firebase code
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then((result) => {
+    firebase.auth().createUserWithEmailAndPassword(email, password).then((result) => {
             // Signed in 
+            return firebase.firestore().collection('users').doc(result.user.uid).set({
+                name: name,
+                email: email,
+                password: password
+            }) 
+        })
+        .then(() => {
             document.write("You are Signed Up")
-            console.log(result)
             window.location='login.html'
-            // ...
         })
         .catch((error) => {
             console.log(error.code);
