@@ -57,7 +57,7 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
         // }
         console.log('press')
   });
-
+ 
   const readData = () => {
     db.collection('users')
     .get()
@@ -81,13 +81,12 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
           })
         }
   
-        function showUserDetails(user){
-          document.getElementById('user_wrapper').innerHTML = `
-            <p>Name:${user}</p>
+        // function showUserDetails(user){
+        //   document.getElementById('user_wrapper').innerHTML = `
+        //     <p>Name:${user}</p>
 
-          ```
-          console.log(user.name)
-        }
+        //   ```
+        // }
   
         function checkAuthState(){
           firebase.auth().onAuthStateChanged(user=>{
@@ -125,22 +124,19 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
           })
         }
     
-      // firebase.auth().onAuthStateChanged(function(user) {
-      //   if (user) {
-      //     // User is signed in.
-      //     var displayName = user.displayName;
-      //     var email = user.email;
-      //     var emailVerified = user.emailVerified;
-      //     var photoURL = user.photoURL;
-      //     var isAnonymous = user.isAnonymous;
-      //     var uid = user.uid;
-      //     var providerData = user.providerData;
-      //     // ...
-      //   } else {
-      //     // User is signed out.
-      //     // ...
-      //   }
-      // });
+      firebase.auth().onAuthStateChanged(function(user) {
+        console.log(user.email)
+        if (user) {
+          // User is signed in.
+          firebase.firestore().collection("users").onSnapshot(snapshot =>{
+            console.log(user.email)
+          })
+        } else {
+          // User is signed out.
+          console.log("not logged in")
+          // ...
+        }
+      });
       function githubSignout(){
          firebase.auth().signOut()
          .then(function() {
