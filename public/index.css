@@ -297,8 +297,28 @@ font-weight: bold;
 
 }
 /*end of center body styling*/
-
-
+.card_header{
+  display: flex;
+  justify-content: space-between;
+}
+.card_head{
+  display: flex;
+  justify-content: space-between;
+}
+.odd_btnR{
+  height: 40px;
+  padding: 5px;
+  border: none;
+  background-color: green;
+  color: white;
+}
+.odd_btn{
+  height: 40px;
+  padding: 5px;
+  border: none;
+  background-color: green;
+  color: white;
+}
 /*admin page*/
 .admin-table{
   height: 500px;

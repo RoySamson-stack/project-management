@@ -72,16 +72,7 @@
     <!-- End Card Boxs -->
     <div class="details">
       <div class="recent_project">
-        <h4>Profile </h4>
-        <div class="">
-          <input type="text" class="" id="user_wrapper" placeholder="name"/>
-        </div>
-        <div class="">
-          <input type="text" class="" placeholder="name"/>
-        </div>
-        <div class="">
-          <input type="text" class="" placeholder="name"/>
-        </div>
+       
         <div class="">
           <input type="submit" value="Update"/>
           <input type="submit" value="Delete" id="delete"/>
@@ -95,113 +86,115 @@
 <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script>
   <script src="popup.js"></script>
+  <script src="index.js"></script>
+
   <script>
-     var config = {
-        apiKey: "AIzaSyDmOzvLfbJ74Ftv0QWQmdpoaE1LzNPUlo0",
-        authDomain: "project-management-53eab.firebaseapp.com",
-        databaseURL: "https://project-management-53eab-default-rtdb.firebaseio.com",
-        projectId: "project-management-53eab",
-        storageBucket: "project-management-53eab.appspot.com",
-        messagingSenderId: "61242591551",
-        appId: "1:61242591551:web:d1707b994cb68028d1ab8a"
-      };
-      firebase.initializeApp(config);
+  //    var config = {
+  //       apiKey: "AIzaSyDmOzvLfbJ74Ftv0QWQmdpoaE1LzNPUlo0",
+  //       authDomain: "project-management-53eab.firebaseapp.com",
+  //       databaseURL: "https://project-management-53eab-default-rtdb.firebaseio.com",
+  //       projectId: "project-management-53eab",
+  //       storageBucket: "project-management-53eab.appspot.com",
+  //       messagingSenderId: "61242591551",
+  //       appId: "1:61242591551:web:d1707b994cb68028d1ab8a"
+  //     };
+  //     firebase.initializeApp(config);
 
    
-    $(document).ready(function(){
-              // teams js code
-              firebase.firestore().collection('teams').get().then((snapshot) => {
-                            snapshot.docs.forEach(doc => {
-                                renderAccount(doc);
-                            })
-                        })
+  //   $(document).ready(function(){
+  //             // teams js code
+  //             firebase.firestore().collection('teams').get().then((snapshot) => {
+  //                           snapshot.docs.forEach(doc => {
+  //                               renderAccount(doc);
+  //                           })
+  //                       })
 
-                        const teamList = document.querySelector('#tbl_teams_list') ;
-                        function renderAccount(doc){
-                            let tr = document.createElement('tr');
-                            let td_email = document.createElement('td');
-                            let td_full_name = document.createElement('td');
-                            let td_uni_id = document.createElement('td');
+  //                       const teamList = document.querySelector('#tbl_teams_list') ;
+  //                       function renderAccount(doc){
+  //                           let tr = document.createElement('tr');
+  //                           let td_email = document.createElement('td');
+  //                           let td_full_name = document.createElement('td');
+  //                           let td_uni_id = document.createElement('td');
 
-                            tr.setAttribute('data-id', doc.id);
-                            td_email.textContent = doc.data().teamname;
-                            td_full_name.textContent = doc.data().teamlead;
-                            td_uni_id.textContent = doc.data().teamleader;
+  //                           tr.setAttribute('data-id', doc.id);
+  //                           td_email.textContent = doc.data().teamname;
+  //                           td_full_name.textContent = doc.data().teamlead;
+  //                           td_uni_id.textContent = doc.data().teamleader;
 
-                            tr.appendChild(td_email);
-                            tr.appendChild(td_full_name);
-                            tr.appendChild(td_uni_id);
-                            // tr.appendChild(td_uni_id)
+  //                           tr.appendChild(td_email);
+  //                           tr.appendChild(td_full_name);
+  //                           tr.appendChild(td_uni_id);
+  //                           // tr.appendChild(td_uni_id)
 
-                            teamList.appendChild(tr);
+  //                           teamList.appendChild(tr);
 
-                        }
-            })
-  </script>
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
-          import { getFirestore,doc, getDoc,addDoc, collection,
-               getDocs, onSnapshot, query, where,setDoc, orderBy, limit , Timestamp 
-                } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js";
-                import { getStorage, ref, uploadBytes , getDownloadURL } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-storage.js";
-          const firebaseConfig = {
-          apiKey: "AIzaSyDmOzvLfbJ74Ftv0QWQmdpoaE1LzNPUlo0",
-          authDomain: "project-management-53eab.firebaseapp.com",
-          databaseURL: "https://project-management-53eab-default-rtdb.firebaseio.com",
-          projectId: "project-management-53eab",
-          storageBucket: "project-management-53eab.appspot.com",
-          messagingSenderId: "61242591551",
-          appId: "1:61242591551:web:d1707b994cb68028d1ab8a"
-          };
+  //                       }
+  //           })
+  // </script>
+  // <script type="module">
+  //   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+  //         import { getFirestore,doc, getDoc,addDoc, collection,
+  //              getDocs, onSnapshot, query, where,setDoc, orderBy, limit , Timestamp 
+  //               } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js";
+  //               import { getStorage, ref, uploadBytes , getDownloadURL } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-storage.js";
+  //         const firebaseConfig = {
+  //         apiKey: "AIzaSyDmOzvLfbJ74Ftv0QWQmdpoaE1LzNPUlo0",
+  //         authDomain: "project-management-53eab.firebaseapp.com",
+  //         databaseURL: "https://project-management-53eab-default-rtdb.firebaseio.com",
+  //         projectId: "project-management-53eab",
+  //         storageBucket: "project-management-53eab.appspot.com",
+  //         messagingSenderId: "61242591551",
+  //         appId: "1:61242591551:web:d1707b994cb68028d1ab8a"
+  //         };
         
           
-          const app = initializeApp(firebaseConfig);
-          const db = getFirestore(app);
+  //         const app = initializeApp(firebaseConfig);
+  //         const db = getFirestore(app);
           
         
-          document.getElementsByClassName("send")[0].addEventListener('click' ,async function(){
+  //         document.getElementsByClassName("send")[0].addEventListener('click' ,async function(){
   
-              var time = (new Date().getTime())
+  //             var time = (new Date().getTime())
           
               
-            const docRef = await addDoc(collection(db, user, "group+messages"), {
-                  value:document.getElementById("txt").value,
-                  sentby:res.user,
-                  time:time
-              });
-              document.getElementById("txt").value = "";
+  //           const docRef = await addDoc(collection(db, user, "group+messages"), {
+  //                 value:document.getElementById("txt").value,
+  //                 sentby:res.user,
+  //                 time:time
+  //             });
+  //             document.getElementById("txt").value = "";
   
-          })
+  //         })
   
   
          
-          const q = query(collection(db, "group+messages") , orderBy("time" , "asc"));
-          const unsubscribe = onSnapshot(q, (snapshot) => {
-            snapshot.docChanges().forEach((change) => {
-      if (change.type === "added") {
-          //console.log("New city: ", change.doc.data());
+  //         const q = query(collection(db, "group+messages") , orderBy("time" , "asc"));
+  //         const unsubscribe = onSnapshot(q, (snapshot) => {
+  //           snapshot.docChanges().forEach((change) => {
+  //     if (change.type === "added") {
+  //         //console.log("New city: ", change.doc.data());
           
-          if (change.doc.data().sentby == "") {
-              var msgdiv = document.createElement("div")
+  //         if (change.doc.data().sentby == "") {
+  //             var msgdiv = document.createElement("div")
   
-                      msgdiv.className = "chat2"
-                      msgdiv.innerHTML = change.doc.data().value
-                      document.getElementsByClassName("uploaded")[0].appendChild(msgdiv)
-          }else{
-              var msgdiv = document.createElement("div")
-                      msgdiv.className = "chat"
-                      msgdiv.innerHTML = change.doc.data().value
-                      document.getElementsByClassName("uploaded")[0].appendChild(msgdiv)
-          }
-      }
-      if (change.type === "modified") {
-          console.log("Modified city: ", change.doc.data());
-      }
-      if (change.type === "removed") {
-          console.log("Removed city: ", change.doc.data());
-      }
-    });
-  });
+  //                     msgdiv.className = "chat2"
+  //                     msgdiv.innerHTML = change.doc.data().value
+  //                     document.getElementsByClassName("uploaded")[0].appendChild(msgdiv)
+  //         }else{
+  //             var msgdiv = document.createElement("div")
+  //                     msgdiv.className = "chat"
+  //                     msgdiv.innerHTML = change.doc.data().value
+  //                     document.getElementsByClassName("uploaded")[0].appendChild(msgdiv)
+  //         }
+  //     }
+  //     if (change.type === "modified") {
+  //         console.log("Modified city: ", change.doc.data());
+  //     }
+  //     if (change.type === "removed") {
+  //         console.log("Removed city: ", change.doc.data());
+  //     }
+  //   });
+  // });
     </script>
 </body>
 </html>

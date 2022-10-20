@@ -79,7 +79,7 @@
     <div class="details">
       <div class="recent_project">
         <div class="card_header">
-          <h2>Teams</h2>
+          <h2>All projects</h2>
         </div>
         <table id="tbl_projects_list">
           <thead>
@@ -93,7 +93,7 @@
       
       <div class="recent_customers">
         <div class="card_header">
-          <!-- <h2>new project</h2> -->
+          <h2>Tasks</h2>
         </div>
         <table id="tbl_users_list">
           <!-- <tbody>      
@@ -126,7 +126,7 @@
       </div>
       <div class="recent_project">
         <div class="card_header">
-          <h2>Saved projects</h2>
+          <h2>Enrolled projects</h2>
         </div>
         <table id="tbl_savedprojects_list">
           <thead>
@@ -145,6 +145,7 @@
   <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script>
+<script src="index.js"></script>
   <script>
      var config = {
         apiKey: "AIzaSyDmOzvLfbJ74Ftv0QWQmdpoaE1LzNPUlo0",
@@ -224,7 +225,13 @@
                             let td_full_name = document.createElement('td');
                             // let td_uni_id = document.createElement('td');
                             var check = document.createElement("input");
-                          
+                            var comment = document.createElement("input")
+                            var comment_btn = document.createElement("button")
+
+
+
+                            comment.className = "comments-section";
+                            var comnt  = document.querySelector(".comments-section")
 
 
                             tr.setAttribute('data-id', doc.id);
@@ -250,10 +257,27 @@
                               })
                              }
 
+                            comment.placeholder = "make a comment"
+                            comment_btn.innerHTML = "comment"
+                            comment.data  = 'hello'
+                            comment_btn.onclick = function(){
+                              console.log(comment.value)
+                              console.log(user.email)
+                              firebase.firestore().collection("projects").doc(doc.id).collection("comments").doc().set({
+                                comment: comment.value,
+                                // user: user.email
+                              })
+                              console.log("click")
+                              reset()
+                            }
+
+
+
+
                             tr.appendChild(td_email);
                             tr.appendChild(td_full_name);
-                            tr.append
-                            // tr.appendChild(td_uni_id);
+                            tr.appendChild(comment)
+                            tr.appendChild(comment_btn);
 
                             teamList.appendChild(tr);
 
@@ -282,7 +306,6 @@ function signup(e) {
 }
   </script>
   <script src="popup.js"></script>
-  <script src="index.js"></script>
 
 </body>
 </html>

@@ -81,8 +81,9 @@
     <!-- End Card Boxs -->
     <div class="details">
       <div class="recent_project">
-        <div class="card_header">
+        <div class="card_head">
           <h2>Teams</h2>
+            <button id="btnOpenForm" class="fo odd_btnR" name="new_team">new team</button>
         </div>
         <table id="tbl_teams_list">
           <thead>
@@ -99,14 +100,13 @@
         <div class="card_header">
           <h2>create team</h2>
         </div>
-        <table id="tbl_users_list">
+        <table id="tbl_users_lists">
           <thead>
             <th>Team lead</th>
             <th>Project</th>
         </thead>
           <!-- <tbody>      
           </tbody> -->
-          <button id="btnOpenForm" class="fo" name="new_team">new team</button>
 
        </div> 
       </div>  
@@ -149,6 +149,8 @@
       <div class="recent_project">
         <div class="card_header">
           <h2>Projects</h2>
+          <button id="btnOpenForm1" class="fo odd_btn" name="new_team">new Project</button>
+
         </div>
         <table id="tbl_projects_list">
           <thead>
@@ -162,12 +164,12 @@
       </div>
       <div class="recent_customers">
         <div class="card_header">
-          <h2>new project</h2>
+          <h2>Completed project</h2>
         </div>
         <table id="tbl_users_list">
+    
           <!-- <tbody>      
           </tbody> -->
-          <button id="btnOpenForm1" class="fo" name="new_team">new Project</button>
         </div>
        
         <div class="form-popup-bg mem-team1 modal-dialog  modal-dialog-centered modal-lg">
@@ -229,13 +231,9 @@
                             let td_uni_id = document.createElement('td');
                             var del_button = document.createElement("button");
 
-                            let update_btn = document.createElement("button")
+                            let assign_btn = document.createElement("select")
 
 
-                            tr.setAttribute('data-id', doc.id);
-                            td_email.textContent = doc.data().teamname;
-                            td_full_name.textContent = doc.data().teammembers;
-                            td_uni_id.textContent = doc.data().teamlead;
                             del_button.data = "hi";
                             del_button.innerHTML = 'Delete';
                             del_button.className="del"
@@ -250,26 +248,20 @@
                                   console.log(err)
                               })
                              }
-                             update_btn.data = "hi";
-                            update_btn.innerHTML = 'Update';
-                            update_btn.onclick = function()
-                            {
-                                // console.log("hello, world");
-                                firebase.firestore().collection('users').doc('rWXzfhHwgofbBO8u16JT')
-                                .update({
-                                  email: 'ashishisagoodboy1234@gmail.com',
-                                  password: '123456'
-                                })
-                                .then(() => {
-                                  console.log('Data Updated')
-                                })
-                                                          }
+                        
+                            tr.setAttribute('data-id', doc.id);
+                            td_email.textContent = doc.data().teamname;
+                            td_full_name.textContent = doc.data().teammembers;
+                            td_uni_id.textContent = doc.data().teamlead;
 
+                     
+                            
+                          
                             tr.appendChild(td_email);
                             tr.appendChild(td_full_name);
                             tr.appendChild(td_uni_id);
                             tr.appendChild(del_button)
-
+                            tr.appendChild(assign_btn)
 
                             // tr.appendChild(td_uni_id)
 
@@ -279,7 +271,8 @@
             })
             $(document).ready(function(){
               // teams js code
-              firebase.firestore().collection('teams').get().then((snapshot) => {
+               // teams js code
+               firebase.firestore().collection('projects').where('completed', "==", true).get().then((snapshot) => {
                             snapshot.docs.forEach(doc => {
                                 renderAccount(doc);
                             })
@@ -290,32 +283,37 @@
                             let tr = document.createElement('tr');
                             let td_email = document.createElement('td');
                             let td_full_name = document.createElement('td');
-                            let td_uni_id = document.createElement('td');
-                                                        var del_button = document.createElement("button");
+                            // let td_uni_id = document.createElement('td');
+                            var check = document.createElement("input");
+                          
 
 
                             tr.setAttribute('data-id', doc.id);
-                            td_full_name.textContent = doc.data().teamlead;
-                            td_email.textContent = doc.data().teamname;
+                            td_email.textContent = doc.data().projectname;
+                            // td_full_name.textContent = doc.data().projectdescription;
                             // td_uni_id.textContent = doc.data().uni_id;
+                            // check.data = "hi";
+                            // check.type = 'checkbox'
+                            // check.value = "Save"
+                            // check.className = "add_btn"
+                            // check.innerHTML = 'Save';
+                            // check.onclick = function()
+                            // {
+                            //     // console.log("hello, world");
+                            //     firebase.firestore().collection('projects').doc(doc.id).update({
+                            //       'save':false,
+                            //     })
+                            //   .then(() => {
+                            //       console.log('Data Saved')
+                            //   })
+                            //   .catch((err) =>{
+                            //       console.log(err)
+                            //   })
+                            //  }
 
-                            del_button.data = "hi";
-                            del_button.className="del"
-                            del_button.innerHTML = 'Delete';
-                            del_button.onclick = function()
-                            {
-                                // console.log("hello, world");
-                                firebase.firestore().collection('projects').doc(doc.id).delete()
-                              .then(() => {
-                                  console.log('Data Deleted')
-                              })
-                              .catch((err) =>{
-                                  console.log(err)
-                              })
-                             }
-                             tr.appendChild(td_full_name);
                             tr.appendChild(td_email);
-                           
+                            tr.appendChild(td_full_name);
+                            // tr.appendChild(check)
                             // tr.appendChild(td_uni_id);
 
                             teamList.appendChild(tr);
@@ -324,35 +322,38 @@
                           }
             })
 
-            // $(document).ready(function(){
-            //   // teams js code
-            //   firebase.firestore().collection('').get().then((snapshot) => {
-            //                 snapshot.docs.forEach(doc => {
-            //                     renderAccount(doc);
-            //                 })
-            //             })
 
-            //             const teamList = document.querySelector('#tbl_users_list') ;
-            //             function renderAccount(doc){
-            //                 let tr = document.createElement('tr');
-            //                 let td_email = document.createElement('h4');
-            //                 let td_full_name = document.createElement('td');
-            //                 let td_uni_id = document.createElement('td');
 
-            //                 tr.setAttribute('data-id', doc.id);
-            //                 td_email.textContent = doc.data().name;
-            //                 td_full_name.textContent = doc.data().teamlead;
-            //                 td_uni_id.textContent = doc.data().uni_id;
+            $(document).ready(function(){
+              // teams js code
+              firebase.firestore().collection('projects').doc(doc.id).collection('comments').get().then((snapshot) => {
+                            snapshot.docs.forEach(doc => {
+                                renderAccount(doc);
+                                
+                            })
+                        })
 
-            //                 tr.appendChild(td_email);
-            //                 tr.appendChild(td_full_name);
-            //                 tr.appendChild(td_uni_id);
+                        const teamList = document.querySelector('#tbl_users_lists') ;
+                        function renderAccount(doc){
+                            let tr = document.createElement('tr');
+                            let td_email = document.createElement('td');
+                            let td_full_name = document.createElement('td');
+                            let td_uni_id = document.createElement('td');
 
-            //                 teamList.appendChild(tr);
+                            tr.setAttribute('data-id', doc.id);
+                            td_email.textContent = doc.data().comments;
+                            // td_full_name.textContent = doc.data().teamlead;
+                            // td_uni_id.textContent = doc.data().uni_id;
+
+                            tr.appendChild(td_email);
+                            // tr.appendChild(td_full_name);
+                            // tr.appendChild(td_uni_id);
+
+                            teamList.appendChild(tr);
 
                  
-            //               }
-            // })
+                          }
+            })
 
             $(document).ready(function(){
               // teams js code
@@ -369,24 +370,7 @@
                             let td_full_name = document.createElement('td');
                             // let td_uni_id = document.createElement('td');
                             var del_button = document.createElement("button");
-                            var assign = document.createElement("select")
-                            assign.innerHTML = "assign";
-                            assign.className = 'select'
-                            assign.onclick = function()
-                            {
-                                // console.log("hello, world");
-                                firebase.firestore().collection('teams').get().then((snapshot) => {
-                            snapshot.docs.forEach(doc => {
-                                renderAccount(doc);
-                                    })
-                                })
-                                const teamList = document.querySelector('.select')
-                                let opt = document.createElement('option')
-                                opt.textContent = doc.data().teamname
-
-
-                             }
-
+                           
                           
 
 
@@ -409,11 +393,10 @@
                                   console.log(err)
                               })
                              }
-
+                             
                             tr.appendChild(td_email);
                             tr.appendChild(td_full_name);
                             // tr.appendChild(del_button)
-
                             // tr.appendChild(td_uni_id);
 
                             teamList.appendChild(tr);

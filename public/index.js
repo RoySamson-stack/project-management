@@ -67,6 +67,31 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
         }))
     })
   }
+
+
+  const guideList = document.querySelector('.guides');
+  const loggedOutLinks = document.querySelectorAll('.logged-out');
+  const loggedInLinks = document.querySelectorAll('.logged-in');
+  const accountDetails = document.querySelector('.account-details');
+  
+  const setupUI = (user) => {
+    if (user) {
+      // account info
+      const html = `
+        <div>Logged in as ${user.email}</div>
+      `;
+      accountDetails.innerHTML = html;
+      // toggle user UI elements
+      loggedInLinks.forEach(item => item.style.display = 'block');
+      loggedOutLinks.forEach(item => item.style.display = 'none');
+    } else {
+      // clear account info
+      accountDetails.innerHTML = '';
+      // toggle user elements
+      loggedInLinks.forEach(item => item.style.display = 'none');
+      loggedOutLinks.forEach(item => item.style.display = 'block');
+    }
+  };
         function GoogleLogin(){
           // const user = firebase.auth().currentUser.displayName;
           console.log('Login Btn Call')
@@ -80,22 +105,32 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
             console.log(e)
           })
         }
-  
-        // function showUserDetails(user){
-        //   document.getElementById('user_wrapper').innerHTML = `
-        //     <p>Name:${user}</p>
 
-        //   ```
-        // }
+        const profilePg = document.querySelector('.recent_project')
+        function showUserDetails(user){
+          // document.querySelector('.recent_project').innerHTML = 
+          //   <div>Name:${user.email}</div>
+          //   <div>password:${user.password}</div>
+          let div = document.createElement('div')
+          let input = document.createElement('input')
+          input.textContent = user.email
+          input.textContent = user.password
+          console.log(user.email)
+
+          div.appendChild(input)
+
+          profilePg.appendChild(div)
+        }
   
         function checkAuthState(){
           firebase.auth().onAuthStateChanged(user=>{
             if(user){
-              document.getElementById('LoginScreen').style.display="none"
-              document.getElementById('dashboard').style.display="block"
-              showUserDetails(user)
+              // document.getElementById('LoginScreen').style.display="none"
+              // document.getElementById('dashboard').style.display="block"
+              // showUserDetails(user)
+              setupUI(user)
             }else{
-  
+              setupUI()
             }
           })
         }
@@ -146,7 +181,9 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
          });
       }
   
-  
+  function getUser(user){
+    console.log(user.email)
+  }
     function twitterSignin(){
       // const user = firebase.auth().currentUser.displayName
 
@@ -218,5 +255,18 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
 
 
 
+  
+  // setup materialize components
+  document.addEventListener('DOMContentLoaded', function() {
+  
+    var modals = document.querySelectorAll('.modal');
+    M.Modal.init(modals);
+  
+    var items = document.querySelectorAll('.collapsible');
+    M.Collapsible.init(items);
+  
+  });
 
+
+getUser()  
 })
