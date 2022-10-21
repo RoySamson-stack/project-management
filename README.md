@@ -1,5 +1,5 @@
 # project-management
-This is a simple projecy management web app that allows for collaboration among team members.The different member in a tema will be assigned different roles by the Admin and they get tio use the platform to collarborate. The different members in the team will be : ~ Admin ~ Team leader ~ Customer
+This is a simple web based project management web app.It allows for different users such as teamlead and students to use the platform in assigning of tasks by the admin and the task broken into subtask by team lead for the student to complete.The different member in a teaM will be assigned different roles by the Admin and they get tio use the platform to collarborate. The different members in the team will be : ~ Admin ~ Team leader ~ Customer
 
 
 ## Technologies and Tools used
@@ -9,14 +9,18 @@ CSS
 Firebase
 
 ### Admin
-The admin will be main user uin the system as they will have main task of assigning jobs and also have function such as: - setting up the project - Dividing the project into tasks - assign tasks to teams - Create new teams if necessary - update any changes to the project - track overall project progress
+The admin will be Ccontroller of the system as they have the priviledges to :
+ - set up the project 
+ - assign tasks to teams 
+ - Create new teams if necessary 
+ - track overall project progress
 
 ### Team leader
 
 Team leaders will be both internal and external. The different tasks the team leader will haev include:
 
 estimate completion dates for new tasks
-assign subtasks to team members
+assign subtasks to student
 record prograss on a particular task
 record completed tasks
 report expeced delays, justify them and provide new estimated completion dates
@@ -24,7 +28,7 @@ report expeced delays, justify them and provide new estimated completion dates
 ### Customer
 View Projects,
 track the progress
-sve projects
+save projects
 
 
 ## live site
