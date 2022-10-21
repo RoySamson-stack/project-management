@@ -243,6 +243,8 @@
                                 firebase.firestore().collection('teams').doc(doc.id).delete()
                               .then(() => {
                                   console.log('Data Deleted')
+                                  window.location.reload();
+
                               })
                               .catch((err) =>{
                                   console.log(err)
@@ -324,7 +326,7 @@
 
 
 
-            $(document).ready(function(){
+            $(document).ready(function(doc){
               // teams js code
               firebase.firestore().collection('projects').doc(doc.id).collection('comments').get().then((snapshot) => {
                             snapshot.docs.forEach(doc => {
@@ -409,23 +411,30 @@
             document.getElementById('signup').addEventListener('click', signup)  
 
 function signup(e) {
-    const teamname = document.getElementById('teamname');
-    const teamlead = document.getElementById('teamlead');
+    const teamname = document.getElementById('teamname').value;
+    const teamlead = document.getElementById('teamlead').value;
     const teammembers = document.getElementById('teammembers');
     const password = document.getElementById('password').value;
     const email = document.getElementById("email").value;
+    
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((result) => {
             // Signed in 
+            return firebase.firestore().collection('teams').doc(result.user.uid).set({
+              teamname: teamname,
+              teamlead: teamlead,
+              email:email,
+              password: password,
+            })
             document.write("You are Signed Up")
             console.log(result)
-            // window.location='login.html'
+            window.location.reload();
             // ...
         })
         .catch((error) => {
-            console.log(error.code);
-            console.log(error.message)
+            // console.log(error.code);
+            // console.log(error.message)
             // ..
         });
 
@@ -433,11 +442,10 @@ function signup(e) {
     var userCollection = database.collection('teams');
     // ------------ Add Data to FireStore ---------------------------------------------//
     e.preventDefault();  
-    userCollection.doc(teamname.value).set({ 
-    teamname: teamname.value,
-    teamlead: teamlead.value,
-    teammemebers: teammembers.value,
-    password: password.value,
+    userCollection.doc(teamname).set({ 
+    teamname: teamname,
+    teamlead: teamlead,
+    password: password.v,
     })
     .then(()=> {console.log('Data Successfully Written ');
     console.log(teamname, teamlead)
@@ -460,7 +468,7 @@ function signupPro(e) {
     projectdescription: projectdescription.value,
     })
     .then(()=> {console.log('Data Successfully Written ');
-    // console.log(teamname, teamlead)
+    window.location.reload();
 })
     .catch(error => {console.error(error)});
 }

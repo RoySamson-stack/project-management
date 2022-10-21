@@ -166,10 +166,12 @@
                             {
                                 // console.log("hello, world");
                                 firebase.firestore().collection('projects').doc(doc.id).update({
-                                  'save':true,
+                                  'completed':true,
                                 })
                               .then(() => {
                                   console.log('Data Saved')
+                                  window.location.reload();
+
                               })
                               .catch((err) =>{
                                   console.log(err)
@@ -218,10 +220,11 @@
                             {
                                 // console.log("hello, world");
                                 firebase.firestore().collection('projects').doc(doc.id).update({
-                                  'save':false,
+                                  'completed':false,
                                 })
                               .then(() => {
                                   console.log('Data Saved')
+                                  window.location.reload();
                               })
                               .catch((err) =>{
                                   console.log(err)

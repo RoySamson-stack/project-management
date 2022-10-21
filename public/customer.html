@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="customer.css">
+  <script src="index.js"></script>
+
   <!-- box icon -->
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -46,12 +48,10 @@
         </a>
       </li> -->
       <li class="login">
-        <a href="#">
-          <span class="links_name login_out">
-            Login Out
-          </span>
-          <i class='bx bx-log-out' id="log_out"></i>
-        </a>
+        <div id="dashboard">
+          <div id="userDetails"></div> 
+         <button id="logout">Logout</button>
+       </div>
       </li>
     </ul>
   </div>
@@ -193,6 +193,7 @@
                                 })
                               .then(() => {
                                   alert('Data Saved')
+                                  window.location.reload
                               })
                               .catch((err) =>{
                                   console.log(err)
@@ -282,6 +283,50 @@
                             teamList.appendChild(tr);
 
                  
+                          }
+            })
+            $(document).ready(function(){
+              // teams js code
+               // teams js code
+               firebase.firestore().collection('projects').doc(uid).collection('tasks').get().then((snapshot) => {
+                            snapshot.docs.forEach(doc => {
+                                renderAccount(doc);
+                                
+                            })
+                        })
+
+                        const teamList = document.querySelector('#tbl_users_list') ;
+                        function renderAccount(doc){
+                            let tr = document.createElement('tr');
+                            let td_email = document.createElement('td');
+                            let td_full_name = document.createElement('td');
+                            // let td_uni_id = document.createElement('td');
+                            var check = document.createElement("input");
+                            var comment = document.createElement("input")
+                            var comment_btn = document.createElement("button")
+
+
+
+                            // comment.className = "comments-section";
+                            // var comnt  = document.querySelector(".comments-section")
+
+
+                            tr.setAttribute('data-id', doc.id);
+                            td_email.textContent = doc.data().task;
+                            // td_full_name.textContent = doc.data().projectdescription;
+                            // td_uni_id.textContent = doc.data().uni_id;
+ 
+                            tr.appendChild(td_email);
+                            tr.appendChild(td_full_name);
+                            tr.appendChild(comment)
+                            tr.appendChild(comment_btn);
+
+                            teamList.appendChild(tr);
+
+                          
+
+
+                            
                           }
             })
 

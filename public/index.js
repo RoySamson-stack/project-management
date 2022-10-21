@@ -14,7 +14,7 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
         firebase.initializeApp(config);
   
         // document.getElementById('dashboard').style.display="block"
-
+        const error_tab = document.getElementById('error')
       document.getElementById('login').addEventListener('click', GoogleLogin)
       document.getElementById('logout').addEventListener('click', LogoutUser)
       document.getElementById('github-login').addEventListener('click', githubSignin)
@@ -155,6 +155,7 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
             showUserDetails(user)
             window.location = 'customer.html'
           }).catch(e=>{
+            error_tab.innerHTML = error.message
             console.log(e)
           })
         }
@@ -177,6 +178,7 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
          .then(function() {
             console.log('Signout successful!')
          }, function(error) {
+          error_tab.innerHTML = error.message
             console.log('Signout failed')
          });
       }
@@ -195,6 +197,8 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
             showUserDetails(user)
             window.location = 'customer.html'
           }).catch(e=>{
+            error_tab.innerHTML = error.message
+
             console.log(e)
           })
       }
@@ -214,6 +218,8 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
 
             })
             .catch((error) => {
+              error_tab.innerHTML = error.message
+
                 console.log(error.code);
                 console.log(error.message)
             });
@@ -227,6 +233,8 @@ $.getScript('https://www.gstatic.com/firebasejs/8.0.0/firebase.js',function() {
       consolelog(success)
     })
     .catch((error) => {
+      error_tab.innerHTML = error.message
+
       const errorCode = error.code;
       const errorMessage = error.message;
       // ...

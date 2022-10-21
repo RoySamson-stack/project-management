@@ -296,6 +296,10 @@ font-weight: bold;
   padding: 20px;
 
 }
+
+#error{
+  color: red;
+}
 /*end of center body styling*/
 .card_header{
   display: flex;
